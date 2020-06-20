@@ -31,7 +31,7 @@ Now that we have gotten the basic terminology out of the way, let's get into cre
 
 ## First repository
 
-There are two ways to create a repository. This guide will go through both in detail. There are specific use cases for either and it's best that you are familiar with them.
+There are two ways to create a repository. This guide will go through both in detail. There are specific use cases for either and it's best that you are familiar with them. When following along with the guide, execute the code in the first method.
 
 <!-- TODO Insert images -->
 ### GitHub first
