@@ -1,3 +1,8 @@
+---
+title: "First repository"
+geometry: margin=1.5cm
+---
+
 # Creating your first repository
 
 Now that you have set up your environment, you are ready to start learning Git. As you progress along the guide, information and references about the concepts discussed will be provided, these will be critical in properly understanding and using Git in your workflow.

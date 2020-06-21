@@ -1,3 +1,8 @@
+---
+title: "Setup"
+geometry: margin=1.5cm
+---
+
 # Setup
 
 To begin, you will have to install Git on your machine. The instructions to do so can be found [here.](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)

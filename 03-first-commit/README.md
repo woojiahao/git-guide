@@ -1,3 +1,8 @@
+---
+title: "First commit"
+geometry: margin=1.5cm
+---
+
 # First commit
 
 Now that you have a repository setup, you can start to save and upload files. Before that, it is important to preface that this will be the most important chapter in understanding Git. As such, please read through each section carefully and properly understand how each command works.
