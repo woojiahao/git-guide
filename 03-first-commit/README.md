@@ -22,16 +22,46 @@ Note that it is possible to have more than one remote per project, this is a con
 
 This is a concept that we will be exploring in practice later in this chapter, for now, let us provide a theoretical understanding of what is going on between the local repository and remote repository.
 
-The staging area in Git is similar to the one you might imagine in schools or convention centres. It is an area where the spotlight is cast on a select few files (or people). The process of casting this spotlight on something is known as tracking. Once a file is tracked (by being added), it will be tracked for **all** changes that occur to it subsequently. This file will be staged for confirmation.
+Before a file is displayed on the staging area, it resides in the working directory.
+
+The staging area in Git is similar to the one you might imagine in schools or convention centres. It is an area where the spotlight is cast on a select few files (or people). The process of casting this spotlight on something is known as tracking. Once a file is tracked (by being added), it will be tracked for **all** changes that occur to it subsequently. This file will be staged for confirmation. This copies the file from the working directory to the staging area.
 
 Only files that have been tracked/staged can be committed. Committing tells Git that you are confirming a set of changes and finalising these changes in the project's history.
 
 Only files that have been committed can be pushed to a remote repository.
 
-If a local file changes while being tracked, Git will inform you that you will have to re-add the file. This is not to re-track the file, but rather to add the latest changes.
+If a local file changes while being tracked, Git will inform you that you will have to re-add the file. This is not to re-track the file, but rather to add the latest changes. The file will be staged again.
 
 If this seems confusing, don't worry, once you start using the commands, it will be easier to understand how Git works.
 
 The following diagram illustrates the general process files of new files in the staging area.
 
 ![Staging area](./res/staging-area.png)
+
+## First commit
+
+Let's now put what we have learnt to practice. Following that last chapter, you should have
+
+- Created a GitHub repository (remote repository)
+- Clone the remote repository on your local machine (local repository)
+- Navigated to the loal copy in your terminal
+
+1. Create a new file in the root of the project folder and add the text "Hello world" into it. You can do this from your file explorer or through the terminal.
+
+    ```bash
+    echo "Hello world" > a.txt
+    ```
+
+2. View the current status of the work directory. `git status` will print the current status of the Git repository. You will notice that there will be one section - "Untracked files". As we have established earlier, the untracked files/unstaged files are not yet on the staging area. So let's add it to the staging area.
+
+    ```bash
+    git status
+    ```
+
+3. Add the file (`a.txt`) to the staging area. This tracks the file and copies it to the staging area.
+
+    ```bash
+    git add a.txt
+    ```
+
+    A common convention of `git add` is `git add .` where `.` represents all the files that are available to be copied to the staging area. This is very useful when you have multiple files you wish to stage at once.
