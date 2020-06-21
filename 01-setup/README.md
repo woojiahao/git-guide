@@ -7,8 +7,10 @@ Once you have installed Git, open up your terminal or Git Bash (if you are on Wi
 **Note*** that from this point forward, the terminal/Git Bash/command prompt will all be referred to as the terminal for ease of reference. If you are unfamiliar with bash commands or batch commands, refer to [this guide]() for a quick tutorial.
 
 ```bash
-$ git --version
+git --version
 ```
+
+![Git version](./res/git-version.png)
 
 You will also be using GitHub to manage your projects. More details will be explained about this in the following chapters. To get started with GitHub, create a new account [here.](https://github.com/) GitHub recently made private repositories with unlimited collaborators free.
 
