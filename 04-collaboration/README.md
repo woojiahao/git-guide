@@ -49,6 +49,7 @@ As this guide is written for students working in groups, it is advised that you 
 
 ### General overview
 
+#### Creating pull requests
 <!--TODO How to get updates-->
 
 1. When you first visit a repository on GitHub that you wish to contribute to, you will notice that in the top right corner of the repository page, there is a button labelled "Fork". Select this option and GitHub will begin creating a copy of this project into your own account.
@@ -66,3 +67,37 @@ As this guide is written for students working in groups, it is advised that you 
 5. Filling in information like the title of the pull request and description of it allows the owner of the repository to understand what the changes proposed does.
 
 After this, everything else is left up to the owner. They are free to review the changes proposed and comment on them. GitHub supports a discussion forum per pull request so that others can chime in about the changes and further improvements can be made before merging them into the original repository. GitHub's pull request feature is very powerful but this guide will not go into detail on every feature available. If you are interested to learn more, refer to this guide [here.](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
+
+As the owner of a repository, you can choose to accept a pull request through GitHub's interface.
+
+#### Receiving the latest changes
+
+As mentioned earlier, as Git allows developers to work on the same project simulatenously without an active connection to the central repository, how can developers receive the latest changes?
+
+This is done through pulling.
+
+Much like pushing changes to the remote repository, pulling changes is akin to downloading the latest updates of a repository to the local copy. This ensures that the local repository is the latest copy of it as seen in the remote repository.
+
+To receive changes from the original repository, some setup is required.
+
+1. In your terminal, navigate to your project folder and add a new remote to the local copy called `upstream`.
+
+    A project can have multiple remotes. The original is called `origin` and this is often referring to the remote repository you own. As we wish to receive that changes from the original repository (not your own), we will have to "link" your local repository to the original repository. As we will only be using this link to download the latest changes (noting that it may contain changes that your local copy does not have yet), we can name it as `upstream`.
+
+    **Note*** that these remotes can be of any name, but `origin` and `upstream` are the most commonly used ones.
+
+2. Once the `upstream` remote has been setup, you can use `git pull` to pull the latest changes from the remote repository.
+3. Once these change are pulled to your local repository, you can push them to your own remote repository using `git push`.
+
+**Note*** If the remote repository has changes that are in conflict with your own local changes (i.e. the same line of the same file is modified in both repositories), you may encounter a "merge conflict". We will be discussing managing merge conflicts in a later section.
+
+That is a simple overview of the fork and pull request workflow. We will now move onto an exercise to demonstrate this workflow.
+
+### Practical
+
+In a group, decide someone to be the owner of a repository. This will be the `learning-git` repository that you created previously. The other members will have to delete this repository (refer [here](https://help.github.com/en/github/administering-a-repository/deleting-a-repository)).
+
+**Note*** If you created a private repository, you will have to add your team members as a collaborator for them to have access to it (refer [here](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)).
+
+1. Each member will fork the original repository.
+2.
