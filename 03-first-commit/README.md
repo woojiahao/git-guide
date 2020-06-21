@@ -20,6 +20,8 @@ Note that it is possible to have more than one remote per project, this is a con
 
 ### Staging area
 
+<!--TODO Discuss the distinction between tracking and staging-->
+
 This is a concept that we will be exploring in practice later in this chapter, for now, let us provide a theoretical understanding of what is going on between the local repository and remote repository.
 
 Before a file is displayed on the staging area, it resides in the working directory.
@@ -52,11 +54,15 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
     echo "Hello world" > a.txt
     ```
 
-2. View the current status of the work directory. `git status` will print the current status of the Git repository. You will notice that there will be one section - "Untracked files". As we have established earlier, the untracked files/unstaged files are not yet on the staging area. So let's add it to the staging area.
+2. View the current status of the work directory.
 
     ```bash
     git status
     ```
+
+    `git status` will print the current status of the Git repository. You will notice that there will be one section - "Untracked files". Under it, there will be the new file, `a.txt` in red. This indicates that the file has not been staged.
+
+    As we have established earlier, the untracked files/unstaged files are not yet on the staging area. So let's add it to the staging area.
 
 3. Add the file (`a.txt`) to the staging area. This tracks the file and copies it to the staging area.
 
@@ -65,3 +71,27 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
     ```
 
     A common convention of `git add` is `git add .` where `.` represents all the files that are available to be copied to the staging area. This is very useful when you have multiple files you wish to stage at once.
+
+    To check that a file has been staged, you can run `git status` again. This time, the file should be green in color and under a new section called "Changes to be committed". This indicates that file has been staged successfully.
+
+4. Once a file has been staged, the file is ready to be committed.
+
+    ```bash
+    git commit -m "Add a.txt"
+    ```
+
+    `git commit` is relatively straightforward. However, the `-m` is rather interesting. It provides a "commit message" for the commit which is the text in quotations following it. This commit message can be thought of as a short description of what the commit/change is about. Generally, commit messages should provide useful information about the commit where you can look back later and understand why changes were made without having to re-read the code.
+
+    To check that a file has been successfully committed, you can run `git status`. This time, Git will inform you on the total number of commits you have in the staging area that have not been pushed to the remote repository.
+
+5. Once a file has been committed, it can finally be pushed the remote repository. Pushing is in a sense uploading the latest set of changes to the remote repository. In our case, we have decided to create a new file called `a.txt`, add the text "Hello world" to it, and save/commit that change.
+
+    ```bash
+    git push origin master
+    ```
+
+    Git will take a while to process the request and may prompt you to fill in your GitHub credentials.
+
+6. To verify that your changes have been made (adding `a.txt`), visit GitHub and navigate to the repository. You will now notice that there is a new file added, `a.txt`. Hooray!
+
+    ![]()
