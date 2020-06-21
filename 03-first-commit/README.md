@@ -95,3 +95,5 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
 6. To verify that your changes have been made (adding `a.txt`), visit GitHub and navigate to the repository. You will now notice that there is a new file added, `a.txt`. Hooray!
 
     ![]()
+
+You have successfully made your first commit! There may seem to be a lot of things to recall at once, but many of these become habit over time. The theory behind Git has to be explained to ensure that you have a clear mental model of what is going on so that future commands or chain of commands will make more sense. If you are unsure about anything discussed in this chapter, go over it once again. Ensure that you have a clear understanding of what each command can do.
