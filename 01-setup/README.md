@@ -2,7 +2,7 @@
 
 To begin, you will have to install Git on your machine. The instructions to do so can be found [here.](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-Once you have installed Git, open up your terminal or Git Bash (if you are on Windows) and type the following command to verify that Git has been installed. You should see that an appropriate number will be shown. As of the writing of this guide, the latest version of Git is `2.27.0**.
+Once you have installed Git, open up your terminal or Git Bash (if you are on Windows) and type the following command to verify that Git has been installed. You should see that an appropriate number will be shown. As of the writing of this guide, the latest version of Git is `2.27.0`.
 
 **Note*** that from this point forward, the terminal/Git Bash/command prompt will all be referred to as the terminal for ease of reference. If you are unfamiliar with bash commands or batch commands, refer to [this guide]() for a quick tutorial.
 
