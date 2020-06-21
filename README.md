@@ -13,7 +13,7 @@ Git is a vast topic and it will be impossible to cover the entirity of the Git t
 1. [Setup](./01-setup/README.md)
 2. [Creating your first repository](./02-first-repository/README.md)
 3. [Your first commit](./03-first-commit/README.md) - `git add`, `git stash`, `git commit`, `git restore`, `git rm`, staging area
-4. [Collaborating with others]() - Forking, branching, pull requests
+4. [Collaborating with others](./04-collaboration/README.md) - Forking, branching, pull requests
 5. [Handling merge conflicts]() - merge conflict resolution
 6. [Advanced topics]() - `.gitignore`, `git log`, `git stash`
 
