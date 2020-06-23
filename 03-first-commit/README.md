@@ -25,23 +25,21 @@ Note that it is possible to have more than one remote per project, this is a con
 
 ### Staging area
 
-<!--TODO Discuss the distinction between tracking and staging-->
+There are three locations that a file will "reside" in. The files do not exclusively "exist" or "reside" in these states/locations but we will use this metaphor to make it easier to understand.
 
-This is a concept that we will be exploring in practice later in this chapter, for now, let us provide a theoretical understanding of what is going on between the local repository and remote repository.
+All files reside first in the **working directory** regardless of state.
 
-Before a file is displayed on the staging area, it resides in the working directory.
+The next location that a file can reside in is the **staging area.** The staging area is similar to the one you might imagine in schools or convention centres. It is an area where the spotlight is cast on a select few files. A file that has been added to the staging area is "staged". It is also tracked by Git, which means that any changes made to the file will be tracked.
 
-The staging area in Git is similar to the one you might imagine in schools or convention centres. It is an area where the spotlight is cast on a select few files (or people). The process of casting this spotlight on something is known as tracking. Once a file is tracked (by being added), it will be tracked for **all** changes that occur to it subsequently. This file will be staged for confirmation. This copies the file from the working directory to the staging area.
+Only files that have been staged can be committed. Committing tells Git that you are confirming/committing to a set of changes and finalising these changes in the project's history.
 
-Only files that have been tracked/staged can be committed. Committing tells Git that you are confirming a set of changes and finalising these changes in the project's history.
+Only files that have been committed can be pushed to a remote repository. The last location happens to be the **remote repository** where the files are uploaded to the remote repository for others to access.
 
-Only files that have been committed can be pushed to a remote repository.
-
-If a local file changes while being tracked, Git will inform you that you will have to re-add the file. This is not to re-track the file, but rather to add the latest changes. The file will be staged again.
+If a local file changes while being tracked, Git will inform you that you will have to re-add the file. The file has to be re-staged as the current copy of the file is no longer the same as the copy in history, so you have to inform Git of these changes.
 
 If this seems confusing, don't worry, once you start using the commands, it will be easier to understand how Git works.
 
-The following diagram illustrates the general process files of new files in the staging area.
+The following diagram illustrates the concepts discussed above.
 
 ![Staging area](./res/staging-area.png)
 
@@ -65,6 +63,8 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
     git status
     ```
 
+    ![]()
+
     `git status` will print the current status of the Git repository. You will notice that there will be one section - "Untracked files". Under it, there will be the new file, `names.txt` in red. This indicates that the file has not been staged.
 
     As we have established earlier, the untracked files/unstaged files are not yet on the staging area. So let's add it to the staging area.
@@ -79,6 +79,8 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
 
     To check that a file has been staged, you can run `git status` again. This time, the file should be green in color and under a new section called "Changes to be committed". This indicates that file has been staged successfully.
 
+    ![]()
+
 4. Once a file has been staged, the file is ready to be committed.
 
     ```bash
@@ -88,6 +90,8 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
     `git commit` is relatively straightforward. However, the `-m` is rather interesting. It provides a "commit message" for the commit which is the text in quotations following it. This commit message can be thought of as a short description of what the commit/change is about. Generally, commit messages should provide useful information about the commit where you can look back later and understand why changes were made without having to re-read the code.
 
     To check that a file has been successfully committed, you can run `git status`. This time, Git will inform you on the total number of commits you have in the staging area that have not been pushed to the remote repository.
+
+    ![]()
 
 5. Once a file has been committed, it can finally be pushed the remote repository. Pushing is in a sense uploading the latest set of changes to the remote repository. In our case, we have decided to create a new file called `names.txt`, add the text "Hello world" to it, and save/commit that change.
 
