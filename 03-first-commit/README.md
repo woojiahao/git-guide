@@ -53,10 +53,10 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
 - Clone the remote repository on your local machine (local repository)
 - Navigated to the loal copy in your terminal
 
-1. Create a new file in the root of the project folder and add the text "Hello world" into it. You can do this from your file explorer or through the terminal.
+1. Create a new file in the root of the project folder and add your name into it. You can do this from your file explorer (creating a new text file directly and editing it) or through the terminal.
 
     ```bash
-    echo "Hello world" > a.txt
+    echo "Woo Jia Hao" > names.txt
     ```
 
 2. View the current status of the work directory.
@@ -65,14 +65,14 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
     git status
     ```
 
-    `git status` will print the current status of the Git repository. You will notice that there will be one section - "Untracked files". Under it, there will be the new file, `a.txt` in red. This indicates that the file has not been staged.
+    `git status` will print the current status of the Git repository. You will notice that there will be one section - "Untracked files". Under it, there will be the new file, `names.txt` in red. This indicates that the file has not been staged.
 
     As we have established earlier, the untracked files/unstaged files are not yet on the staging area. So let's add it to the staging area.
 
-3. Add the file (`a.txt`) to the staging area. This tracks the file and copies it to the staging area.
+3. Add the file (`names.txt`) to the staging area. This tracks the file and copies it to the staging area.
 
     ```bash
-    git add a.txt
+    git add names.txt
     ```
 
     A common convention of `git add` is `git add .` where `.` represents all the files that are available to be copied to the staging area. This is very useful when you have multiple files you wish to stage at once.
@@ -82,14 +82,14 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
 4. Once a file has been staged, the file is ready to be committed.
 
     ```bash
-    git commit -m "Add a.txt"
+    git commit -m "Add names.txt"
     ```
 
     `git commit` is relatively straightforward. However, the `-m` is rather interesting. It provides a "commit message" for the commit which is the text in quotations following it. This commit message can be thought of as a short description of what the commit/change is about. Generally, commit messages should provide useful information about the commit where you can look back later and understand why changes were made without having to re-read the code.
 
     To check that a file has been successfully committed, you can run `git status`. This time, Git will inform you on the total number of commits you have in the staging area that have not been pushed to the remote repository.
 
-5. Once a file has been committed, it can finally be pushed the remote repository. Pushing is in a sense uploading the latest set of changes to the remote repository. In our case, we have decided to create a new file called `a.txt`, add the text "Hello world" to it, and save/commit that change.
+5. Once a file has been committed, it can finally be pushed the remote repository. Pushing is in a sense uploading the latest set of changes to the remote repository. In our case, we have decided to create a new file called `names.txt`, add the text "Hello world" to it, and save/commit that change.
 
     ```bash
     git push origin master
@@ -97,7 +97,7 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
 
     Git will take a while to process the request and may prompt you to fill in your GitHub credentials.
 
-6. To verify that your changes have been made (adding `a.txt`), visit GitHub and navigate to the repository. You will now notice that there is a new file added, `a.txt`. Hooray!
+6. To verify that your changes have been made (adding `names.txt`), visit GitHub and navigate to the repository. You will now notice that there is a new file added, `names.txt`. Hooray!
 
     ![]()
 
