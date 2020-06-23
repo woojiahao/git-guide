@@ -35,7 +35,6 @@ Now that we have gotten the basic terminology out of the way, let's get into cre
 
 There are two ways to create a repository. This guide will go through both in detail. There are specific use cases for either and it's best that you are familiar with them. When following along with the guide, execute the code in the first method.
 
-<!-- TODO Insert images -->
 ### GitHub first
 
 The first approach is "GitHub first". This is where the repository is created on GitHub (creating a remote repository first) before it is made available on your local machine. (Do not worry about the remote vs local idea for now, this will be explained in chapter 3).
