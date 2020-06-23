@@ -95,9 +95,48 @@ That is a simple overview of the fork and pull request workflow. We will now mov
 
 ### Practical
 
-In a group, decide someone to be the owner of a repository. This will be the `learning-git` repository that you created previously. The other members will have to delete this repository (refer [here](https://help.github.com/en/github/administering-a-repository/deleting-a-repository)).
+In a group, decide someone to be the owner of a repository. This will be the `learning-git` repository that you created previously. The other members will have to delete this repository (refer [here](https://help.github.com/en/github/administering-a-repository/deleting-a-repository)). The other members will also have to delete the local copy of the repository. This can be done using the file browser.
 
 **Note*** If you created a private repository, you will have to add your team members as a collaborator for them to have access to it (refer [here](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)).
 
-1. Each member will fork the original repository.
-2.
+All members (excluding the owner) are the perform these steps first.
+
+1. Fork the repository
+2. Clone the repository
+3. Navigate to the file in the file explorer or terminal
+4. Create an `upstream` remote to the original repository.
+
+    ```bash
+    git remote add upstream <original repository URL>
+    ```
+
+    The repository URL can here:
+
+    ![]()
+
+    To view all remotes available to you, use the `git remote -v` command to view both the alias of the remote and the URL of the matching repository. For example:
+
+    ![]()
+
+The following steps must be carried out one by one.
+
+1. Before making any changes to the project, ensure that you have the latest changes of the repository by performing `git pull upstream master`
+
+    ```bash
+    git pull upstream master
+    ```
+
+2. Open the file and add a new line of the file (`names.txt`), this can be your name or any text. You can use a text editor.
+
+    **Terminal tip:** If you wish to quickly append a new line to a file, you can use the command `echo '<text>' >> <filename>` in bash. For example, `echo 'Woo Jia Hao' >> names.txt`.
+
+3. Add this change to the staging area and push it to your local repository
+4. In GitHub, create a pull request where the `base` is the original repository's `master` branch and the `compare` is your copy of the repository's master branch. If you want to, fill in the information about the pull request
+
+    ![]()
+
+Once a member has created a pull request, the owner of the repository should be able to view it in the repository. The owner must accept this pull request, this automatically merges the changes from the copy of the repository to the original repository.
+
+Once the owner has accepted the pull request and merged the changes, the next member can begin. Repeat the steps above ensuring that the latest changes are pulled from the `upstream` remote.
+
+After one round of this, the original repository should have all of the team member's names in `names.txt`. Feel free to repeat this process a couple more rounds to properly understand the commands if necessary. You can choose to add any content to the file.
