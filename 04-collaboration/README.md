@@ -87,7 +87,7 @@ If your team is using the `learning-git` repository, all other members will have
 
 **Note*** If you created a private repository, you will have to add your team members as a collaborator for them to have access to it (refer [here](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)).
 
-All members (excluding the owner) are the perform these steps first.
+All members (excluding the owner) are to perform these steps first.
 
 1. Fork the repository
 2. Clone the repository
