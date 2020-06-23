@@ -1,6 +1,6 @@
 # Git Guide
 
-An introduction to the Git version control system.
+An introduction to the Git version control system for Singapore Polytechnic's DIT.
 
 ## Objectives
 
@@ -15,7 +15,9 @@ Git is a vast topic and it will be impossible to cover the entirity of the Git t
 3. [Your first commit](./03-first-commit/README.md) - `git add`, `git stash`, `git commit`, `git restore`, `git rm`, staging area
 4. [Collaborating with others](./04-collaboration/README.md) - Forking, branching, pull requests
 5. [Handling merge conflicts]() - merge conflict resolution
-6. [Advanced topics]() - `.gitignore`, `git log`, `git stash`
+6. [(Optional) Branching]()
+7. [(Optional) Advanced topics]() - `.gitignore`, `git log`, `git stash`
+7. [(Optional) Terminal commands]() - `.gitignore`, `git log`, `git stash`
 
 ## Recommended resources
 
