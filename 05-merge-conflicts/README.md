@@ -2,22 +2,22 @@
 
 Merge conflicts occur when the same line of a file is modified by two sources and these sources are attempting to merge with one another. They often occur when the line change is made before the latest changes have been pulled.
 
-For example, member A changes the first line of `names.txt` to his/her own name and this change is merged with the original repository. At the same time, member B also changes the first line of `names.txt` to his/her own name but this time, this change is not merged with the original repository but is still committed.
+For example, the owner of the original repository changes the first line of `names.txt` to their favourite color, blue and pushes this change to the original repository. Then, member A also changes the first line of `names.txt` to their favourite color, red. However, this change is made before pulling from the `upstream`, thus causing a merge conflict at the first line.
 
-When member B tries to pull from `upstream`, he/she will encounter a merge conflict informing him/her that the same line in the file has been modified in two sources.
+When member A tries to pull from `upstream`, they will encounter a merge conflict informing them that the same line in the file has been modified in two sources.
 
 While Git is powerful, it does not know whose changes to keep and whose to throw away, so it is up to you to inform Git which are the changes that should stay and which should go.
 
 Let us first simulate a merge conflict.
 
-For this practical, three members will be required at a time: the owner of the repository and two other members. Feel free to rotate between the members so that everyone gets a chance to experience a merge conflict and try fixing it.
+For this mini-practical, every member should try simulating a merge conflict one. It is best to perform the following set of steps as one and only repeat them after the other person has completed it.
 
-1. Member A will modify the first line of `names.txt` and change it to any text that they want. Once they are done, make a pull request and the owner will merge this change.
-2. Member B will also make a modification (different from member A) to the frist line and commit it. But this time, do not make a pull request
-3. Member B will use `git pull` to get the latest changes from the original repository. A merge conflict will occur.
+1. The owner will modify the first line of `names.txt` and change it to any text that they want. Once they are done, push this change to the original repository.
+2. Member A will also make a modification (different from the owner) to the frist line and commit it.
+3. Member A will use `git pull` to get the latest changes from the original repository. A merge conflict will occur.
 4. To view the status of the merge conflict, use `git status`. It will provide information about the files in question.
 
-It is up to member B to fix this merge conflict on their end now.
+It is up to member A to fix this merge conflict on their end now.
 
 Now to fix the merge conflict, open the file in question (`names.txt`) and you will notice that at the top of the file (or whereever the conflict happened), there will be an odd notation:
 
