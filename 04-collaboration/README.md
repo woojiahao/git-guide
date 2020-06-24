@@ -87,9 +87,14 @@ If your team is using the `learning-git` repository, all other members will have
 
 **Note*** If you created a private repository, you will have to add your team members as a collaborator for them to have access to it (refer [here](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)).
 
+![]()
+
 All members (excluding the owner) are to perform these steps first.
 
 1. Fork the repository
+
+    ![]()
+
 2. Clone the repository
 3. Navigate to the file in the file explorer or terminal
 4. Create an `upstream` remote to the original repository
@@ -106,7 +111,7 @@ All members (excluding the owner) are to perform these steps first.
 
     ![]()
 
-The following steps must be carried out one by one.
+The following steps must be carried out by each member one after another. The owner of the repository **must** accept the pull request from each member first before the next member can proceed.
 
 1. Before making any changes to the project, ensure that you have the latest changes of the repository by performing `git pull upstream master`
 
@@ -135,6 +140,8 @@ The following steps must be carried out one by one.
     ![]()
 
 Once a member has created a pull request, the owner of the repository can view it in the repository. When the owner accepts this pull request, the changes proposed will be merged into the original repository. In the GitHub file brower, you can view the contents of `names.txt` and find that the new line added by the member is present.
+
+![]()
 
 Once the owner has accepted the pull request and merged the changes, the next member can begin. Repeat the steps above ensuring that the latest changes are pulled from the `upstream` remote.
 
