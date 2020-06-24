@@ -12,22 +12,49 @@ Let us first simulate a merge conflict.
 
 For this mini-practical, every member should try simulating a merge conflict one. It is best to perform the following set of steps as one and only repeat them after the other person has completed it.
 
-1. The owner will modify the first line of `names.txt` and change it to any text that they want. Once they are done, push this change to the original repository.
-2. Member A will also make a modification (different from the owner) to the frist line and commit it.
-3. Member A will use `git pull` to get the latest changes from the original repository. A merge conflict will occur.
-4. To view the status of the merge conflict, use `git status`. It will provide information about the files in question.
+1. Following the previous chapter, the owner must pull the latest changes from their remote repository.
+
+    ![git pull](./res/owner-pull.png)
+
+2. The owner will modify the first line of `names.txt` and change it to any text that they want. Once they are done, push this change to the original repository.
+
+    ![Owner changing the first line of text](./res/owner-change.png)
+
+3. Member A will also make a modification (different from the owner) to the first line and commit it.
+
+    ![Member A's modification](./res/member-change.png)
+
+4. Member A will use `git pull` to get the latest changes from the original repository. A merge conflict will occur.
+
+    ![git pull merge conflict error](./res/merge-conflict-warning.png)
+
+5. To view the status of the merge conflict, use `git status`. It will provide information about the files in question.
+
+    ![View the files with conflict](./res/gst.png)
 
 It is up to member A to fix this merge conflict on their end now.
 
 Now to fix the merge conflict, open the file in question (`names.txt`) and you will notice that at the top of the file (or whereever the conflict happened), there will be an odd notation:
 
 ```
-
+<<<<<<< HEAD (Member A's changes)
+Red
+=======
+Blue
+>>>>>>> fc844c137e0f6b7ead645f11c0b24f08c51b5202 (Owner's changes)
+Andrew Ng
 ```
 
-The top section represents the changes from the original repository (aka member A's changes). The bottom section represents the changes by member B. To resolve the merge conflict, select the content between the dividers that you wish the merge. For instance, member B might want to merge his/her changes instead of member A's, so delete all other contents except the ones between `<<<<<<< HEAD` and `=======`.
+Between `<<<<<<< HEAD` and `=======` resides member A's changes. Between `=======` and `>>>>>>> fc844c137e0f6b7ead645f11c0b24f08c51b5202` resides the owner's changes or the incoming (pulled) changes. To fix the merge conflict, you will have to delete these markers and the content you wish to remove. For example, member A may wish to keep the owner's changes and discard their own, so they will delete everything else between the markers except the owner's changes.
 
-Once done, the changes have been saved, add and commit the file again and this time, `git status` should show that the merge conflict has been resolved. Generally, the commit after fixing a merge conflict should indicate that the file was modified due to a merge conflict.
+```
+Blue
+Andrew Ng
+```
+
+Once done, the changes have been saved, add and commit the file again and this time, `git status` should show that the merge conflict has been resolved. Generally, the commit after fixing a merge conflict should indicate that the file was modified due to a merge conflict. As you can see, the error is gone.
+
+![Fix merge conlict and commit](./res/fix-mc.png)
 
 Rotate this exercise between your members and try modifying various lines of code at once and resolving the merge conflicts that arise. It is hard to simulate all environments where you may receive a merge conflict so it is crucial that everyone understands how merge conflicts can be resolved so that future even if the file contents differ.
 
