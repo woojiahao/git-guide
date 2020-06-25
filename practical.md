@@ -28,7 +28,6 @@ Setup Git and GitHub to begin following this guide. Original chapter [here.](./0
     git config --global user.email "<Your email used when setting up GitHub>"
     ```
 
-
 ## First repository
 
 Next, you will be creating your first repository. While there are two ways to do so (as discussed in [chapter 2](./02-first-repository/README.md)), this practical uses the "GitHub first" approach.
@@ -40,9 +39,14 @@ Next, you will be creating your first repository. While there are two ways to do
 1. Login to GitHub
 2. Expand drop-down menu in the top-right corner of the menu bar
 3. Select the "New Repository" option
+
+    ![New repository option](./02-first-repository/res/new-repository-option.png)
+
 4. Configure and create the repository, creating a remote repository
 
     For now, only change the project name to "learning-git" and the project visibility to "Private". Leave everything else as it is. For more information about the various options, refer to chapter 2.
+
+    ![New repository details](./02-first-repository/res/new-repository-details.png)
 
 5. Clone the repository to create a local repository
 
@@ -54,7 +58,7 @@ Next, you will be creating your first repository. While there are two ways to do
 
     You will notice a repository link provided by GitHub. Copy that to your clipboard and use it when cloning the repository.
 
-    ![Repository URL]()
+    ![Repository URL](./02-first-repository/res/new-repository-created.png)
 
     ```bash
     git clone https://github.com/woojiahao/learning-git.git
@@ -71,6 +75,8 @@ Next, you will be creating your first repository. While there are two ways to do
     ```
 
     To verify that you are in your local repository, you can use `pwd`. The current folder should be `learning-git/` now.
+
+    ![pwd](./02-first-repository/res/pwd.png)
 
 ## First commit
 
@@ -94,6 +100,8 @@ This practical picks up right where the previous one ended.
     git status
     ```
 
+    ![git status new file](./03-first-commit/res/gst-untracked.png)
+
     The new file should be in red under the "Untracked files" section as this is a new file that has yet to be staged once.
 
 3. Add `names.txt` to the staging area to track it
@@ -106,6 +114,8 @@ This practical picks up right where the previous one ended.
 
     The file should now be in green under the "Changes to be committed" section.
 
+    ![git status add file](./03-first-commit/res/gst-add.png)
+
 5. Commit `names.txt`, confirming that you wish to keep the changes made (in this case, creating a new file and adding your name to it)
 
     ```bash
@@ -116,6 +126,8 @@ This practical picks up right where the previous one ended.
 
 6. Verify that the file has been committed using `git status`
 
+    ![git status committed file](./03-first-commit/res/gst-commit.png)
+
     The file will now no longer be shown.
 
 7. Push this commit to the remote repository to upload these changes to the remote repository
@@ -124,11 +136,17 @@ This practical picks up right where the previous one ended.
     git push origin master
     ```
 
+    ![git push](./03-first-commit/res/git-push.png)
+
     You may have to enter your GitHub credentials.
 
 8. You can verify that the changes have been pushed to GitHub on GitHub under the repository page
 
+    ![File added to GitHub](./03-first-commit/res/new-file-added.png)
+
     There will be a new file added and you can view it in the built-in file browser for GitHub.
+
+    ![names.txt file content](./03-first-commit/res/new-file-content.png)
 
 ## Fork and pull request workflow
 
@@ -171,6 +189,11 @@ All members (excluding the owner) are to perform the following steps first.
 The following steps must be carried out by each member one after another. The owner of the repsoitry must accept the pull request from each member before the next member can proceed.
 
 1. Pull the latest changes of the repository
+
+    ```bash
+    git pull upstream master
+    ```
+
 2. Add your name to the file `names.txt`
 
     This can be done in either a terminal or text editor.
@@ -189,11 +212,19 @@ The following steps must be carried out by each member one after another. The ow
 
 4. Create a pull request in Github
 
-    When you open your remote repository, you will find the "Pull request" button in your repository. You will also notice that GitHub will inform you that you are 1 commit ahead of the original repository.
+    When you open your remote repository, you can create a pull request under the "Pull requests" tab.
+
+    ![Create PR button](./04-collaboration/res/create-pr-button.png)
 
     Confirm that you wish to create a pull request and you can leave the details of the pull request as it is. The various components of a pull request is explored in [chapter 4.](./04-collaboration/README.md)
 
+    ![Create PR page](./04-collaboration/res/pr-page.png)
+
+    ![PR details](./04-collaboration/res/pr-details.png)
+
 Now that the pull request has been created, the owner can view it under the "Pull Requests" tab. The owner must accept the pull request which will merge the member's changes into the original repository.
+
+![View PR](./04-collaboration/res/view-pr.png)
 
 Now, if you view `names.txt` in the original repository in GitHub, you will be able to see the new name.
 
@@ -208,3 +239,83 @@ git pull origin master
 ```
 
 ## Merge conflicts
+
+When working with others, you may encounter merge conflicts. These often happen when the same line of a file is modified by two sources and these sources are attempting to merge with one another.
+
+As explained in [chapter 5](./05-merge-conflicts/README.md), we can simulate this by having the owner update and push a change to `names.txt` while the same line is also modified by another member without pulling the latest changes by the owner.
+
+The following exercise should be conducted between the owner of the repository and another member, one at a time.
+
+1. The owner must pull the latest changes from their remote repository
+
+    ```bash
+    git pull origin master
+    ```
+
+2. The owner will modify the first line of `names.txt` and change it to any text they want
+3. The owner will commit and push this change to the original repository
+
+    ```bash
+    git add names.txt
+    git commit -m "Change first line to favourite color"
+    git push origin master
+    ```
+
+4. The member will make a modification (diferent from the owner) to the first line and commit it
+
+    ```bash
+    git add names.txt
+    git commit -m "Add my favorite color"
+    ```
+
+5. The member will pull the latest changes from the original repository, causing a merge conflict
+
+    ```bash
+    git pull upstream master
+    ```
+
+    ![git pull merge conflict warning](./05-merge-conflicts/res/merge-conflict-warning.png)
+
+6. `git status` can be used to view the status of the merge conflict
+
+    ```bash
+    git status
+    ```
+
+    ![git status merge conflict](./05-merge-conflicts/res/gst.png)
+
+7. Open `names.txt` with a text editor, there will be a unique notation marking the area where the merge conflict is present
+
+    This notation is further elaborated on in chapter 5 but this is the gist of what it describes
+
+    ```
+    <<<<<<< HEAD (Member A's changes)
+    Red
+    =======
+    Blue
+    >>>>>>> fc844c137e0f6b7ead645f11c0b24f08c51b5202 (Owner's changes)
+    Andrew Ng
+    ```
+
+8. The member will remove their change and only keep the text "Blue" from the owner
+
+    ```
+    Blue
+    Andrew Ng
+    ```
+
+9. The member will add and commit the resolution of the merge conflict
+
+    ```bash
+    git add names.txt
+    git commit -m "Fix merge conflict - choose owner edit"
+    git push origin master
+    ```
+
+Once this round is performed, another member can try to simulate a merge conflict with the original repository.
+
+## Conclusion
+
+This practical goes over a very brief version of the exercises described in each chapter. This practical is designed as a quick reference to understand the applications of Git.
+
+It is highly recommended that you reference the formal chapters in this guide to gain a full understanding of the concepts described in this practical.
