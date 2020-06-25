@@ -1,3 +1,8 @@
+---
+title: "Merge Conflicts"
+geometry: margin=0.5cm
+---
+
 # Merge conflicts
 
 Merge conflicts occur when the same line of a file is modified by two sources and these sources are attempting to merge with one another. They often occur when the line change is made before the latest changes have been pulled.
