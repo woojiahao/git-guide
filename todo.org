@@ -1,3 +1,0 @@
-* Things to change
-** TODO Don't need to register for Git Education pack
-   - Recently was made free
