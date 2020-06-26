@@ -14,7 +14,7 @@ While this is a useful document for a quick glance, it is strongly advised that 
 
 ## Setup
 
-Setup Git and GitHub to begin following this guide. Original chapter [here.](./01-setup/README.md)
+Setup Git and GitHub to begin following this guide. Original chapter [here.](../01-setup/README.md)
 
 1. Install Git on your machine. Instructions [here.](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
@@ -30,7 +30,7 @@ Setup Git and GitHub to begin following this guide. Original chapter [here.](./0
 
 ## First repository
 
-Next, you will be creating your first repository. While there are two ways to do so (as discussed in [chapter 2](./02-first-repository/README.md)), this practical uses the "GitHub first" approach.
+Next, you will be creating your first repository. While there are two ways to do so (as discussed in [chapter 2](../02-first-repository/README.md)), this practical uses the "GitHub first" approach.
 
 **Note*** that the terms "repository" and "project" are used interchangably in the practicals.
 
@@ -40,13 +40,13 @@ Next, you will be creating your first repository. While there are two ways to do
 2. Expand drop-down menu in the top-right corner of the menu bar
 3. Select the "New Repository" option
 
-    ![New repository option](./02-first-repository/res/new-repository-option.png)
+    ![New repository option](../02-first-repository/res/new-repository-option.png)
 
 4. Configure and create the repository, creating a remote repository
 
     For now, only change the project name to "learning-git" and the project visibility to "Private". Leave everything else as it is. For more information about the various options, refer to chapter 2.
 
-    ![New repository details](./02-first-repository/res/new-repository-details.png)
+    ![New repository details](../02-first-repository/res/new-repository-details.png)
 
 5. Clone the repository to create a local repository
 
@@ -58,7 +58,7 @@ Next, you will be creating your first repository. While there are two ways to do
 
     You will notice a repository link provided by GitHub. Copy that to your clipboard and use it when cloning the repository.
 
-    ![Repository URL](./02-first-repository/res/new-repository-created.png)
+    ![Repository URL](../02-first-repository/res/new-repository-created.png)
 
     ```bash
     git clone https://github.com/woojiahao/learning-git.git
@@ -76,13 +76,13 @@ Next, you will be creating your first repository. While there are two ways to do
 
     To verify that you are in your local repository, you can use `pwd`. The current folder should be `learning-git/` now.
 
-    ![pwd](./02-first-repository/res/pwd.png)
+    ![pwd](../02-first-repository/res/pwd.png)
 
 ## First commit
 
 After creating the repository, you can start committing changes to your local repository and pushing them to your remote repository.
 
-This chapter relies heavily on a broad understanding of the staging area (and the related locations a file can exist). These concepts are further explained in [chapter 3.](./03-first-commit/README.md)
+This chapter relies heavily on a broad understanding of the staging area (and the related locations a file can exist). These concepts are further explained in [chapter 3.](../03-first-commit/README.md)
 
 This practical picks up right where the previous one ended.
 
@@ -100,7 +100,7 @@ This practical picks up right where the previous one ended.
     git status
     ```
 
-    ![git status new file](./03-first-commit/res/gst-untracked.png)
+    ![git status new file](../03-first-commit/res/gst-untracked.png)
 
     The new file should be in red under the "Untracked files" section as this is a new file that has yet to be staged once.
 
@@ -114,7 +114,7 @@ This practical picks up right where the previous one ended.
 
     The file should now be in green under the "Changes to be committed" section.
 
-    ![git status add file](./03-first-commit/res/gst-add.png)
+    ![git status add file](../03-first-commit/res/gst-add.png)
 
 5. Commit `names.txt`, confirming that you wish to keep the changes made (in this case, creating a new file and adding your name to it)
 
@@ -126,7 +126,7 @@ This practical picks up right where the previous one ended.
 
 6. Verify that the file has been committed using `git status`
 
-    ![git status committed file](./03-first-commit/res/gst-commit.png)
+    ![git status committed file](../03-first-commit/res/gst-commit.png)
 
     The file will now no longer be shown.
 
@@ -136,17 +136,17 @@ This practical picks up right where the previous one ended.
     git push origin master
     ```
 
-    ![git push](./03-first-commit/res/git-push.png)
+    ![git push](../03-first-commit/res/git-push.png)
 
     You may have to enter your GitHub credentials.
 
 8. You can verify that the changes have been pushed to GitHub on GitHub under the repository page
 
-    ![File added to GitHub](./03-first-commit/res/new-file-added.png)
+    ![File added to GitHub](../03-first-commit/res/new-file-added.png)
 
     There will be a new file added and you can view it in the built-in file browser for GitHub.
 
-    ![names.txt file content](./03-first-commit/res/new-file-content.png)
+    ![names.txt file content](../03-first-commit/res/new-file-content.png)
 
 ## Fork and pull request workflow
 
@@ -160,11 +160,11 @@ All members (excluding the owner) are to perform the following steps first.
 
 1. Fork the repository
 
-    ![Fork option](./04-collaboration/res/fork-2.png)
+    ![Fork option](../04-collaboration/res/fork-2.png)
 
     GitHub should begin creating a remote copy for your own account. Once done, you should see a page like this.
 
-    ![Forked repository](./04-collaboration/res/forked.png)
+    ![Forked repository](../04-collaboration/res/forked.png)
 
 2. Clone the repository
 3. Navigate to the file in the file explorer or terminal
@@ -174,15 +174,15 @@ All members (excluding the owner) are to perform the following steps first.
     git remote add upstream <original repository URL>
     ```
 
-    ![git remote add](./04-collaboration/res/add-upstream.png)
+    ![git remote add](../04-collaboration/res/add-upstream.png)
 
     The repository URL is the same URL that you used to clone a repository. However, this time, it can be found in the original repository.
 
-    ![Original repository URL](./04-collaboration/res/orig-url.png)
+    ![Original repository URL](../04-collaboration/res/orig-url.png)
 
 5. Use `git remote -v` to view both the alias of the remote and the URL of the matching repository
 
-    ![View remotes](./04-collaboration/res/list-remotes.png)
+    ![View remotes](../04-collaboration/res/list-remotes.png)
 
     Ensure that you have both an `origin` and `upstream` branch.
 
@@ -214,17 +214,17 @@ The following steps must be carried out by each member one after another. The ow
 
     When you open your remote repository, you can create a pull request under the "Pull requests" tab.
 
-    ![Create PR button](./04-collaboration/res/create-pr-button.png)
+    ![Create PR button](../04-collaboration/res/create-pr-button.png)
 
-    Confirm that you wish to create a pull request and you can leave the details of the pull request as it is. The various components of a pull request is explored in [chapter 4.](./04-collaboration/README.md)
+    Confirm that you wish to create a pull request and you can leave the details of the pull request as it is. The various components of a pull request is explored in [chapter 4.](../04-collaboration/README.md)
 
-    ![Create PR page](./04-collaboration/res/pr-page.png)
+    ![Create PR page](../04-collaboration/res/pr-page.png)
 
-    ![PR details](./04-collaboration/res/pr-details.png)
+    ![PR details](../04-collaboration/res/pr-details.png)
 
 Now that the pull request has been created, the owner can view it under the "Pull Requests" tab. The owner must accept the pull request which will merge the member's changes into the original repository.
 
-![View PR](./04-collaboration/res/view-pr.png)
+![View PR](../04-collaboration/res/view-pr.png)
 
 Now, if you view `names.txt` in the original repository in GitHub, you will be able to see the new name.
 
@@ -242,7 +242,7 @@ git pull origin master
 
 When working with others, you may encounter merge conflicts. These often happen when the same line of a file is modified by two sources and these sources are attempting to merge with one another.
 
-As explained in [chapter 5](./05-merge-conflicts/README.md), we can simulate this by having the owner update and push a change to `names.txt` while the same line is also modified by another member without pulling the latest changes by the owner.
+As explained in [chapter 5](../05-merge-conflicts/README.md), we can simulate this by having the owner update and push a change to `names.txt` while the same line is also modified by another member without pulling the latest changes by the owner.
 
 The following exercise should be conducted between the owner of the repository and another member, one at a time.
 
@@ -274,7 +274,7 @@ The following exercise should be conducted between the owner of the repository a
     git pull upstream master
     ```
 
-    ![git pull merge conflict warning](./05-merge-conflicts/res/merge-conflict-warning.png)
+    ![git pull merge conflict warning](../05-merge-conflicts/res/merge-conflict-warning.png)
 
 6. `git status` can be used to view the status of the merge conflict
 
@@ -282,7 +282,7 @@ The following exercise should be conducted between the owner of the repository a
     git status
     ```
 
-    ![git status merge conflict](./05-merge-conflicts/res/gst.png)
+    ![git status merge conflict](../05-merge-conflicts/res/gst.png)
 
 7. Open `names.txt` with a text editor, there will be a unique notation marking the area where the merge conflict is present
 
@@ -319,3 +319,5 @@ Once this round is performed, another member can try to simulate a merge conflic
 This practical goes over a very brief version of the exercises described in each chapter. This practical is designed as a quick reference to understand the applications of Git.
 
 It is highly recommended that you reference the formal chapters in this guide to gain a full understanding of the concepts described in this practical.
+
+For more details on each topic, you can visit the GitHub repository for this guide [here.](https://github.com/woojiahao/git-guide) More chapters and erratas will be updated there.
