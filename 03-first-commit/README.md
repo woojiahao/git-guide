@@ -1,8 +1,3 @@
----
-title: "First commit"
-geometry: margin=1.5cm
----
-
 # First commit
 
 Now that you have a repository setup, you can start to save and upload files. Before that, it is important to preface that this will be the most important chapter in understanding Git. As such, please read through each section carefully and properly understand how each command works.
@@ -114,3 +109,5 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
     ![File contents](./res/new-file-content.png)
 
 You have successfully made your first commit! There may seem to be a lot of things to recall at once, but many of these become habit over time. The theory behind Git has to be explained to ensure that you have a clear mental model of what is going on so that future commands or chain of commands will make more sense. If you are unsure about anything discussed in this chapter, go over it once again. Ensure that you have a clear understanding of what each command can do.
+
+[Next](../04-collaboration/README.md)
