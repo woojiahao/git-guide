@@ -1,8 +1,3 @@
----
-title: "Chapter 2 - First repository"
-geometry: margin=1.5cm
----
-
 # Creating your first repository
 
 Now that you have set up your environment, you are ready to start learning Git.
