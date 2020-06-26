@@ -1,6 +1,6 @@
 ---
-title: "Merge Conflicts"
-geometry: margin=0.5cm
+title: "Chapter 5 - Merge conflicts"
+geometry: margin=1.5cm
 ---
 
 # Merge conflicts
@@ -66,3 +66,11 @@ Rotate this exercise between your members and try modifying various lines of cod
 For the owner of the original repository, can you figure out how you can receive a merge conflict even if you own the project? Think about this for a while and see if you can simulate this as well.
 
 To cause a merge conflict on your own repository, you will be acting as member B in the scenario above and instead of pulling changes from `upstrea`, you will pull them from `origin`.
+
+# Final words
+
+Congratulations! You have come to the end of the core chapters for this guide!
+
+To learn more about advanced topic, please refer to the GitHub repository for this guide [here.](https://github.com/woojiahao/git-guide) More topics and erratas will be released there over time.
+
+I wish you the best of luck in your journey to mastering Git!
