@@ -1,4 +1,4 @@
-# Git guide
+# Git Guide
 
 An introduction to the Git version control system designed for Singapore Polytechnic's DIT SEP module.
 
