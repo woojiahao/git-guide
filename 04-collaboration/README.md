@@ -1,8 +1,3 @@
----
-title: "Collaborating with others"
-geometry: margin=1.5cm
----
-
 # Collaborating with others
 
 While Git can be used as a tool for managing personal projects, its strongest attribute is allowing many developers to collaborate and work on a single project simultaneously. These developers do not need an active connection to the remote repository to work together, making it incredibly powerful for group projects.
@@ -177,3 +172,5 @@ After one round of this, the original repository should have all of the team mem
 ```bash
 git pull origin master
 ```
+
+[Next](../05-merge-conflicts/README.md)
