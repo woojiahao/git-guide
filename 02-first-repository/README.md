@@ -1,13 +1,13 @@
 ---
-title: "First repository"
+title: "Chapter 2 - First repository"
 geometry: margin=1.5cm
 ---
 
 # Creating your first repository
 
-Now that you have set up your environment, you are ready to start learning Git. As you progress along the guide, information and references about the concepts discussed will be provided, these will be critical in properly understanding and using Git in your workflow.
+Now that you have set up your environment, you are ready to start learning Git.
 
-In this chapter, you will be familiarised with the basic ideas surrounding Git as well as starting to use Git.
+In this chapter, you will be the basic ideas surrounding Git and start using Git.
 
 ## Pre-requisite concepts
 
@@ -17,29 +17,33 @@ Simply put, Git is a [version control system](https://www.atlassian.com/git/tuto
 
 > ... a category of software tools that help a software team manage changes to source code over time. Version control software keeps track of every modification to the code in a special database
 
-Git is not the first version control system but it is one of the most commonly used ones at present time. Other version control systems include [SVN](https://subversion.apache.org/) and [Mercurial](https://www.mercurial-scm.org/).
+Git is not the first version control system but it is one of the most commonly used ones at present time. Other version control systems include [SVN](https://subversion.apache.org/) and [Mercurial.](https://www.mercurial-scm.org/)
 
-Essentially, a version control system tracks the "history" of changes to a piece of code over time. Git, in particular, is well-known as it allows developers to collaborate and work on a codebase without an active connection to a central code repository.
+A version control system tracks the "history" of changes to a piece of code over time. Git, in particular, is well-known as it allows developers to collaborate and work on a codebase without an active connection to a central code repository.
 
-However, in order for collaboration to happen, Git requires a remote server to store this code history. There are plenty of free options available - one of which being Github which we will explore later - but there are also ways to create your own Git remote server ([more details](https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server)).
+However, in order for collaboration to happen, Git requires a remote server to store this code history. There are plenty of free options available - one of which being Github which we will explore later.
+
+There are also ways to create your own Git remote server ([more details](https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server)).
 
 ### GitHub
 
-GitHub is a company that provides hosting for Git. This means that any code that is uploaded to the Git server is managed and maintained by the GitHub team.
+GitHub is a company that provides hosting for Git. This means that any code uploaded to the Git server is managed and maintained by GitHub.
 
 GitHub is one of the most popular version control sites out there. Other options include [GitLab](https://about.gitlab.com/) and [BitBucket.](https://bitbucket.org/)
 
-Now that we have gotten the basic terminology out of the way, let's get into creating your first repository.
+With the basic terminology out of the way, let's get into creating your first repository.
 
 ## First repository
 
-There are two ways to create a repository. This guide will go through both in detail. There are specific use cases for either and it's best that you are familiar with them. When following along with the guide, execute the code in the first method.
+There are two ways to create a repository. There are specific use cases for either and it's best that you are familiar with them.
+
+**Note*** when following along with the guide, execute the code in the first method (GitHub first).
 
 ### GitHub first
 
-The first approach is "GitHub first". This is where the repository is created on GitHub (creating a remote repository first) before it is made available on your local machine. (Do not worry about the remote vs local idea for now, this will be explained in chapter 3).
+In "GitHub first", the repository is created on GitHub (creating a remote repository first) before it is made available on your local machine (Do not worry about the remote vs local idea for now, this will be explained in chapter 3).
 
-1. First, login to GitHub and in the top-right corner of the menu bar, you should see a drop-down. Expand it and you will see an option for a "New Repository". Select this option.
+1. Login to GitHub and in the top-right corner of the menu bar, you should see a drop-down. Expand it and you will see an option for a "New Repository". Select this option.
 
     ![New repository option in GitHub](./res/new-repository-option.png)
 
@@ -47,16 +51,16 @@ The first approach is "GitHub first". This is where the repository is created on
 
     ![New repository page in GitHub](./res/new-repository-page.png)
 
-    1. Project/repository name (mandatory)
-    2. Project/repository description (optional)
+    **Note*** For the guide, we will be using the terms repository and project interchangeably.
+
+    1. Repository name (mandatory)
+    2. Repository description (optional)
     3. Private vs public repository (mandatory, public by default)
     4. README file (optional)
     5. License (optional)
     6. .gitignore (optional)
 
-    This chapter will explain the first three concepts. The remaining concepts will be elaborated upon in chapter 6.
-
-    **Note*** For the guide, we will be using the terms repository and project interchangeably.
+    This chapter will explain the first three concepts.
 
     Every time you wish to start a new project, you will create a new repository on GitHub. The repository's name is the name of the project that you will be working on. This can be any name that you wish to give it. However, common convention often has repository names using [kebab naming convetion](https://wprock.fr/en/blog/conventions-nommage-programmation/#Conventions-Le-Kebab-case-ou-Spinal-case) or [pascal naming convention.](https://wprock.fr/en/blog/conventions-nommage-programmation/#Conventions-Le-Pascal-case) For this guide, the project name chosen will be `learning-git`, but you can choose anything.
 
@@ -68,7 +72,7 @@ The first approach is "GitHub first". This is where the repository is created on
 
 3. Now that you have created a project on GitHub, you can then create a local copy of this project on your local machine. Open your terminal and navigate to a folder where you wish to store your project. For now, we will store all projects in a `Projects/` folder found on your user directory (`/home/<user>` for unix-based systems and `C:\Users\<user>\` for Windows).
 
-    **Note*** If you are unfamiliar with using the terminal, a quick guide on the basic commands used in this guide can be found in chapter 7 so if you need to, quickly jump over to familiarise yourself with them.
+    **Note*** If you are unfamiliar with using the terminal, a quick guide on the basic commands used in this guide can be found in [chapter 8](../08-bash-tutorial/README.md) so if you need to, quickly jump over to familiarise yourself with them.
 
     ```bash
     cd ~/Projects/
@@ -108,7 +112,7 @@ The first approach is "GitHub first". This is where the repository is created on
 
 Opposed to the previous method of creating a repository, the "local machine first" approach is useful when you already have an existing project on your local machine that you wish to upload to GitHub. You are essentially performing the previous method but in reverse: starting with a local repository and then creating a remote repository based on it.
 
-1. To start, navigate to an existing project folder on your local machine.
+1. Navigate to an existing project folder on your local machine.
 
     ```bash
     cd ~/Projects/existing-git-project/
@@ -129,7 +133,7 @@ Opposed to the previous method of creating a repository, the "local machine firs
     ![New repository settings](./res/new-repository-details.png)
 
 4. Once the repository is created, GitHub will again provide a URL for you to access the remote repository. Copy this URL to the clipboard and return to the terminal.
-5. In the terminal, ensure that you within the local repository and execute the following commands.
+5. In the terminal, ensure that you within the local repository and execute the following commands. These commands will be covered in future chapters.
 
     ```bash
     git remote add origin <url>
