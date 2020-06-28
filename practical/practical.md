@@ -166,7 +166,7 @@ All members (excluding the owner) are to perform the following steps first.
 
     ![Forked repository](../04-collaboration/res/forked.png)
 
-2. Clone the repository
+2. Clone the repository by clicking on the green "Clone" button and using the repository URL
 3. Navigate to the file in the file explorer or terminal
 4. Create an `upstream` remote to the original repository
 
@@ -184,7 +184,9 @@ All members (excluding the owner) are to perform the following steps first.
 
     ![View remotes](../04-collaboration/res/list-remotes.png)
 
-    Ensure that you have both an `origin` and `upstream` branch.
+    Ensure that you have both an `origin` and `upstream` remote.
+
+    **Note*** the repository URL for the `origin` and `upstream` remote must be different. The `origin` remote must point to your forked repository while the `upstream` remote must point to the original repository.
 
 The following steps must be carried out by each member one after another. The owner of the repsoitry must accept the pull request from each member before the next member can proceed.
 
@@ -216,13 +218,15 @@ The following steps must be carried out by each member one after another. The ow
 
     ![Create PR button](../04-collaboration/res/create-pr-button.png)
 
-    Confirm that you wish to create a pull request and you can leave the details of the pull request as it is. The various components of a pull request is explored in [chapter 4.](../04-collaboration/README.md)
+    Confirm that you wish to create a pull request and you can leave the details of the pull request as it is (note that the title is always mandatory while the other fields are optional). More about pull requests is explored in [chapter 4.](../04-collaboration/README.md)
 
     ![Create PR page](../04-collaboration/res/pr-page.png)
 
     ![PR details](../04-collaboration/res/pr-details.png)
 
-Now that the pull request has been created, the owner can view it under the "Pull Requests" tab. The owner must accept the pull request which will merge the member's changes into the original repository.
+    Once the details of the pull request has been confirmed, you can select the "Create pull request" button.
+
+Now that the pull request has been created, the owner can view it under the "Pull Requests" tab. The owner must accept the pull request which will merge the member's changes into the original repository. When in the "Pull Requests" tab, they will be able to view all pending pull requests in a list. For this practical, select the only pull request shown, so select that pull request and merge it but clicking on the "Merge pull request" button.
 
 ![View PR](../04-collaboration/res/view-pr.png)
 
