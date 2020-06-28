@@ -89,11 +89,11 @@ In "GitHub first", the repository is created on GitHub (creating a remote reposi
 
     You will observe some logging messages show up. Once completed, check that the project has been cloned. `ls` should display that a new folder, `learning-git`, has been created in the folder you have navigated to.
 
-    ![git clone](./res/clone.png)
-
     ```bash
     ls
     ```
+
+    ![git clone](./res/clone.png)
 
 4. Finally, you can navigate into your local copy.
 
