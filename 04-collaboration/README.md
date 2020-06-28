@@ -10,7 +10,7 @@ As with the previous chapters, there is some basic terminology required that wil
 
 ### Forking
 
-When you wish to contribute to a project, the first step is to create a remote copy of that repository.
+When you wish to contribute to a project, the first step is to create a remote copy of that repository in GitHub.
 
 Instead of cloning the repository first, GitHub has a feature known as `forking` where you create a copy of the original repository (owned by someone else) in your own GitHub account. This will be a remote copy of the original repository. Any changes that you wish to make can be pushed to this remote copy.
 
@@ -39,9 +39,9 @@ There are two steps to the workflow, the first is how you can create a pull requ
 
     You will have to select the `base` and `compare` branches.
 
-    The `base` branch refers to a branch on the original repository. While there may be different branches, this chapter will focus on the default `master` branch. The `base` branch is the target branch where you wish to merge your changes to.
+    The `base` branch will be a branch on the original repository and this branch will default to the `master` branch. This is the destination branch that you wish to merge your changes to (often being the `master` branch of the original repository).
 
-    The `compare` branch refers to the branch that holds your changes. Depending on the method chosen, you will either select the `master` branch or the feature/bug fix branch created.
+    The `compare` branch will be a branch on your forked repository and this branch will default to the `master` branch. This is the branch containing your changes that you wish to merge.
 
 5. The title and description of a pull request allows the owner of the repository to understand what the changes proposed does.
 
@@ -94,7 +94,7 @@ All members (excluding the owner) are to perform these steps first.
 
     ![Forked repository](./res/forked.png)
 
-2. Clone the repository
+2. Clone the repository by clicking on the green "Clone" button and copying the repository URL
 3. Navigate to the file in the file explorer or terminal
 4. Create an `upstream` remote to the original repository
 
@@ -149,7 +149,7 @@ The following steps must be carried out by each member one after another. The ow
 
     ![Add new name](./res/add-new-name.png)
 
-4. In GitHub, create a pull request where the `base` is the original repository's `master` branch and the `compare` is your copy of the repository's `master` branch. Optionally, fill in the information about the pull request. The pull request button can be found in your remote copy of the repository.
+4. In GitHub, create a pull request where the `base` is the original repository's `master` branch and the `compare` is your copy of the repository's `master` branch. The title field is required while the others are optional. The pull request button can be found in your remote copy of the repository.
 
     ![Pull request button](./res/local-updated.png)
 
@@ -157,7 +157,9 @@ The following steps must be carried out by each member one after another. The ow
 
     ![Pull request details page](./res/pr-details.png)
 
-Once a member has created a pull request, the owner of the repository can view it in the repository under the "Pull requests" tab. When the owner accepts this pull request, the changes proposed will be merged into the original repository. In the GitHub file brower, you can view the contents of `names.txt` and find that the new line added by the member is present.
+5. To create the pull request, click on the "Create pull request" button.
+
+Once a member has created a pull request, the owner of the repository can view it in the repository under the "Pull requests" tab. They will now view a list of pending pull requests, which will be one from the member. Click onto the pull request in the list and they will be able to view the pull request. When the owner accepts this pull request (by clicking on the "Merge pull request" button), the changes proposed will be merged into the original repository. In the GitHub file brower, you can view the contents of `names.txt` and find that the new line added by the member is present.
 
 ![View pull request](./res/view-pr.png)
 
