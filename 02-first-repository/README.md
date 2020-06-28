@@ -2,7 +2,7 @@
 
 Now that you have set up your environment, you are ready to start learning Git.
 
-In this chapter, you will be the basic ideas surrounding Git and start using Git.
+In this chapter, you will be learning the basic ideas surrounding Git and start using Git.
 
 ## Pre-requisite concepts
 
@@ -127,8 +127,7 @@ Opposed to the previous method of creating a repository, the "local machine firs
 
     ![New repository settings](./res/new-repository-details.png)
 
-4. Once the repository is created, GitHub will again provide a URL for you to access the remote repository. Copy this URL to the clipboard and return to the terminal.
-5. In the terminal, ensure that you within the local repository and execute the following commands. These commands will be covered in future chapters.
+5. In the terminal, ensure that you are within the local repository and execute the following commands. These commands will be covered in future chapters.
 
     ```bash
     git remote add origin <url>
@@ -143,6 +142,7 @@ Opposed to the previous method of creating a repository, the "local machine firs
     - `git add .` - adds all current local files to the Git staging area
     - `git commit -m "Initial commit"`- commits the staged (added) files to indicate that you are saving these changes and want to make them permanent within the history of the project
     - `git push -u origin master` - uploads the current set of changes from your local repository to the remote repository, effectively making them available on GitHub. `-u` sets up a [tracking branch](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#:~:text=Tracking%20branches%20are%20local%20branches,which%20branch%20to%20merge%20in.) (refer to the attached resource for more information, this guide will not cover what tracking branches are)
+4. Once the repository is created, GitHub will again provide a URL for you to access the remote repository. Copy this URL to the clipboard and return to the terminal.
 
 And there you have it! You have successfully uploaded an existing project to GitHub. You may have some questions about what each command does; fret not, the following chapters will go over them and hopefully build on your understanding of Git.
 
