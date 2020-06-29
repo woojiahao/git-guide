@@ -35,3 +35,4 @@ However, as with anything relating to programming, the best learning is always i
 ## Updates
 
 - **26 June 2020** - First release of guide, chapters six and seven are not completed yet
+
