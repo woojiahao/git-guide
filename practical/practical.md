@@ -152,9 +152,11 @@ This practical picks up right where the previous one ended.
 
 Now that you know how to push changes on your own. Let's explore how you can collaborate with others and share code among a team for group projects.
 
-For this practical, appoint someone in your group to be the owner of the practice repository. We will be using the `learning-git` repository for ease of learning. The other members must delete their own remote repository (details [here](https://help.github.com/en/github/administering-a-repository/deleting-a-repository)) and the local repository from their system (just deleting the folder is enough).
+For this practical, appoint someone in your group to be the owner of the practice repository. The owner will then proceed to create a new repository, following the steps discussed in the previous chapters (including the first commit).
 
-Since the `learning-git` repository is a private repository, the owner of the repository must add your team members as collaborators for them to have access to it (refer [here](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)).
+Since the new repository is a private repository, the owner of the repository must add your team members as collaborators for them to have access to it (refer [here](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)).
+
+**Note*** The following screenshots will have the repository name as `learning-git`. However, you will have to replace the name of the repository with whatever the owner sets the repository name to be.
 
 All members (excluding the owner) are to perform the following steps first.
 
