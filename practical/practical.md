@@ -1,3 +1,8 @@
+---
+title: "Practical"
+geometry: margin=1.5cm
+---
+
 # Practical
 
 This document contains all the practical information (from chapters 1 to 5) condensed into a single document - stripped of most explanations.
@@ -169,6 +174,11 @@ All members (excluding the owner) are to perform the following steps first.
     ![Forked repository](../04-collaboration/res/forked.png)
 
 2. Clone the repository by clicking on the green "Clone" button and using the repository URL
+
+    ```bash
+    git clone <repository url>
+    ```
+
 3. Navigate to the file in the file explorer or terminal
 4. Create an `upstream` remote to the original repository
 
