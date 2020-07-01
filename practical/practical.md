@@ -1,8 +1,3 @@
----
-title: "Practical"
-geometry: margin=1.5cm
----
-
 # Practical
 
 This document contains all the practical information (from chapters 1 to 5) condensed into a single document - stripped of most explanations.
