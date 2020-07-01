@@ -95,6 +95,11 @@ All members (excluding the owner) are to perform these steps first.
     ![Forked repository](./res/forked.png)
 
 2. Clone the repository by clicking on the green "Clone" button and copying the repository URL
+
+    ```bash
+    git clone <repository url>
+    ```
+
 3. Navigate to the file in the file explorer or terminal
 4. Create an `upstream` remote to the original repository
 
