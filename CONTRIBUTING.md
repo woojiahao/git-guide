@@ -2,7 +2,7 @@
 
 To ask about the guide, feel free to message on Discord @Chill#4048 or create an issue and I will try to respond to it.
 
-To contribute to the guide, fork this repository and make the necessary ammendments to the markdown files for each chapter. Then, create a pull request for the changes and tag @woojiahao for review. 
+To contribute to the guide, fork this repository and make the necessary ammendments to the markdown files for each chapter. Then, create a pull request for the changes and tag @woojiahao for review.
 
 ## Exporting chapters as PDFs
 
@@ -22,13 +22,20 @@ So at the start of the chapter that you wish to export, add the following lines 
 
 ```markdown
 ---
-title: "Chapter X - <Title>
+title: "Chapter X - <Title>"
 geometry: margin=1.5cm
+output:
+    rmarkdown::pdf_document:
+        fig_caption: yes
+        includes:
+            in_header: figure-adjustment.tex
 ---
 
 # Title
 ...
 ```
+
+**Note*** the only line to change is the title of the document
 
 ### Export script
 
@@ -42,8 +49,11 @@ chmod +x export.sh
 
 Then, run the script, passing in the chapter's markdown file as the first argument and the PDF file name as the second.
 
+**Note*** the script must be run within the chapter folder otherwise the images will not be rendered.
+
 ```bash
-bash ./export.sh 01-setup/README.md chapter-1.pdf
+cd 01-setup/
+bash ../export.sh README.md chapter-1.pdf
 ```
 
 Once done, you should be able to view the changes and commit that new PDF.
