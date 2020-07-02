@@ -35,6 +35,8 @@ backend/start-server
 Let's say at this point you have added some code and commits to the project and want to see what commits you had done.  
 This could be because, you wanted to see where you left off yesterday or how features have or have not been done. (The later reason is when you are working on a larger feature)
 
+### Basic git log
+
 Well to look at all the commits made on your current branch you can do:
 ```bash
 git log
@@ -44,6 +46,8 @@ git log
 From this screenshot you can see that although we can see all the commits linked to our current branch, there is a bit too much information at once.  
 For example information like when the commit was made or who made it is not really important when trying to look at the bigger picture.  
 This is also not practical when looking at projects with 10s or 100s of commits, as we would be lost in the information
+
+### Flag oneline
 
 Luckily there are special flags we can use to format the output.  
 If we add the flag, `--oneline`, git will shorten each commit to oneline, only preserving the important information.  
@@ -56,4 +60,15 @@ And boom, this was what we wanted at the start. Now we can see that we have adde
 
 But there is something weird here, we can also see that the `origin/master` commit together with the commits of our branch. This is because as we know, branches have to start off(be based off) somewhere. As such, we can make a pretty good guess that this `frontend/landing` was made off the master branch.  
 
-Luckily
+Luckily, we don't have to guess as there is a flag which will show us the relationship between these commits.  
+
+### Flag graph
+To make git log show the relationships between commits, we just have to add the `--graph` flag. This flag shows a 'graph' of the commits, which for us means the relationship the commits have.  
+Combining this with `--oneline` flag we showed above, makes for a very clean and concise git log.  
+
+(I will leave it to the reader to try out what `--graph` flag does on its own)
+
+```bash
+git log --oneline --graph
+```
+![Git log with oneline and graph](res/small_picture_3.png)
