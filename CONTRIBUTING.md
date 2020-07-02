@@ -47,3 +47,7 @@ bash ./export.sh 01-setup/README.md chapter-1.pdf
 ```
 
 Once done, you should be able to view the changes and commit that new PDF.
+
+### Cleaning up
+
+After exporting the PDF, it is advised that the front matter YAML added is removed from the file.
