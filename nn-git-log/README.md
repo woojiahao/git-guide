@@ -81,3 +81,20 @@ Combining this with `--oneline` flag we showed above, makes for a very clean and
 git log --oneline --graph
 ```
 ![Git log with oneline and graph](res/small_picture_3.png)
+
+## Looking at the big picture
+Now that you know how to look at commits tagged to your branch, you might also want to see how the entire repository might look like.  
+Luckily we have a flag to look at the log of the entire repository.  
+
+### Flag all
+Using the `--all` flag, this will show the git log, including all the commits from every branch you might have in the respository.  
+We will also be combining this flag with all previous flags to get the best overview of a project. (In my opnion)
+```bash
+git log --oneline --graph --all
+```
+![Git log with oneline graph and all](res/big_picture_1.png)
+
+Now we can see that our frontend landing page feature has already been merged down to master. We can also see that after git fetch(To fetch any changes from github), our teammate B had already made more commits on his feature and our local `backend/start-server` branch is behind.  
+
+## Wrapping up
+Hopefully this gives you an idea of how powerful this `git log` command can be at giving you an overview of how your project is coming along. 
