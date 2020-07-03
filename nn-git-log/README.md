@@ -1,13 +1,3 @@
----
-title: "Chapter X - <Title>"
-geometry: margin=1.5cm
-output:
-    rmarkdown::pdf_document:
-        fig_caption: yes
-        includes:
-            in_header: figure-adjustment.tex
----
-
 # Git Log
 
 Now that you know how to do the basics in git and started working on the repo, a few commits in and you might ask yourslef, how do we visualize these commits and changes we have made in the repository?  
