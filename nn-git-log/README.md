@@ -97,4 +97,17 @@ git log --oneline --graph --all
 Now we can see that our frontend landing page feature has already been merged down to master. We can also see that after git fetch(To fetch any changes from github), our teammate B had already made more commits on his feature and our local `backend/start-server` branch is behind.  
 
 ## Wrapping up
-Hopefully this gives you an idea of how powerful this `git log` command can be at giving you an overview of how your project is coming along. 
+To end off, the `git log` command actually has a lot more features and flags which are a bit more nuanced and situationally. What was shown here are the most common and applicable features and flags which I hope will be usefully to you.
+
+As mentioned above, below are additional resources:  
+[More features of git log](https://www.atlassian.com/git/tutorials/git-log)
+[git log documentation](https://git-scm.com/docs/git-log)
+
+Additional GUI applications that can help you visualise the git log:  
+[VSCode extension (Git Graph)](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+![Git graph looks like](res/git_graph_vscode.png)
+
+On Github:
+Actually there is a feature on github that also allows you to visualise the graph of your respository.  
+It is under `Insights` &rarr; `Network` in your respective github respository.  
+![Github graph](res/github_graph.png)
