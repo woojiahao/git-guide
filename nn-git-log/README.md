@@ -51,6 +51,15 @@ This is also not practical when looking at projects with 10s or 100s of commits,
 
 Luckily there are special flags we can use to format the output.  
 If we add the flag, `--oneline`, git will shorten each commit to oneline, only preserving the important information.  
+Looking at the man page for this command:  
+```bash
+Documentation:
+--oneline
+This is a shorthand for "--pretty=oneline --abbrev-commit" used together.
+--abbrev-commit
+Instead of showing the full 40-byte hexadecimal commit object name, show only a partial prefix. Non default number of digits can be specified with "--abbrev=<n>" (which also modifies diff output, if it is displayed).
+```
+Thus when running the command.
 ```bash
 git log --oneline
 ```
