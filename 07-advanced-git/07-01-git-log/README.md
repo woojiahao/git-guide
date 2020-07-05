@@ -4,9 +4,9 @@ Now that you know how to do the basics in git and started working on the repo, a
 
 That is where this chapter, and the subsequent, `Git Diffs` come in. These commands give you a way to visualize the commits and changes made in your git respository.  
 
-To explain simply, the command `git log` and its corresponding optional flags lets you look at history of commits and how the link up in your respository. At the end of the chapter there will be links to additional resources, as well as more visual GUI tools you can use to look at the log of the respository, but I still suggest reading and learning this chapter.  
+**TL|DR:** The command `git log` and its corresponding optional flags lets you look at history of commits and how they link up in your respository.  
 
-This is because these tools still do rely on the git commands to generate their graphs, and understanding this command kind of gives you the 'feel' for it in general. Lastly, as this command comes with git, using the command does not require any additional setup other than having git.
+At the end of the chapter there will be links to additional resources, as well as more visual GUI tools you can use to look at the log of the respository, but I still suggest reading and understanding how `git log` works as these tools still rely on the basic `git log` to generate their graphs. Having an understanding of this command gives you an intuition for how these tools work in general. Additionally, as the command comes with Git, there is no additional setup required to start using `git log`. 
 
 Note:
 This chapter serves to show you and explain the common use cases for the command. For a more detailed explaination, look at the addtional resources or the documentation of the command.
