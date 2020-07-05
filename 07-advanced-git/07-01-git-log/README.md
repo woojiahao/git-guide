@@ -90,7 +90,7 @@ Now that you know how to look at commits tagged to your branch, you might also w
 Luckily we have a flag to look at the log of the entire repository.  
 
 #### all
-Using the `--all` flag, this will show the git log, including all the commits from every branch you might have in the respository.  
+The `--all` flag shows the `git log`; including all the commits from every branch you have in the repository.  
 We will also be combining this flag with all previous flags to get the best overview of a project. (In my opnion)
 ```bash
 git log --oneline --graph --all
