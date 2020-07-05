@@ -18,14 +18,14 @@ And you have decided to split the work to frontend and backend work, with respec
 
 It may look something like this:  
 ```
-Github
-origin/master, master
+Github branches:
+master, start-server (This will be remote branches for you)
 
-Teammate A
-frontend/landing
+Teammate A's branches (On your local machine):
+master, origin/master, backend/start-server, origin/backend/start-server, frontend/landing
 
-Teammate B
-backend/start-server
+Teammate B's branches:
+backend/start-server (His local branch connected to github)
 ```
 
 ## Looking at the small picture
