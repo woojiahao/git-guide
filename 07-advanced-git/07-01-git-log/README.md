@@ -97,7 +97,7 @@ git log --oneline --graph --all
 ```
 ![Git log with oneline graph and all](res/big_picture_1.png)
 
-Now we can see that our frontend landing page feature has already been merged down to master. We can also see that after git fetch (To fetch any changes from GitHub), teammate B had already made more commits on his feature branch and the local `backend/start-server` branch is behind.  
+Now we can see that our frontend landing page feature has already been merged down to our local master branch. We can also see that after `git fetch` (To fetch any changes from GitHub), teammate B had already made more commits on his feature branch and the local `backend/start-server` branch is behind.  
 
 ## Wrapping up
 To end off, the `git log` command actually has a lot more features and flags which are a bit more nuanced and situationally. What was shown here are the most common and applicable features and flags which I hope will be usefully to you.
