@@ -47,7 +47,9 @@ From this screenshot you can see that although we can see all the commits linked
 For example information like when the commit was made or who made it is not really important when trying to look at the bigger picture.  
 This is also not practical when looking at projects with 10s or 100s of commits, as we would be lost in the information
 
-### Flag oneline
+### Flags
+
+#### oneline
 
 Luckily there are special flags we can use to format the output.  
 If we add the flag, `--oneline`, git will shorten each commit to oneline, only preserving the important information.  
@@ -71,7 +73,7 @@ But there is something weird here, we can also see that the `origin/master` comm
 
 Luckily, we don't have to guess as there is a flag which will show us the relationship between these commits.  
 
-### Flag graph
+#### graph
 To make git log show the relationships between commits, we just have to add the `--graph` flag. This flag shows a 'graph' of the commits, which for us means the relationship the commits have.  
 Combining this with `--oneline` flag we showed above, makes for a very clean and concise git log.  
 
@@ -86,7 +88,7 @@ git log --oneline --graph
 Now that you know how to look at commits tagged to your branch, you might also want to see how the entire repository might look like.  
 Luckily we have a flag to look at the log of the entire repository.  
 
-### Flag all
+#### all
 Using the `--all` flag, this will show the git log, including all the commits from every branch you might have in the respository.  
 We will also be combining this flag with all previous flags to get the best overview of a project. (In my opnion)
 ```bash
