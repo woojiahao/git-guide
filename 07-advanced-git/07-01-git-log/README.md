@@ -33,7 +33,7 @@ backend/start-server (His local branch connected to github)
 **Note: Assume you are teammate A**
 
 Let's say at this point you have added some code and commits to the project and want to see what commits you had done.  
-This could be because, you wanted to see where you left off yesterday or how features have or have not been done. (The later reason is when you are working on a larger feature)
+This could be because, you wanted to see where you left off yesterday or how many features have been completed. (The latter reason is when you are working on a larger feature)
 
 ### Basic git log
 
