@@ -78,7 +78,7 @@ Luckily, we don't have to guess as there is a flag which will show us the relati
 To make git log show the relationships between commits, we just have to add the `--graph` flag. This flag shows a 'graph' of the commits, which for us means the relationship the commits have.  
 Combining this with `--oneline` flag we showed above, makes for a very clean and concise git log.  
 
-(I will leave it to the reader to try out what `--graph` flag does on its own)
+(Try this out yourself and see what happens!)
 
 ```bash
 git log --oneline --graph
