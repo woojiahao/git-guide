@@ -22,7 +22,7 @@ Original repository branches:
 master, start-server (This will be remote branches for you)
 
 Teammate A's branches (On your local machine):
-master, origin/master, backend/start-server, origin/backend/start-server, frontend/landing
+master, origin/master, backend/start-server, origin/backend/start-server, frontend/landing (active)
 
 Teammate B's branches:
 backend/start-server (His local branch connected to github)
