@@ -18,7 +18,7 @@ And you have decided to split the work to frontend and backend work, with respec
 
 It may look something like this:  
 ```
-Github branches:
+Original repository branches:
 master, start-server (This will be remote branches for you)
 
 Teammate A's branches (On your local machine):
