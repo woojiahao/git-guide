@@ -72,7 +72,7 @@ And boom, this was what we wanted at the start. Now we can see that we have adde
 But there is something weird here...  
 We can see that there is a commit tagged with origin/master, along with the commits of our current branch, frontend/landing. As we have established previously in chapter 6, all branches start off somewhere. In this example, the branch frontend/landing branches out from the origin/master branch. As such, git log makes a reference to this.
 
-Luckily, we don't have to guess as there is a flag which will show us the relationship between these commits.  
+Luckily, we don't have to imagine these relationships between branches and commits as there is a flag that provides us with that visualization.
 
 #### graph
 To make git log show the relationships between commits, we just have to add the `--graph` flag. This flag shows a 'graph' of the commits, which for us means the relationship the commits have.  
