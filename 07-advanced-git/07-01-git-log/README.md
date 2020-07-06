@@ -76,7 +76,7 @@ Luckily, we don't have to imagine these relationships between branches and commi
 
 #### graph
 As mentioned earlier, to display the relationships between branches and commits, we can use the `--graph` flag. This flag shows a 'graph' of the commits, or the relationship between branches and commits.  
-Combining this with `--oneline` flag we showed above, makes for a very clean and concise git log.  
+Combining this with the `--oneline` flag we showed above, makes for a very clean and concise git log.  
 
 (Try this out yourself and see what happens!)
 
