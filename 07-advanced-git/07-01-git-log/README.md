@@ -1,6 +1,5 @@
-# Git Log
-
-Table of Contents
+# Table of Contents
+- [Table of Contents](#table-of-contents)
 - [Git Log](#git-log)
   - [Project set up so-far](#project-set-up-so-far)
     - [Basic git log](#basic-git-log)
@@ -12,6 +11,8 @@ Table of Contents
     - [Additional Resources to read](#additional-resources-to-read)
     - [GUI applications to help you visualise the git log](#gui-applications-to-help-you-visualise-the-git-log)
     - [Github:](#github)
+
+# Git Log
 
 Now that you know the basics of Git and have started working on the repository with a few commits, you might ask yourself, "How do we visualize these commits and changes we have made in the repository?"  
 
