@@ -1,5 +1,18 @@
 # Git Log
 
+Table of contents below
+- [Git Log](#git-log)
+  - [Project set up so-far](#project-set-up-so-far)
+    - [Basic git log](#basic-git-log)
+    - [Flags](#flags)
+      - [oneline](#oneline)
+      - [graph](#graph)
+      - [all](#all)
+  - [Wrapping up](#wrapping-up)
+    - [Additional Resources to read](#additional-resources-to-read)
+    - [GUI applications to help you visualise the git log](#gui-applications-to-help-you-visualise-the-git-log)
+    - [Github:](#github)
+
 Now that you know the basics of Git and have started working on the repository with a few commits, you might ask yourself, "How do we visualize these commits and changes we have made in the repository?"  
 
 That is where this chapter, and the subsequent, `Git Diffs` come in. These commands give you a way to visualize the commits and changes made in your git repository.  
@@ -19,7 +32,7 @@ And you have decided to split the work to frontend and backend work, with respec
 It may look something like this:  
 ```
 Original repository branches:
-master, start-server (This will be remote branches for you)
+master, backend/start-server (This will be remote branches for you)
 
 Teammate A's branches (On your local machine):
 master, origin/master, backend/start-server, origin/backend/start-server, frontend/landing (active)
@@ -27,8 +40,6 @@ master, origin/master, backend/start-server, origin/backend/start-server, fronte
 Teammate B's branches:
 backend/start-server (His local branch connected to github)
 ```
-
-## Looking at the small picture
 
 **Note: Assume you are teammate A**
 
@@ -85,7 +96,6 @@ git log --oneline --graph
 ```
 ![Git log with oneline and graph](res/small_picture_3.png)
 
-## Looking at the big picture
 Now that you know how to look at commits tagged to your branch, you might also want to see how the entire repository might look like.  
 Luckily we have a flag to look at the log of the entire repository.  
 
@@ -112,7 +122,7 @@ As mentioned above, below are additional resources.
 - [VSCode extension (Git Graph)](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 ![Git graph looks like](res/git_graph_vscode.png)
 
-#### Github:
+### Github:
 Actually there is a feature on GitHub that also allows you to visualise the graph of your repository.  
 It is under `Insights` &rarr; `Network` in your respective GitHub repository.  
 ![Github graph](res/github_graph.png)
