@@ -100,17 +100,19 @@ git log --oneline --graph --all
 Now we can see that our frontend landing page feature has already been merged down to our local master branch. We can also see that after `git fetch` (To fetch any changes from GitHub), teammate B had already made more commits on his feature branch and the local `backend/start-server` branch is behind.  
 
 ## Wrapping up
-To end off, the `git log` command actually has a lot more features and flags which are a bit more nuanced and situational. This chapter demonstrates the most commonly used features and flags which we hope will be usefully to you.  
+To end off, the `git log` command actually has a lot more features and flags which are a bit more nuanced and situational. This chapter demonstrates the most commonly used features and flags which we hope will be useful to you.  
 
-As mentioned above, below are additional resources:  
-[More features of git log](https://www.atlassian.com/git/tutorials/git-log)
-[git log documentation](https://git-scm.com/docs/git-log)
+As mentioned above, below are additional resources.
 
-Additional GUI applications that can help you visualise the git log:  
-[VSCode extension (Git Graph)](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+### Additional Resources to read
+- [More features of git log](https://www.atlassian.com/git/tutorials/git-log)
+- [git log documentation](https://git-scm.com/docs/git-log)
+
+### GUI applications to help you visualise the git log
+- [VSCode extension (Git Graph)](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 ![Git graph looks like](res/git_graph_vscode.png)
 
-On Github:
-Actually there is a feature on github that also allows you to visualise the graph of your respository.  
-It is under `Insights` &rarr; `Network` in your respective github respository.  
+#### Github:
+Actually there is a feature on GitHub that also allows you to visualise the graph of your repository.  
+It is under `Insights` &rarr; `Network` in your respective GitHub repository.  
 ![Github graph](res/github_graph.png)
