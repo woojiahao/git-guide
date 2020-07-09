@@ -1,6 +1,6 @@
 # Git Log
 
-Table of contents below
+Table of Contents
 - [Git Log](#git-log)
   - [Project set up so-far](#project-set-up-so-far)
     - [Basic git log](#basic-git-log)
@@ -109,7 +109,8 @@ git log --oneline --graph --all
 
 Now we can see that our frontend landing page feature (`frontend/landing` branch) has already been merged down to the `master` branch of our local repository. Using `git fetch` (to fetch any changes from GitHub), we can see that teammate B has also made more commits on his feature branch and the local `backend/start-server` branch is behind.  
 
-For a better explaination of how to read the git log, you can refer to these stackoverflow answers:  
+For a better explaination of how to read the graph from `--graph` flag, you can refer to these stackoverflow answers:  
+
 - [Need help interpreting git log --graph command](https://stackoverflow.com/questions/39772204/need-help-interpreting-git-log-graph-command)
 - [How to read git log graph](https://stackoverflow.com/questions/5382255/how-to-read-git-log-graph)
 
@@ -124,6 +125,7 @@ As mentioned above, below are additional resources.
 
 ### GUI applications to help you visualise the git log
 - [VSCode extension (Git Graph)](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+
 ![Git graph looks like](res/git_graph_vscode.png)
 
 ### Github:
