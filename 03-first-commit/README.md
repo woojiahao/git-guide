@@ -110,4 +110,40 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
 
 You have successfully made your first commit! There may seem to be a lot of things to recall at once, but many of these become habit over time. The theory behind Git has to be explained to ensure that you have a clear mental model of what is going on so that future commands or chain of commands will make more sense. If you are unsure about anything discussed in this chapter, go over it once again. Ensure that you have a clear understanding of what each command can do.
 
+### (Optional) Working with multiple files
+
+Now, you might be wondering, "How do I add/commit/push multiple files at once?" Well, the process is similar to that of adding/commiting/pushing a single file, only this time, you will be specifying multiple files when adding them. In essence, the way you work with multiple files is the same as you would with a single file.
+
+This was briefly mentioned in step 3 but we would like to elaborate on this idea further.
+
+To add multiple files to the staging area at once, the file names can be placed one after another in the `git add` command, as such:
+
+```bash
+git add names.txt fruits.txt game.js
+```
+
+You can also specify the name of a folder to add all the files (with changes) from that folder to the staging area, as such:
+
+```bash
+git add assets/
+```
+
+If you wish to add all files (with changes) in your working directory (in the current folder) to the staging area at once, you can opt to use `.` instead of specifying every single file.
+
+```bash
+git add .
+```
+
+Once multiple files have been added, they can be committed in a single commit. Doing so groups the changes as one. This is especially useful when you had to modify multiple files to make a change to the project and these changes all fall under the same reason (aka the commit message).
+
+```bash
+git commit -m "Add user names, fruits, to the game"
+```
+
+Similarly, you can push multiple commits at once.
+
+```bash
+git push origin master
+```
+
 [Next](../04-collaboration/README.md)
