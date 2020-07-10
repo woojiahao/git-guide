@@ -29,7 +29,7 @@ At the end of the chapter, there will be links to additional resources and more 
 Let's say the project you are working on is a full-stack web application, with a frontend and backend.  
 And you have decided to split the work to frontend and backend work, with respective features branches being worked on.
 
-It may look something like this:  
+Your branches may look like this:
 ```
 Original repository branches:
 master, backend/start-server (This will be remote branches for you)
