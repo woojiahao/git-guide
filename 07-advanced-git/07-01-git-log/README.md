@@ -124,7 +124,7 @@ As mentioned above, below are additional resources.
 - [More features of git log](https://www.atlassian.com/git/tutorials/git-log)
 - [git log documentation](https://git-scm.com/docs/git-log)
 
-### GUI applications to help you visualise the git log
+### GUI applications to visualise `git log`
 - [VSCode extension (Git Graph)](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
 ![Git graph looks like](res/git_graph_vscode.png)
