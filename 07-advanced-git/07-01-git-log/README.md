@@ -110,7 +110,7 @@ git log --oneline --graph --all
 
 Now we can see that our frontend landing page feature (`frontend/landing` branch) has already been merged down to the `master` branch of our local repository. Using `git fetch` (to fetch any changes from GitHub), we can see that teammate B has also made more commits on his feature branch and the local `backend/start-server` branch is behind.  
 
-For a better explaination of how to read the graph from `--graph` flag, you can refer to these stackoverflow answers:  
+For a detailed explanation on how to read the graph, you can refer to these Stack Overflow answers:  
 
 - [Need help interpreting git log --graph command](https://stackoverflow.com/questions/39772204/need-help-interpreting-git-log-graph-command)
 - [How to read git log graph](https://stackoverflow.com/questions/5382255/how-to-read-git-log-graph)
