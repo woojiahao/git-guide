@@ -97,7 +97,7 @@ git log --oneline --graph
 ```
 ![Git log with oneline and graph](res/small_picture_3.png)
 
-Now that you know how to look at commits tagged to your branch, you might also want to see how the entire repository might look like.  
+Now that you know how to look at commits tagged to your branch, you might also want to see all the commits of the entire repository across all branches - both remote and local.  
 Luckily we have a flag to look at the log of the entire repository.  
 
 #### all
