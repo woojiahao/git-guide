@@ -129,7 +129,7 @@ As mentioned above, below are additional resources.
 
 ![Git graph looks like](res/git_graph_vscode.png)
 
-### Github:
+### Github
 Actually there is a feature on GitHub that also allows you to visualise the graph of your repository.  
 It is under `Insights` &rarr; `Network` in your respective GitHub repository.  
 ![Github graph](res/github_graph.png)
