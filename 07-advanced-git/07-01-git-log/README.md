@@ -120,7 +120,7 @@ To end off, the `git log` command actually has a lot more features and flags whi
 
 As mentioned above, below are additional resources.
 
-### Additional Resources to read
+### Additional resources
 - [More features of git log](https://www.atlassian.com/git/tutorials/git-log)
 - [git log documentation](https://git-scm.com/docs/git-log)
 
