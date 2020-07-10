@@ -148,6 +148,8 @@ This practical picks up right where the previous one ended.
 
     ![names.txt file content](../03-first-commit/res/new-file-content.png)
 
+**Note*** the workflow described in this section works with both single files (as demonstrated here) and with multiple files. To understand how to adapt the existing suite of commands to work with multiple files, refer to the optional section [here.](../03-first-commit/README.md#optional-working-with-multiple-files)
+
 ## Fork and pull request workflow
 
 Now that you know how to push changes on your own. Let's explore how you can collaborate with others and share code among a team for group projects.
