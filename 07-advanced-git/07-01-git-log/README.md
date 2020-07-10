@@ -54,8 +54,9 @@ git log
 ```
 ![Basic git log of local branch](res/small_picture_1.png)
 
-From this screenshot you can see that although we can see all the commits linked to our current branch, there is a bit too much information at once.  
-For example information like when the commit was made or who made it is not really important when trying to look at the bigger picture.  
+From this screenshot you can see that although we can see all the commits linked to our current branch, there is a bit too much information at once.
+
+For example, information like when the commit was made or who made it is not really important when trying to look at the bigger picture.  
 This is also not practical when looking at projects with 10s or 100s of commits, as we would be lost in the information
 
 ### Flags
