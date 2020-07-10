@@ -16,7 +16,7 @@
 
 Now that you know the basics of Git and have started working on the repository with a few commits, you might ask yourself, "How do we visualize these commits and changes we have made in the repository?"  
 
-That is where this chapter, and the subsequent, `Git Diffs` come in. These commands give you a way to visualize the commits and changes made in your git repository.  
+This is where this chapter, and the subsequent (`Git Diffs`), come in. These commands give you a way to visualize the commits and changes made in your Git repository.  
 
 **TL|DR:** The command `git log` and its corresponding optional flags lets you look at the history of commits and how they link up in your repository.  
 
