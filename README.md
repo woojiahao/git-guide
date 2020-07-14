@@ -25,6 +25,7 @@ However, as with anything relating to programming, the best learning is always i
 5. [Merge conflicts](./05-merge-conflicts/README.md)
 6. [(Optional) Branching - WIP](./06-branching/README.md)
 7. [(Optional) Advanced topics - WIP](./07-advanced-git/README.md)
+   1. [Git Log](./07-advanced-git/07-01-git-log/README.md)
 8. [(Optional) Basic bash commands](./08-bash-tutorial/README.md)
 
 ## Recommended resources
