@@ -35,5 +35,5 @@ However, as with anything relating to programming, the best learning is always i
 ## Updates
 
 - **26 June 2020** - First release of guide, chapters six and seven are not completed yet
-- **7 July 2020** - Addition of first advanced chapter, 07-01, `Git Log`
-
+- **07 July 2020** - Work started on first advanced chapter - 07-01: `git log`. Credits to @chuanhao01 for working on this!
+- **15 July 2020** - First advanced chapter (`git log`) added! Thanks to @chuanhao01 for helping!
