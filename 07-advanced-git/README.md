@@ -1,4 +1,3 @@
 # Table of contents
 
-7. Advanced Git
-   1. `Git Log`
+1. [`Git Log`](./07-01-git-log/README.md)
