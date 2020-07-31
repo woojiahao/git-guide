@@ -20,4 +20,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
+  margin: 1.5em 0;
+}
+
+p, ol, ol li, ul, ul li, pre {
+  margin-bottom: 1em;
+}
+
+pre code {
+  white-space: pre-wrap;
 }
