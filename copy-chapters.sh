@@ -10,3 +10,5 @@ do
   mkdir -p $content_path
   cp -r $i $content_path
 done
+
+cp README.md $content_path
