@@ -67,3 +67,10 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Intellij
+*.iml
+.idea/
+
+# /content folder that should be generated on push
+/content/*
