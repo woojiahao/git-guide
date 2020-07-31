@@ -9,6 +9,10 @@ const Layout: React.FC = ({ children }) => (
       maxWidth: 900
     }}>
     {children}
+    <footer>
+      Copyright &copy; 2020. Git Guide is built with Gatsby.js. The repository can be found <a
+      href="https://github.com/woojiahao/git-guide">here.</a>
+    </footer>
   </div>
 )
 
