@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Lora');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  --body-font: 'Open Sans', sans-serif;
+  --heading-font: 'Lora', serif;
+  --font-size: 16px;
+  --bg: #eae6e5;
+  --fg: #12130f;
+
+  font-family: var(--body-font);
+  font-size: var(--font-size);
+  color: var(--fg);
+  background-color: var(--bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+}
