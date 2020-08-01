@@ -1,0 +1,38 @@
+{
+  "name": "Git Guide",
+  "private": true,
+  "description": "An introduction to the Git version control system designed for Singapore Polytechnic's DIT SEP module.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build && gh-pages -d public -b gh-pages -r https://$GH_TOKEN@github.com/woojiahao/git-guide"
+  },
+  "dependencies": {
+    "gatsby": "^2.23.12",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-sharp": "^2.6.24",
+    "gatsby-remark-images": "^3.3.23",
+    "gatsby-source-filesystem": "^2.3.23",
+    "gatsby-transformer-remark": "^2.8.27",
+    "gh-pages": "^3.1.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/woojiahao/git-guide"
+  },
+  "bugs": {
+    "url": "https://github.com/woojiahao/git-guide/issues"
+  }
+}

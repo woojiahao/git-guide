@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  --body-font: 'Open Sans', sans-serif;
+  --heading-font: 'Josefin Sans', serif;
+  --code-font: 'Source Code Pro', monospace;
+  --font-size: 16px;
+  --bg: #eae6e5;
+  --fg: #12130f;
+  --white: #fdfffc;
+  --subtitle: #7c809b;
+  --link: #1282a2;
+
+  font-family: var(--body-font);
+  font-size: var(--font-size);
+  color: var(--fg);
+  background-color: var(--bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  margin: 1.5em 0;
+}
+
+p, ol, ol li, ul, ul li, pre {
+  margin-bottom: 1em;
+}
+
+ul, ol {
+  margin-left: 2em;
+}
+
+pre code {
+  white-space: pre-wrap;
+}
+
+:not(pre) > code, pre {
+  background-color: var(--white);
+  border-radius: 5px;
+  font-family: var(--code-font);
+}
+
+:not(pre) > code {
+  padding: 0.2em;
+}
+
+pre {
+  padding: 1em;
+}
+
+a {
+   color: var(--link);
+}
+
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+  color: var(--fg);
+  text-decoration: none;
+}

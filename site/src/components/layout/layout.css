@@ -1,0 +1,15 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 4.5fr;
+}
+
+.container .content {
+  overflow-y: scroll;
+  padding: 3em;
+}
+
+.container .content footer hr {
+  margin: 2em 0;
+}

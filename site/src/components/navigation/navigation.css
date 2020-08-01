@@ -1,0 +1,30 @@
+.navigation {
+  background-color: var(--white);
+  padding: 2em;
+}
+
+.navigation h1 {
+  text-align: center;
+}
+
+.navigation ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+.navigation ul li a:hover {
+  font-weight: bold;
+}
+
+.navigation ul li.parent-chapter {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.navigation ul li > ul {
+  margin-left: 2em;
+}
+
+.navigation ul li > ul li:first-child {
+  margin-top: 0.5em;
+}
