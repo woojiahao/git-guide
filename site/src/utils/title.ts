@@ -1,4 +1,4 @@
-const chapterTitleRegex = /^\/(\d{2,})-(.*)\/$/
+const chapterTitleRegex = /^\/?(\d{2,})-([-&_+\w\d]*)\/?$/
 
 const capitalize = (s: string): string => {
   const firstLetter = s[0].toUpperCase()
@@ -6,19 +6,27 @@ const capitalize = (s: string): string => {
   return `${firstLetter}${remaining}`
 }
 
-const createTitle = (slug: string): string => {
-
-  console.log(slug)
-
+const createTitle = (slug: string, subChapter: boolean = false): string => {
   if (!chapterTitleRegex.test(slug)) {
     throw new Error(`Markdown is not a chapter!`)
   }
 
   const matches = slug.match(chapterTitleRegex)
-  const chapter = matches[1]
-  const title = matches[2]
+  let [, chapter, title] = matches
 
-  return `Chapter ${parseFloat(chapter)}: ${title.split("-").map(capitalize).join(' ')}`
+  // TODO Support more than two-level nesting
+  if (subChapter) {
+    if (!chapterTitleRegex.test(title)) {
+      throw new Error(`Sub-chapter ${title} naming convention is wrong. Must be e.g. 07-01-Git Log`)
+    }
+
+    const subChapterMatches = title.match(chapterTitleRegex)
+    const subChapter = subChapterMatches[1]
+    chapter = `${chapter}.${subChapter}`
+    title = subChapterMatches[2]
+  }
+
+  return `Chapter ${chapter} - ${title.split("-").map(capitalize).join(' ')}`
 }
 
 

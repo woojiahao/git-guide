@@ -28,7 +28,7 @@ class Chapter {
   }
 
   get title(): string {
-    return createTitle(this.slug)
+    return createTitle(this.slug, this.parent !== null)
   }
 
   get hasSubChapters(): boolean {

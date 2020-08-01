@@ -19,7 +19,6 @@ const ChapterTemplate: React.FC<ChapterTemplateProps> = ({ data }) => {
 
   return (
     <Layout>
-      <h1>{createTitle(data.markdownRemark.fields.slug)}</h1>
       <div dangerouslySetInnerHTML={{ __html: chapterContent }}/>
     </Layout>
   )
