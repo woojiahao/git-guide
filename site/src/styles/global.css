@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Josefin+Sans&family=Source+Code+Pro');
 
 * {
   margin: 0;
@@ -13,6 +13,7 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
 body {
   --body-font: 'Open Sans', sans-serif;
   --heading-font: 'Josefin Sans', serif;
+  --code-font: 'Source Code Pro', monospace;
   --font-size: 18px;
   --bg: #eae6e5;
   --fg: #12130f;
@@ -40,6 +41,7 @@ pre code {
 :not(pre) > code, pre {
   background-color: var(--white);
   border-radius: 5px;
+  font-family: var(--code-font);
 }
 
 :not(pre) > code {
