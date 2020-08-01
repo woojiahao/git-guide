@@ -1,9 +1,11 @@
 import * as React from "react"
+import Layout from "../components/layout/layout"
+import Navigation from "../components/navigation/navigation"
 
 const Index = () => (
-  <div>
-    <h1>Hello world</h1>
-  </div>
+  <Layout>
+    <h1>Git Guide</h1>
+  </Layout>
 )
 
 export default Index

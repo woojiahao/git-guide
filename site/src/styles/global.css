@@ -1,16 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Lora');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Josefin+Sans');
 
 * {
   margin: 0;
   padding: 0;
 }
 
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
+}
+
 body {
   --body-font: 'Open Sans', sans-serif;
-  --heading-font: 'Lora', serif;
-  --font-size: 16px;
+  --heading-font: 'Josefin Sans', serif;
+  --font-size: 18px;
   --bg: #eae6e5;
   --fg: #12130f;
+  --white: #fdfffc;
 
   font-family: var(--body-font);
   font-size: var(--font-size);
@@ -33,6 +38,6 @@ pre code {
 
 pre {
   padding: 1em;
-  background-color: #fdfffc;
+  background-color: var(--white);
   border-radius: 5px;
 }
