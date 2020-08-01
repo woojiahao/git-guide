@@ -12,7 +12,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const parts = defaultFilePath.split("/")
     const filename = parts[parts.length - 2]
 
-    const filePath = `/${parentFolderName}${filename}.md`
+    const filePath = filename === "README" ? `/${parentFolderName}` : `/${parentFolderName}${filename}.md`
     createNodeField({
       node,
       name: `slug`,
