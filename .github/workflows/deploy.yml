@@ -34,6 +34,6 @@ jobs:
 
       - name: Deploy the site
         working-directory: ${{ env.SITE_DIR }}
-        run: pwd && npm run deploy
+        run: npm run deploy
         env: 
           GH_TOKEN: ${{ env.GH_TOKEN }}
