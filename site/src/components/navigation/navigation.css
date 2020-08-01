@@ -1,6 +1,4 @@
 .navigation {
-  flex-grow: 1;
   background-color: var(--white);
-  height: 100%;
   padding: 2em;
 }

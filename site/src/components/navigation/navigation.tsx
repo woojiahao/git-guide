@@ -22,8 +22,8 @@ const Navigation: React.FC = () => {
       <h1>Git Guide</h1>
       <ul>
         <li><Link to="/">Home</Link></li>
+        {allMarkdownRemark.edges.map(({node}) => <li><Link to={node.fields.slug}>{node.fields.slug}</Link></li>)}
       </ul>
-      {allMarkdownRemark.edges.map(({node}) => <p>{node.fields.slug}</p>)}
     </aside>
   )
 }
