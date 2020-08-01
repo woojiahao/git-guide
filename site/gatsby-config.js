@@ -20,6 +20,16 @@ module.exports = {
         name: `chapters`,
         path: `${__dirname}/content/chapters/`
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Source Code Pro`,
+          `Josefin Sans`,
+          `Open Sans`
+        ]
+      }
     }
   ]
 }
