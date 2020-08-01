@@ -32,6 +32,10 @@ p, ol, ol li, ul, ul li, pre {
   margin-bottom: 1em;
 }
 
+ul, ol {
+  margin-left: 2em;
+}
+
 pre code {
   white-space: pre-wrap;
 }
