@@ -37,8 +37,15 @@ pre code {
   white-space: pre-wrap;
 }
 
-pre {
-  padding: 1em;
+:not(pre) > code, pre {
   background-color: var(--white);
   border-radius: 5px;
+}
+
+:not(pre) > code {
+  padding: 0.2em;
+}
+
+pre {
+  padding: 1em;
 }
