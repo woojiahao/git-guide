@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.04d0941a4fae9b863984.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3474f1558647ff02c280.js"/><link as="script" rel="preload" href="/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/app-03394a6cb6649e9f37ba.js"/><link as="script" rel="preload" href="/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/page-data/07-advanced-git/07-01-git-log/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/">Git Guide</a></h1><ul><li><a href="/01-setup/">Chapter 01 - Setup</a></li><li><a href="/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a aria-current="page" class="" href="/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Git Log</h1>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/git-guide/styles.8ab3bfd9c991aca83fbf.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em;overflow-y:auto}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/git-guide/webpack-runtime-78d3762e75c9669ecd81.js"/><link as="script" rel="preload" href="/git-guide/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/git-guide/app-bfafb2d29eac3f02890a.js"/><link as="script" rel="preload" href="/git-guide/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/git-guide/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/git-guide/page-data/07-advanced-git/07-01-git-log/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/git-guide/">Git Guide</a></h1><ul><li><a href="/git-guide/01-setup/">Chapter 01 - Setup</a></li><li><a href="/git-guide/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/git-guide/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/git-guide/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/git-guide/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/git-guide/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a aria-current="page" class="" href="/git-guide/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/git-guide/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Git Log</h1>
 <p>Now that you know the basics of Git and have started working on the repository with a few commits, you might ask yourself, "How do we visualize these commits and changes we have made in the repository?"  </p>
 <p>This is where this chapter, and the subsequent (<code>Git Diffs</code>), come in. These commands give you a way to visualize the commits and changes made in your Git repository.  </p>
 <p><strong>TLDR:</strong> The command <code>git log</code> and its corresponding optional flags lets you look at the history of commits and how they link up in your repository.  </p>
@@ -30,7 +30,7 @@ This could be because, you wanted to see where you left off yesterday or how man
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/4fadb9f499709a4a966fea08d378a132/cc488/small_picture_1.png"
+    href="/git-guide/static/4fadb9f499709a4a966fea08d378a132/cc488/small_picture_1.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -43,11 +43,11 @@ This could be because, you wanted to see where you left off yesterday or how man
         class="gatsby-resp-image-image"
         alt="Basic git log of local branch"
         title="Basic git log of local branch"
-        src="/static/4fadb9f499709a4a966fea08d378a132/1cfc2/small_picture_1.png"
-        srcset="/static/4fadb9f499709a4a966fea08d378a132/3684f/small_picture_1.png 225w,
-/static/4fadb9f499709a4a966fea08d378a132/fc2a6/small_picture_1.png 450w,
-/static/4fadb9f499709a4a966fea08d378a132/1cfc2/small_picture_1.png 900w,
-/static/4fadb9f499709a4a966fea08d378a132/cc488/small_picture_1.png 928w"
+        src="/git-guide/static/4fadb9f499709a4a966fea08d378a132/1cfc2/small_picture_1.png"
+        srcset="/git-guide/static/4fadb9f499709a4a966fea08d378a132/3684f/small_picture_1.png 225w,
+/git-guide/static/4fadb9f499709a4a966fea08d378a132/fc2a6/small_picture_1.png 450w,
+/git-guide/static/4fadb9f499709a4a966fea08d378a132/1cfc2/small_picture_1.png 900w,
+/git-guide/static/4fadb9f499709a4a966fea08d378a132/cc488/small_picture_1.png 928w"
         sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -77,7 +77,7 @@ Instead of showing the full 40-byte hexadecimal commit object name, show only a 
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/7250a3f3a1a29e43bddfd405d0e04f20/078fe/small_picture_2.png"
+    href="/git-guide/static/7250a3f3a1a29e43bddfd405d0e04f20/078fe/small_picture_2.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -90,11 +90,11 @@ Instead of showing the full 40-byte hexadecimal commit object name, show only a 
         class="gatsby-resp-image-image"
         alt="Git log with only oneline"
         title="Git log with only oneline"
-        src="/static/7250a3f3a1a29e43bddfd405d0e04f20/1cfc2/small_picture_2.png"
-        srcset="/static/7250a3f3a1a29e43bddfd405d0e04f20/3684f/small_picture_2.png 225w,
-/static/7250a3f3a1a29e43bddfd405d0e04f20/fc2a6/small_picture_2.png 450w,
-/static/7250a3f3a1a29e43bddfd405d0e04f20/1cfc2/small_picture_2.png 900w,
-/static/7250a3f3a1a29e43bddfd405d0e04f20/078fe/small_picture_2.png 934w"
+        src="/git-guide/static/7250a3f3a1a29e43bddfd405d0e04f20/1cfc2/small_picture_2.png"
+        srcset="/git-guide/static/7250a3f3a1a29e43bddfd405d0e04f20/3684f/small_picture_2.png 225w,
+/git-guide/static/7250a3f3a1a29e43bddfd405d0e04f20/fc2a6/small_picture_2.png 450w,
+/git-guide/static/7250a3f3a1a29e43bddfd405d0e04f20/1cfc2/small_picture_2.png 900w,
+/git-guide/static/7250a3f3a1a29e43bddfd405d0e04f20/078fe/small_picture_2.png 934w"
         sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -117,7 +117,7 @@ Combining this with the <code>--oneline</code> flag we showed above, makes for a
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/7f6a934bbbc3bf893a583b6851d833cb/dc616/small_picture_3.png"
+    href="/git-guide/static/7f6a934bbbc3bf893a583b6851d833cb/dc616/small_picture_3.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -130,11 +130,11 @@ Combining this with the <code>--oneline</code> flag we showed above, makes for a
         class="gatsby-resp-image-image"
         alt="Git log with oneline and graph"
         title="Git log with oneline and graph"
-        src="/static/7f6a934bbbc3bf893a583b6851d833cb/1cfc2/small_picture_3.png"
-        srcset="/static/7f6a934bbbc3bf893a583b6851d833cb/3684f/small_picture_3.png 225w,
-/static/7f6a934bbbc3bf893a583b6851d833cb/fc2a6/small_picture_3.png 450w,
-/static/7f6a934bbbc3bf893a583b6851d833cb/1cfc2/small_picture_3.png 900w,
-/static/7f6a934bbbc3bf893a583b6851d833cb/dc616/small_picture_3.png 933w"
+        src="/git-guide/static/7f6a934bbbc3bf893a583b6851d833cb/1cfc2/small_picture_3.png"
+        srcset="/git-guide/static/7f6a934bbbc3bf893a583b6851d833cb/3684f/small_picture_3.png 225w,
+/git-guide/static/7f6a934bbbc3bf893a583b6851d833cb/fc2a6/small_picture_3.png 450w,
+/git-guide/static/7f6a934bbbc3bf893a583b6851d833cb/1cfc2/small_picture_3.png 900w,
+/git-guide/static/7f6a934bbbc3bf893a583b6851d833cb/dc616/small_picture_3.png 933w"
         sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -154,7 +154,7 @@ We will also be combining this flag with all previous flags to get the best over
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/bcbe119a02f52e16c46a709ca8045cc6/416ee/big_picture_1.png"
+    href="/git-guide/static/bcbe119a02f52e16c46a709ca8045cc6/416ee/big_picture_1.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -167,11 +167,11 @@ We will also be combining this flag with all previous flags to get the best over
         class="gatsby-resp-image-image"
         alt="Git log with oneline graph and all"
         title="Git log with oneline graph and all"
-        src="/static/bcbe119a02f52e16c46a709ca8045cc6/1cfc2/big_picture_1.png"
-        srcset="/static/bcbe119a02f52e16c46a709ca8045cc6/3684f/big_picture_1.png 225w,
-/static/bcbe119a02f52e16c46a709ca8045cc6/fc2a6/big_picture_1.png 450w,
-/static/bcbe119a02f52e16c46a709ca8045cc6/1cfc2/big_picture_1.png 900w,
-/static/bcbe119a02f52e16c46a709ca8045cc6/416ee/big_picture_1.png 930w"
+        src="/git-guide/static/bcbe119a02f52e16c46a709ca8045cc6/1cfc2/big_picture_1.png"
+        srcset="/git-guide/static/bcbe119a02f52e16c46a709ca8045cc6/3684f/big_picture_1.png 225w,
+/git-guide/static/bcbe119a02f52e16c46a709ca8045cc6/fc2a6/big_picture_1.png 450w,
+/git-guide/static/bcbe119a02f52e16c46a709ca8045cc6/1cfc2/big_picture_1.png 900w,
+/git-guide/static/bcbe119a02f52e16c46a709ca8045cc6/416ee/big_picture_1.png 930w"
         sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -202,7 +202,7 @@ We will also be combining this flag with all previous flags to get the best over
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/aac4622827ac44710e87e0d26a1df06f/99072/git_graph_vscode.png"
+    href="/git-guide/static/aac4622827ac44710e87e0d26a1df06f/99072/git_graph_vscode.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -215,10 +215,10 @@ We will also be combining this flag with all previous flags to get the best over
         class="gatsby-resp-image-image"
         alt="Git graph looks like"
         title="Git graph looks like"
-        src="/static/aac4622827ac44710e87e0d26a1df06f/99072/git_graph_vscode.png"
-        srcset="/static/aac4622827ac44710e87e0d26a1df06f/3684f/git_graph_vscode.png 225w,
-/static/aac4622827ac44710e87e0d26a1df06f/fc2a6/git_graph_vscode.png 450w,
-/static/aac4622827ac44710e87e0d26a1df06f/99072/git_graph_vscode.png 842w"
+        src="/git-guide/static/aac4622827ac44710e87e0d26a1df06f/99072/git_graph_vscode.png"
+        srcset="/git-guide/static/aac4622827ac44710e87e0d26a1df06f/3684f/git_graph_vscode.png 225w,
+/git-guide/static/aac4622827ac44710e87e0d26a1df06f/fc2a6/git_graph_vscode.png 450w,
+/git-guide/static/aac4622827ac44710e87e0d26a1df06f/99072/git_graph_vscode.png 842w"
         sizes="(max-width: 842px) 100vw, 842px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -234,7 +234,7 @@ It is under <code>Insights</code> → <code>Network</code> in your respective Gi
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/645ce6cc45b29f602dbad8daf49a6966/3d405/github_graph.png"
+    href="/git-guide/static/645ce6cc45b29f602dbad8daf49a6966/3d405/github_graph.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -247,14 +247,14 @@ It is under <code>Insights</code> → <code>Network</code> in your respective Gi
         class="gatsby-resp-image-image"
         alt="Github graph"
         title="Github graph"
-        src="/static/645ce6cc45b29f602dbad8daf49a6966/1cfc2/github_graph.png"
-        srcset="/static/645ce6cc45b29f602dbad8daf49a6966/3684f/github_graph.png 225w,
-/static/645ce6cc45b29f602dbad8daf49a6966/fc2a6/github_graph.png 450w,
-/static/645ce6cc45b29f602dbad8daf49a6966/1cfc2/github_graph.png 900w,
-/static/645ce6cc45b29f602dbad8daf49a6966/3d405/github_graph.png 1348w"
+        src="/git-guide/static/645ce6cc45b29f602dbad8daf49a6966/1cfc2/github_graph.png"
+        srcset="/git-guide/static/645ce6cc45b29f602dbad8daf49a6966/3684f/github_graph.png 225w,
+/git-guide/static/645ce6cc45b29f602dbad8daf49a6966/fc2a6/github_graph.png 450w,
+/git-guide/static/645ce6cc45b29f602dbad8daf49a6966/1cfc2/github_graph.png 900w,
+/git-guide/static/645ce6cc45b29f602dbad8daf49a6966/3d405/github_graph.png 1348w"
         sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
       />
   </a>
-    </span></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/07-advanced-git/07-01-git-log/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-03394a6cb6649e9f37ba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/app-03394a6cb6649e9f37ba.js" async=""></script><script src="/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/webpack-runtime-3474f1558647ff02c280.js" async=""></script></body></html>
+    </span></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/07-advanced-git/07-01-git-log/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-bfafb2d29eac3f02890a.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/git-guide/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/git-guide/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/git-guide/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/git-guide/app-bfafb2d29eac3f02890a.js" async=""></script><script src="/git-guide/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/git-guide/webpack-runtime-78d3762e75c9669ecd81.js" async=""></script></body></html>

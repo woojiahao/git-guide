@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.04d0941a4fae9b863984.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3474f1558647ff02c280.js"/><link as="script" rel="preload" href="/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/app-03394a6cb6649e9f37ba.js"/><link as="script" rel="preload" href="/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/page-data/05-merge-conflicts/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/">Git Guide</a></h1><ul><li><a href="/01-setup/">Chapter 01 - Setup</a></li><li><a href="/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a aria-current="page" class="" href="/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a href="/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Merge conflicts</h1>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/git-guide/styles.8ab3bfd9c991aca83fbf.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em;overflow-y:auto}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/git-guide/webpack-runtime-78d3762e75c9669ecd81.js"/><link as="script" rel="preload" href="/git-guide/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/git-guide/app-bfafb2d29eac3f02890a.js"/><link as="script" rel="preload" href="/git-guide/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/git-guide/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/git-guide/page-data/05-merge-conflicts/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/git-guide/">Git Guide</a></h1><ul><li><a href="/git-guide/01-setup/">Chapter 01 - Setup</a></li><li><a href="/git-guide/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/git-guide/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/git-guide/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a aria-current="page" class="" href="/git-guide/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/git-guide/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a href="/git-guide/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/git-guide/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Merge conflicts</h1>
 <p>Merge conflicts occur when the same line of a file is modified by two sources and these sources are attempting to merge with one another. They often occur when the line change is made before the latest changes have been pulled.</p>
 <p>For example, the owner of the original repository changes the first line of <code>names.txt</code> to their favourite color, blue and pushes this change to the original repository. Then, member A also changes the first line of <code>names.txt</code> to their favourite color, red. However, this change is made before pulling from the <code>upstream</code>, thus causing a merge conflict at the first line.</p>
 <p>When member A tries to pull from <code>upstream</code>, they will encounter a merge conflict informing them that the same line in the file has been modified in two sources.</p>
@@ -14,7 +14,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/88434bb89c54f7d9af151ff8e1673c18/1b747/owner-pull.png"
+    href="/git-guide/static/88434bb89c54f7d9af151ff8e1673c18/1b747/owner-pull.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -27,10 +27,10 @@
         class="gatsby-resp-image-image"
         alt="git pull"
         title="git pull"
-        src="/static/88434bb89c54f7d9af151ff8e1673c18/1b747/owner-pull.png"
-        srcset="/static/88434bb89c54f7d9af151ff8e1673c18/3684f/owner-pull.png 225w,
-/static/88434bb89c54f7d9af151ff8e1673c18/fc2a6/owner-pull.png 450w,
-/static/88434bb89c54f7d9af151ff8e1673c18/1b747/owner-pull.png 679w"
+        src="/git-guide/static/88434bb89c54f7d9af151ff8e1673c18/1b747/owner-pull.png"
+        srcset="/git-guide/static/88434bb89c54f7d9af151ff8e1673c18/3684f/owner-pull.png 225w,
+/git-guide/static/88434bb89c54f7d9af151ff8e1673c18/fc2a6/owner-pull.png 450w,
+/git-guide/static/88434bb89c54f7d9af151ff8e1673c18/1b747/owner-pull.png 679w"
         sizes="(max-width: 679px) 100vw, 679px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -46,7 +46,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/9e78b226b4d9370422a6bfc7c89ba36d/3ddad/owner-change.png"
+    href="/git-guide/static/9e78b226b4d9370422a6bfc7c89ba36d/3ddad/owner-change.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -59,10 +59,10 @@
         class="gatsby-resp-image-image"
         alt="Owner changing the first line of text"
         title="Owner changing the first line of text"
-        src="/static/9e78b226b4d9370422a6bfc7c89ba36d/3ddad/owner-change.png"
-        srcset="/static/9e78b226b4d9370422a6bfc7c89ba36d/3684f/owner-change.png 225w,
-/static/9e78b226b4d9370422a6bfc7c89ba36d/fc2a6/owner-change.png 450w,
-/static/9e78b226b4d9370422a6bfc7c89ba36d/3ddad/owner-change.png 545w"
+        src="/git-guide/static/9e78b226b4d9370422a6bfc7c89ba36d/3ddad/owner-change.png"
+        srcset="/git-guide/static/9e78b226b4d9370422a6bfc7c89ba36d/3684f/owner-change.png 225w,
+/git-guide/static/9e78b226b4d9370422a6bfc7c89ba36d/fc2a6/owner-change.png 450w,
+/git-guide/static/9e78b226b4d9370422a6bfc7c89ba36d/3ddad/owner-change.png 545w"
         sizes="(max-width: 545px) 100vw, 545px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -78,7 +78,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/9602fa95669e843019aacf0d7ba2a18a/a805e/member-change.png"
+    href="/git-guide/static/9602fa95669e843019aacf0d7ba2a18a/a805e/member-change.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -91,10 +91,10 @@
         class="gatsby-resp-image-image"
         alt="Member A&#39;s modification"
         title="Member A&#39;s modification"
-        src="/static/9602fa95669e843019aacf0d7ba2a18a/a805e/member-change.png"
-        srcset="/static/9602fa95669e843019aacf0d7ba2a18a/3684f/member-change.png 225w,
-/static/9602fa95669e843019aacf0d7ba2a18a/fc2a6/member-change.png 450w,
-/static/9602fa95669e843019aacf0d7ba2a18a/a805e/member-change.png 572w"
+        src="/git-guide/static/9602fa95669e843019aacf0d7ba2a18a/a805e/member-change.png"
+        srcset="/git-guide/static/9602fa95669e843019aacf0d7ba2a18a/3684f/member-change.png 225w,
+/git-guide/static/9602fa95669e843019aacf0d7ba2a18a/fc2a6/member-change.png 450w,
+/git-guide/static/9602fa95669e843019aacf0d7ba2a18a/a805e/member-change.png 572w"
         sizes="(max-width: 572px) 100vw, 572px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -110,7 +110,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/f6ddb1c24a43e3d8be1115ccf62c1110/bca35/merge-conflict-warning.png"
+    href="/git-guide/static/f6ddb1c24a43e3d8be1115ccf62c1110/bca35/merge-conflict-warning.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -123,10 +123,10 @@
         class="gatsby-resp-image-image"
         alt="git pull merge conflict error"
         title="git pull merge conflict error"
-        src="/static/f6ddb1c24a43e3d8be1115ccf62c1110/bca35/merge-conflict-warning.png"
-        srcset="/static/f6ddb1c24a43e3d8be1115ccf62c1110/3684f/merge-conflict-warning.png 225w,
-/static/f6ddb1c24a43e3d8be1115ccf62c1110/fc2a6/merge-conflict-warning.png 450w,
-/static/f6ddb1c24a43e3d8be1115ccf62c1110/bca35/merge-conflict-warning.png 683w"
+        src="/git-guide/static/f6ddb1c24a43e3d8be1115ccf62c1110/bca35/merge-conflict-warning.png"
+        srcset="/git-guide/static/f6ddb1c24a43e3d8be1115ccf62c1110/3684f/merge-conflict-warning.png 225w,
+/git-guide/static/f6ddb1c24a43e3d8be1115ccf62c1110/fc2a6/merge-conflict-warning.png 450w,
+/git-guide/static/f6ddb1c24a43e3d8be1115ccf62c1110/bca35/merge-conflict-warning.png 683w"
         sizes="(max-width: 683px) 100vw, 683px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -142,7 +142,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/c7913a230f7a1ba5a9a1b020bb045c2b/6e6fb/gst.png"
+    href="/git-guide/static/c7913a230f7a1ba5a9a1b020bb045c2b/6e6fb/gst.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -155,10 +155,10 @@
         class="gatsby-resp-image-image"
         alt="View the files with conflict"
         title="View the files with conflict"
-        src="/static/c7913a230f7a1ba5a9a1b020bb045c2b/6e6fb/gst.png"
-        srcset="/static/c7913a230f7a1ba5a9a1b020bb045c2b/3684f/gst.png 225w,
-/static/c7913a230f7a1ba5a9a1b020bb045c2b/fc2a6/gst.png 450w,
-/static/c7913a230f7a1ba5a9a1b020bb045c2b/6e6fb/gst.png 618w"
+        src="/git-guide/static/c7913a230f7a1ba5a9a1b020bb045c2b/6e6fb/gst.png"
+        srcset="/git-guide/static/c7913a230f7a1ba5a9a1b020bb045c2b/3684f/gst.png 225w,
+/git-guide/static/c7913a230f7a1ba5a9a1b020bb045c2b/fc2a6/gst.png 450w,
+/git-guide/static/c7913a230f7a1ba5a9a1b020bb045c2b/6e6fb/gst.png 618w"
         sizes="(max-width: 618px) 100vw, 618px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -187,7 +187,7 @@ Andrew Ng
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/e1f6f65cc87e2ea34d2b43864a57e345/af590/fix-mc.png"
+    href="/git-guide/static/e1f6f65cc87e2ea34d2b43864a57e345/af590/fix-mc.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -200,10 +200,10 @@ Andrew Ng
         class="gatsby-resp-image-image"
         alt="Fix merge conlict and commit"
         title="Fix merge conlict and commit"
-        src="/static/e1f6f65cc87e2ea34d2b43864a57e345/af590/fix-mc.png"
-        srcset="/static/e1f6f65cc87e2ea34d2b43864a57e345/3684f/fix-mc.png 225w,
-/static/e1f6f65cc87e2ea34d2b43864a57e345/fc2a6/fix-mc.png 450w,
-/static/e1f6f65cc87e2ea34d2b43864a57e345/af590/fix-mc.png 626w"
+        src="/git-guide/static/e1f6f65cc87e2ea34d2b43864a57e345/af590/fix-mc.png"
+        srcset="/git-guide/static/e1f6f65cc87e2ea34d2b43864a57e345/3684f/fix-mc.png 225w,
+/git-guide/static/e1f6f65cc87e2ea34d2b43864a57e345/fc2a6/fix-mc.png 450w,
+/git-guide/static/e1f6f65cc87e2ea34d2b43864a57e345/af590/fix-mc.png 626w"
         sizes="(max-width: 626px) 100vw, 626px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -216,4 +216,4 @@ Andrew Ng
 <h1>Final words</h1>
 <p>Congratulations! You have come to the end of the core chapters for this guide!</p>
 <p>To learn more about advanced topics, please refer to the GitHub repository for this guide <a href="https://github.com/woojiahao/git-guide">here.</a> More topics and erratas will be released there over time.</p>
-<p>I wish you the best of luck in your journey to mastering Git!</p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/05-merge-conflicts/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-03394a6cb6649e9f37ba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/app-03394a6cb6649e9f37ba.js" async=""></script><script src="/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/webpack-runtime-3474f1558647ff02c280.js" async=""></script></body></html>
+<p>I wish you the best of luck in your journey to mastering Git!</p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/05-merge-conflicts/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-bfafb2d29eac3f02890a.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/git-guide/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/git-guide/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/git-guide/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/git-guide/app-bfafb2d29eac3f02890a.js" async=""></script><script src="/git-guide/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/git-guide/webpack-runtime-78d3762e75c9669ecd81.js" async=""></script></body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.04d0941a4fae9b863984.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3474f1558647ff02c280.js"/><link as="script" rel="preload" href="/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/app-03394a6cb6649e9f37ba.js"/><link as="script" rel="preload" href="/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/page-data/02-first-repository/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/">Git Guide</a></h1><ul><li><a href="/01-setup/">Chapter 01 - Setup</a></li><li><a aria-current="page" class="" href="/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a href="/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Creating your first repository</h1>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/git-guide/styles.8ab3bfd9c991aca83fbf.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em;overflow-y:auto}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/git-guide/webpack-runtime-78d3762e75c9669ecd81.js"/><link as="script" rel="preload" href="/git-guide/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/git-guide/app-bfafb2d29eac3f02890a.js"/><link as="script" rel="preload" href="/git-guide/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/git-guide/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/git-guide/page-data/02-first-repository/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/git-guide/">Git Guide</a></h1><ul><li><a href="/git-guide/01-setup/">Chapter 01 - Setup</a></li><li><a aria-current="page" class="" href="/git-guide/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/git-guide/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/git-guide/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/git-guide/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/git-guide/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a href="/git-guide/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/git-guide/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Creating your first repository</h1>
 <p>Now that you have set up your environment, you are ready to start learning Git.</p>
 <p>In this chapter, you will be learning the basic ideas surrounding Git and start using Git.</p>
 <h2>Pre-requisite concepts</h2>
@@ -29,7 +29,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/4efd185553ea42639ba24aded39cc6f4/3684f/new-repository-option.png"
+    href="/git-guide/static/4efd185553ea42639ba24aded39cc6f4/3684f/new-repository-option.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -42,8 +42,8 @@
         class="gatsby-resp-image-image"
         alt="New repository option in GitHub"
         title="New repository option in GitHub"
-        src="/static/4efd185553ea42639ba24aded39cc6f4/3684f/new-repository-option.png"
-        srcset="/static/4efd185553ea42639ba24aded39cc6f4/3684f/new-repository-option.png 225w"
+        src="/git-guide/static/4efd185553ea42639ba24aded39cc6f4/3684f/new-repository-option.png"
+        srcset="/git-guide/static/4efd185553ea42639ba24aded39cc6f4/3684f/new-repository-option.png 225w"
         sizes="(max-width: 225px) 100vw, 225px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -59,7 +59,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/a71ed72bda941a68186074c5abc7ee56/29114/new-repository-page.png"
+    href="/git-guide/static/a71ed72bda941a68186074c5abc7ee56/29114/new-repository-page.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -72,13 +72,13 @@
         class="gatsby-resp-image-image"
         alt="New repository page in GitHub"
         title="New repository page in GitHub"
-        src="/static/a71ed72bda941a68186074c5abc7ee56/1cfc2/new-repository-page.png"
-        srcset="/static/a71ed72bda941a68186074c5abc7ee56/3684f/new-repository-page.png 225w,
-/static/a71ed72bda941a68186074c5abc7ee56/fc2a6/new-repository-page.png 450w,
-/static/a71ed72bda941a68186074c5abc7ee56/1cfc2/new-repository-page.png 900w,
-/static/a71ed72bda941a68186074c5abc7ee56/21482/new-repository-page.png 1350w,
-/static/a71ed72bda941a68186074c5abc7ee56/d61c2/new-repository-page.png 1800w,
-/static/a71ed72bda941a68186074c5abc7ee56/29114/new-repository-page.png 1920w"
+        src="/git-guide/static/a71ed72bda941a68186074c5abc7ee56/1cfc2/new-repository-page.png"
+        srcset="/git-guide/static/a71ed72bda941a68186074c5abc7ee56/3684f/new-repository-page.png 225w,
+/git-guide/static/a71ed72bda941a68186074c5abc7ee56/fc2a6/new-repository-page.png 450w,
+/git-guide/static/a71ed72bda941a68186074c5abc7ee56/1cfc2/new-repository-page.png 900w,
+/git-guide/static/a71ed72bda941a68186074c5abc7ee56/21482/new-repository-page.png 1350w,
+/git-guide/static/a71ed72bda941a68186074c5abc7ee56/d61c2/new-repository-page.png 1800w,
+/git-guide/static/a71ed72bda941a68186074c5abc7ee56/29114/new-repository-page.png 1920w"
         sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -104,7 +104,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
+    href="/git-guide/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -117,10 +117,10 @@
         class="gatsby-resp-image-image"
         alt="New repository settings"
         title="New repository settings"
-        src="/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
-        srcset="/static/4e34bc97f68c237502def4edac0067e0/3684f/new-repository-details.png 225w,
-/static/4e34bc97f68c237502def4edac0067e0/fc2a6/new-repository-details.png 450w,
-/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png 776w"
+        src="/git-guide/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
+        srcset="/git-guide/static/4e34bc97f68c237502def4edac0067e0/3684f/new-repository-details.png 225w,
+/git-guide/static/4e34bc97f68c237502def4edac0067e0/fc2a6/new-repository-details.png 450w,
+/git-guide/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png 776w"
         sizes="(max-width: 776px) 100vw, 776px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -139,7 +139,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/1525bc2bb32562857f70858a89bbb063/78e79/cd.png"
+    href="/git-guide/static/1525bc2bb32562857f70858a89bbb063/78e79/cd.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -152,9 +152,9 @@
         class="gatsby-resp-image-image"
         alt="cd"
         title="cd"
-        src="/static/1525bc2bb32562857f70858a89bbb063/78e79/cd.png"
-        srcset="/static/1525bc2bb32562857f70858a89bbb063/3684f/cd.png 225w,
-/static/1525bc2bb32562857f70858a89bbb063/78e79/cd.png 265w"
+        src="/git-guide/static/1525bc2bb32562857f70858a89bbb063/78e79/cd.png"
+        srcset="/git-guide/static/1525bc2bb32562857f70858a89bbb063/3684f/cd.png 225w,
+/git-guide/static/1525bc2bb32562857f70858a89bbb063/78e79/cd.png 265w"
         sizes="(max-width: 265px) 100vw, 265px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -171,7 +171,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/b9d54015ad06f4c56c1b1cb38704c4df/29114/new-repository-created.png"
+    href="/git-guide/static/b9d54015ad06f4c56c1b1cb38704c4df/29114/new-repository-created.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -184,13 +184,13 @@
         class="gatsby-resp-image-image"
         alt="New repository created"
         title="New repository created"
-        src="/static/b9d54015ad06f4c56c1b1cb38704c4df/1cfc2/new-repository-created.png"
-        srcset="/static/b9d54015ad06f4c56c1b1cb38704c4df/3684f/new-repository-created.png 225w,
-/static/b9d54015ad06f4c56c1b1cb38704c4df/fc2a6/new-repository-created.png 450w,
-/static/b9d54015ad06f4c56c1b1cb38704c4df/1cfc2/new-repository-created.png 900w,
-/static/b9d54015ad06f4c56c1b1cb38704c4df/21482/new-repository-created.png 1350w,
-/static/b9d54015ad06f4c56c1b1cb38704c4df/d61c2/new-repository-created.png 1800w,
-/static/b9d54015ad06f4c56c1b1cb38704c4df/29114/new-repository-created.png 1920w"
+        src="/git-guide/static/b9d54015ad06f4c56c1b1cb38704c4df/1cfc2/new-repository-created.png"
+        srcset="/git-guide/static/b9d54015ad06f4c56c1b1cb38704c4df/3684f/new-repository-created.png 225w,
+/git-guide/static/b9d54015ad06f4c56c1b1cb38704c4df/fc2a6/new-repository-created.png 450w,
+/git-guide/static/b9d54015ad06f4c56c1b1cb38704c4df/1cfc2/new-repository-created.png 900w,
+/git-guide/static/b9d54015ad06f4c56c1b1cb38704c4df/21482/new-repository-created.png 1350w,
+/git-guide/static/b9d54015ad06f4c56c1b1cb38704c4df/d61c2/new-repository-created.png 1800w,
+/git-guide/static/b9d54015ad06f4c56c1b1cb38704c4df/29114/new-repository-created.png 1920w"
         sizes="(max-width: 900px) 100vw, 900px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -207,7 +207,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/3719374707eb3b10519ac8c9bd94bac1/c67d4/clone.png"
+    href="/git-guide/static/3719374707eb3b10519ac8c9bd94bac1/c67d4/clone.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -220,10 +220,10 @@
         class="gatsby-resp-image-image"
         alt="git clone"
         title="git clone"
-        src="/static/3719374707eb3b10519ac8c9bd94bac1/c67d4/clone.png"
-        srcset="/static/3719374707eb3b10519ac8c9bd94bac1/3684f/clone.png 225w,
-/static/3719374707eb3b10519ac8c9bd94bac1/fc2a6/clone.png 450w,
-/static/3719374707eb3b10519ac8c9bd94bac1/c67d4/clone.png 723w"
+        src="/git-guide/static/3719374707eb3b10519ac8c9bd94bac1/c67d4/clone.png"
+        srcset="/git-guide/static/3719374707eb3b10519ac8c9bd94bac1/3684f/clone.png 225w,
+/git-guide/static/3719374707eb3b10519ac8c9bd94bac1/fc2a6/clone.png 450w,
+/git-guide/static/3719374707eb3b10519ac8c9bd94bac1/c67d4/clone.png 723w"
         sizes="(max-width: 723px) 100vw, 723px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -241,7 +241,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/2b477c3e544b176575260940e5a43601/5a428/cd-clone.png"
+    href="/git-guide/static/2b477c3e544b176575260940e5a43601/5a428/cd-clone.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -254,9 +254,9 @@
         class="gatsby-resp-image-image"
         alt="cd into repository"
         title="cd into repository"
-        src="/static/2b477c3e544b176575260940e5a43601/5a428/cd-clone.png"
-        srcset="/static/2b477c3e544b176575260940e5a43601/3684f/cd-clone.png 225w,
-/static/2b477c3e544b176575260940e5a43601/5a428/cd-clone.png 437w"
+        src="/git-guide/static/2b477c3e544b176575260940e5a43601/5a428/cd-clone.png"
+        srcset="/git-guide/static/2b477c3e544b176575260940e5a43601/3684f/cd-clone.png 225w,
+/git-guide/static/2b477c3e544b176575260940e5a43601/5a428/cd-clone.png 437w"
         sizes="(max-width: 437px) 100vw, 437px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -283,7 +283,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/90cbd/init.png"
+    href="/git-guide/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/90cbd/init.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -296,10 +296,10 @@
         class="gatsby-resp-image-image"
         alt="git init"
         title="git init"
-        src="/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/90cbd/init.png"
-        srcset="/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/3684f/init.png 225w,
-/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/fc2a6/init.png 450w,
-/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/90cbd/init.png 605w"
+        src="/git-guide/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/90cbd/init.png"
+        srcset="/git-guide/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/3684f/init.png 225w,
+/git-guide/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/fc2a6/init.png 450w,
+/git-guide/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/90cbd/init.png 605w"
         sizes="(max-width: 605px) 100vw, 605px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -316,7 +316,7 @@
     >
       <a
     class="gatsby-resp-image-link"
-    href="/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
+    href="/git-guide/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
     style="display: block"
     target="_blank"
     rel="noopener"
@@ -329,10 +329,10 @@
         class="gatsby-resp-image-image"
         alt="New repository settings"
         title="New repository settings"
-        src="/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
-        srcset="/static/4e34bc97f68c237502def4edac0067e0/3684f/new-repository-details.png 225w,
-/static/4e34bc97f68c237502def4edac0067e0/fc2a6/new-repository-details.png 450w,
-/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png 776w"
+        src="/git-guide/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
+        srcset="/git-guide/static/4e34bc97f68c237502def4edac0067e0/3684f/new-repository-details.png 225w,
+/git-guide/static/4e34bc97f68c237502def4edac0067e0/fc2a6/new-repository-details.png 450w,
+/git-guide/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png 776w"
         sizes="(max-width: 776px) 100vw, 776px"
         style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
         loading="lazy"
@@ -379,4 +379,4 @@ git push -u origin master
 </tbody>
 </table>
 <p>Note that it is completely possible to use the local repository first pattern to create brand new projects. The use case mentioned above is the slightly more common approach to using the pattern.</p>
-<p><a href="../03-first-commit/README.md">Next</a></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/02-first-repository/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-03394a6cb6649e9f37ba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/app-03394a6cb6649e9f37ba.js" async=""></script><script src="/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/webpack-runtime-3474f1558647ff02c280.js" async=""></script></body></html>
+<p><a href="../03-first-commit/README.md">Next</a></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/02-first-repository/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-bfafb2d29eac3f02890a.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/git-guide/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/git-guide/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/git-guide/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/git-guide/app-bfafb2d29eac3f02890a.js" async=""></script><script src="/git-guide/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/git-guide/webpack-runtime-78d3762e75c9669ecd81.js" async=""></script></body></html>
