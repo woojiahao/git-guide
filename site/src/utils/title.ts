@@ -8,6 +8,8 @@ const capitalize = (s: string): string => {
 
 const createTitle = (slug: string): string => {
 
+  console.log(slug)
+
   if (!chapterTitleRegex.test(slug)) {
     throw new Error(`Markdown is not a chapter!`)
   }
