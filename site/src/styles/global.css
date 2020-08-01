@@ -30,3 +30,9 @@ p, ol, ol li, ul, ul li, pre {
 pre code {
   white-space: pre-wrap;
 }
+
+pre {
+  padding: 1em;
+  background-color: #fdfffc;
+  border-radius: 5px;
+}
