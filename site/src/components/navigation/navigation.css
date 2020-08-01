@@ -2,3 +2,7 @@
   background-color: var(--white);
   padding: 2em;
 }
+
+.navigation h1 {
+  text-align: center;
+}
