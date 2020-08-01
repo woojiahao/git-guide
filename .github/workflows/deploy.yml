@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node_version }}
 
       - name: Copy chapters to /site/content/
-        run: chmod +x copy-chapters.sh && bash copy-chapters.sh
+        run: chmod +x copy-chapters.sh && bash copy-chapters.sh && ls ./site/content/
 
       - name: Installing Gatsby CLI
         working-directory: ${{ env.SITE_DIR }}
