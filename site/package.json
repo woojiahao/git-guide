@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "Git Guide",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "An introduction to the Git version control system designed for Singapore Polytechnic's DIT SEP module.",
   "version": "0.1.0",
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -11,7 +11,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build && gh-pages -d public -b gh-pages -r https://$GH_TOKEN@github.com/woojiahao/git-guide"
   },
   "dependencies": {
     "gatsby": "^2.23.12",
@@ -20,6 +21,7 @@
     "gatsby-remark-images": "^3.3.23",
     "gatsby-source-filesystem": "^2.3.23",
     "gatsby-transformer-remark": "^2.8.27",
+    "gh-pages": "^3.1.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -28,9 +30,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/woojiahao/git-guide"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/woojiahao/git-guide/issues"
   }
 }
