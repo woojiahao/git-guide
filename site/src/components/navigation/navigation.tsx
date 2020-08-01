@@ -5,7 +5,7 @@ import "./navigation.css"
 const Navigation: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: fields___slug, order: ASC }) {
         edges {
           node {
             fields {
@@ -19,9 +19,8 @@ const Navigation: React.FC = () => {
 
   return (
     <aside className="navigation">
-      <h1>Git Guide</h1>
+      <h1><Link to="/">Git Guide</Link></h1>
       <ul>
-        <li><Link to="/">Home</Link></li>
         {allMarkdownRemark.edges.map(({node}) => <li><Link to={node.fields.slug}>{node.fields.slug}</Link></li>)}
       </ul>
     </aside>
