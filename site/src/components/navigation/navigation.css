@@ -1,6 +1,7 @@
 .navigation {
   background-color: var(--white);
   padding: 2em;
+  overflow-y: auto;
 }
 
 .navigation h1 {

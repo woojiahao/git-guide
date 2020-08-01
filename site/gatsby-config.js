@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `git-guide`,
   plugins: [
     `gatsby-plugin-sharp`,
     {
