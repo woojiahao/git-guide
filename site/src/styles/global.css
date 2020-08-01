@@ -16,6 +16,8 @@ body {
   --bg: #eae6e5;
   --fg: #12130f;
   --white: #fdfffc;
+  --subtitle: #7c809b;
+  --link: #1282a2;
 
   font-family: var(--body-font);
   font-size: var(--font-size);
@@ -52,4 +54,13 @@ pre code {
 
 pre {
   padding: 1em;
+}
+
+a {
+   color: var(--link);
+}
+
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+  color: var(--fg);
+  text-decoration: none;
 }
