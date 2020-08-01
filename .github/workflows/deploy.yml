@@ -26,14 +26,14 @@ jobs:
           node-version: ${{ matrix.node_version }}
 
       - name: Copy chapters to /site/content/
-        run: chmod +x copy-chapters.sh && bash copy-chapters.sh && ls ./site/content/chapters/
+        run: chmod +x copy-chapters.sh && bash copy-chapters.sh
 
       - name: Installing Gatsby 
         working-directory: ${{ env.SITE_DIR }}
-        run: ls && npm install -g gatsby
+        run: npm i --save gatsby
 
       - name: Deploy the site
         working-directory: ${{ env.SITE_DIR }}
-        run: npm run deploy
+        run: pwd && npm run deploy
         env: 
           GH_TOKEN: ${{ env.GH_TOKEN }}
