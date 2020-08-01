@@ -30,7 +30,7 @@ jobs:
 
       - name: Installing Gatsby CLI
         working-directory: ${{ env.SITE_DIR }}
-        run: ls && npm install -g gatsby-cli && npm install --no-optional
+        run: ls && npm install -g gatsby-cli
 
       - name: Deploy the site
         working-directory: ${{ env.SITE_DIR }}
