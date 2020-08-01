@@ -1,12 +1,25 @@
 module.exports = {
   plugins: [
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 900
+            }
+          }
+        ]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `chapters`,
-        path: `${__dirname}/content/chapters/`,
-      },
-    },
-    `gatsby-transformer-remark`,
-  ],
+        path: `${__dirname}/content/chapters/`
+      }
+    }
+  ]
 }
