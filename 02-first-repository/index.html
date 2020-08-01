@@ -1,0 +1,382 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.04d0941a4fae9b863984.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3474f1558647ff02c280.js"/><link as="script" rel="preload" href="/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/app-03394a6cb6649e9f37ba.js"/><link as="script" rel="preload" href="/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/page-data/02-first-repository/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/">Git Guide</a></h1><ul><li><a href="/01-setup/">Chapter 01 - Setup</a></li><li><a aria-current="page" class="" href="/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a href="/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Creating your first repository</h1>
+<p>Now that you have set up your environment, you are ready to start learning Git.</p>
+<p>In this chapter, you will be learning the basic ideas surrounding Git and start using Git.</p>
+<h2>Pre-requisite concepts</h2>
+<h3>Git</h3>
+<p>Simply put, Git is a <a href="https://www.atlassian.com/git/tutorials/what-is-version-control#:~:text=Version%20control%20systems%20are%20a,a%20special%20kind%20of%20database.">version control system</a>. According to the article, a version control system is</p>
+<blockquote>
+<p>... a category of software tools that help a software team manage changes to source code over time. Version control software keeps track of every modification to the code in a special database</p>
+</blockquote>
+<p>Git is not the first version control system but it is one of the most commonly used ones at present time. Other version control systems include <a href="https://subversion.apache.org/">SVN</a> and <a href="https://www.mercurial-scm.org/">Mercurial.</a></p>
+<p>A version control system tracks the "history" of changes to a piece of code over time. Git, in particular, is well-known as it allows developers to collaborate and work on a codebase without an active connection to a central code repository.</p>
+<p>However, in order for collaboration to happen, Git requires a remote server to store this code history. There are plenty of free options available - one of which being Github which we will explore later.</p>
+<p>There are also ways to create your own Git remote server (<a href="https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server">more details</a>).</p>
+<h3>GitHub</h3>
+<p>GitHub is a company that provides hosting for Git. This means that any code uploaded to the Git server is managed and maintained by GitHub.</p>
+<p>GitHub is one of the most popular version control sites out there. Other options include <a href="https://about.gitlab.com/">GitLab</a> and <a href="https://bitbucket.org/">BitBucket.</a></p>
+<p>With the basic terminology out of the way, let's get into creating your first repository.</p>
+<h2>First repository</h2>
+<p>There are two ways to create a repository. There are specific use cases for either and it's best that you are familiar with them.</p>
+<p><strong>Note*</strong> when following along with the guide, execute the code in the first method (GitHub first).</p>
+<h3>GitHub first</h3>
+<p>In "GitHub first", the repository is created on GitHub (creating a remote repository first) before it is made available on your local machine (Do not worry about the remote vs local idea for now, this will be explained in chapter 3).</p>
+<ol>
+<li>
+<p>Login to GitHub and in the top-right corner of the menu bar, you should see a drop-down. Expand it and you will see an option for a "New Repository". Select this option.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 225px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4efd185553ea42639ba24aded39cc6f4/3684f/new-repository-option.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 89.77777777777777%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADCElEQVQ4y5WSSUwTURjHx5MxetHExERTFQRrLQNoJETAuF0MxuViop40Rg+AEbeo0RskJsYNoyev3oxiXAqCiRtKa2mdtrRTSqdM9w4MdObNTGfpzPjREtwT/fKbydv+79setm4D/l9Ub6yrWG+vtOLVthqsylY7T4UVX2vFK/7Cmmp7zebG3Xv2N7bsrKrZcqh1G2aptJZZvc5qs1lxuw2v+TP2jRtqcfuBfa11dfjKivV19TjW0LS9oWnHlq3bmnftbb/xuPPe67Zbr07fdZzpcbTfcXSUgEFnT9+F+/3Aw0Gq8/az5t17Nze2YOnsZCo7mWOYr5HssrNU5dV4w/Vk1bW45fJEbVcC70rUdyc3dSctl+mFbdFFHVHsJLn8HOUMZSYZBlM0XdEMXdcjabT4GLHkVMBykay8RNquja+9FFl1PrSiM2i5QC5tD2KHvy44SmBHiCXHff44b5o6pumGrOmqpk9x0kAQ9XryzwPKgyeugyeuPBpiXvjEXi//1MO9JFD/qNAXQI4AGhhFWRZJBRnrf/PhlaMfGHw3ZJpmLh0PEa63b/ru99yMhX1BwkWRvoB3OBzwJOmoWTbD4AUBiTI2RtFRaiIyTkUoWlY1CIQXJLGgwBlNK07neQ6JeV6A/wyHYBdQijqsCJKMGaW71KIBExhMsWw2x/A84jgOqqiqqvmb6YaRRyVxPJUOj8d4UQYnsJFMpj4PO0eDoRGPd9jp4nm+FOac/SoOjUXcXr8gq0iUoObmP9h3MZ3IxOgkRSfGojHYiEapT8NOkgxP0LR7xPvFPUIQfn9g1Olyk+ExpZQF+JgTJ9K5eCqTYaZSWQaulGUZUmVZlkcoHk9AFuxsFXKZbJZlp4vF4k9ipdRkSVZ5QTRMQxRFSZKgToqiFgoyuILpL+l8DxtkAIygE7ARm6A/Dn0mfP5giPzi9rz/MBQiSUVRymWbF3NlMXwAEgszeQSNnT00G5ihwUTXIU7QwPRHtGIRPPFCYd6zAs8AujXJ5ueY5sowbP5HYIWdfTkSSL4BJGEfISzN6SwAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="New repository option in GitHub"
+        title="New repository option in GitHub"
+        src="/static/4efd185553ea42639ba24aded39cc6f4/3684f/new-repository-option.png"
+        srcset="/static/4efd185553ea42639ba24aded39cc6f4/3684f/new-repository-option.png 225w"
+        sizes="(max-width: 225px) 100vw, 225px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+</li>
+<li>
+<p>You will be brought to a page where you can "customise your repository". You will have options to customise the following:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a71ed72bda941a68186074c5abc7ee56/29114/new-repository-page.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsSAAALEgHS3X78AAAAzklEQVQoz5WSjQ6DIAyEff/nXBa36BARQf5uBSOiUTcbv5DYct41VjipQFgPeO9xpyrnHGyJtYjvhBAYBomeznFUmIyBMROMNakf546oQgjYEysKso5D6wlK6YRUEqMecXRnodrELAQVCQ1SJjeGvhyJ8WN7mSnnc+S9WBakmOzDwDlPbmex4zSl6KlD1nd4vms0bYuOC6x3to4uHeaTnpds8BB1jrjgfCC3xC+HZdOmfSFh3SoWRSYbYNzMX5HLPzHgfPm3Ih8t/qpXznwB4VUXuS2ot8sAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="New repository page in GitHub"
+        title="New repository page in GitHub"
+        src="/static/a71ed72bda941a68186074c5abc7ee56/1cfc2/new-repository-page.png"
+        srcset="/static/a71ed72bda941a68186074c5abc7ee56/3684f/new-repository-page.png 225w,
+/static/a71ed72bda941a68186074c5abc7ee56/fc2a6/new-repository-page.png 450w,
+/static/a71ed72bda941a68186074c5abc7ee56/1cfc2/new-repository-page.png 900w,
+/static/a71ed72bda941a68186074c5abc7ee56/21482/new-repository-page.png 1350w,
+/static/a71ed72bda941a68186074c5abc7ee56/d61c2/new-repository-page.png 1800w,
+/static/a71ed72bda941a68186074c5abc7ee56/29114/new-repository-page.png 1920w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><strong>Note*</strong> For the guide, we will be using the terms repository and project interchangeably.</p>
+<ol>
+<li>Repository name (mandatory)</li>
+<li>Repository description (optional)</li>
+<li>Private vs public repository (mandatory, public by default)</li>
+<li>README file (optional)</li>
+<li>License (optional)</li>
+<li>.gitignore (optional)</li>
+</ol>
+<p>This chapter will explain the first three concepts.</p>
+<p>Every time you wish to start a new project, you will create a new repository on GitHub. The repository's name is the name of the project that you will be working on. This can be any name that you wish to give it. However, common convention often has repository names using <a href="https://wprock.fr/en/blog/conventions-nommage-programmation/#Conventions-Le-Kebab-case-ou-Spinal-case">kebab naming convetion</a> or <a href="https://wprock.fr/en/blog/conventions-nommage-programmation/#Conventions-Le-Pascal-case">pascal naming convention.</a> For this guide, the project name chosen will be <code>learning-git</code>, but you can choose anything.</p>
+<p>The project's description is used to provide a brief description of what the project is about. For now, you can choose to leave this alone.</p>
+<p>Lastly, you can specify if the project is publicly-accessible or privately-accessible. For school projects or personal projects that you wish to keep under wraps, you can set the repository to private. This means that no one can view your repository unless you explicitly give them permission to do so. For open-source projects, you can set the repository to public so that other developers can view your code and use it. For this guide, this selection does not matter.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 776px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 84.44444444444446%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABtUlEQVQ4y41Ty47UMBDMp3NE2uOeOPAzSOxKgIA7YhcmjpNxno7jR+LHUHYmELRhRKnldCdxd3W7nEkpC0JY3QBVdSakoGW1LPZyGyEu2SR1TlnJetZ0bdsyVrddPwx8mqSYsGCVQggZnUmkV1yINXumbeikq8dFaPcnbwjO+2Ruc5K5a4gf4uYFSeyVJHyllNZ6NuYfXMM+zkY+/Hz61vVcSjVJ9f35+ceJjKPw4eJ8MG5eixwiM1qxqqzOrGlis+i4blp4sKbrz4wNEbzp63NHq7bQRu8qC0EIres4J9D2Ce437Pa0drGLWcyeSIav2pjFunmO7cM5NOv81fBnDON0M9RBjANAHF7ikmyD33/BZlDqBw5lgL/WRqorMD+ESJoijRoHAxNzkHLCYDgXIA3u8wb0ua9zsBmcjYkVUEMmi47SmLA288b7wJLClMpJUULWrC4ToG28iUd9RPWvyouzhBaEUlheUCQpihKb0SdUDSne2gzBOe289lZFkSpt0r3gI+6D8eF25Xws350+PhZf3+efezXGXKv8fVj1f6vnB/rl1cP93ae3rz+8OY10vVKX/8MvnGDalR7Bqe8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="New repository settings"
+        title="New repository settings"
+        src="/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
+        srcset="/static/4e34bc97f68c237502def4edac0067e0/3684f/new-repository-details.png 225w,
+/static/4e34bc97f68c237502def4edac0067e0/fc2a6/new-repository-details.png 450w,
+/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png 776w"
+        sizes="(max-width: 776px) 100vw, 776px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+</li>
+<li>
+<p>Now that you have created a project on GitHub, you can then create a local copy of this project on your local machine. Open your terminal and navigate to a folder where you wish to store your project. For now, we will store all projects in a <code>Projects/</code> folder found on your user directory (<code>/home/&#x3C;user></code> for unix-based systems and <code>C:\Users\&#x3C;user>\</code> for Windows).</p>
+<p><strong>Note*</strong> If you are unfamiliar with using the terminal, a quick guide on the basic commands used in this guide can be found in <a href="../08-bash-tutorial/README.md">chapter 8</a> so if you need to, quickly jump over to familiarise yourself with them.</p>
+<pre><code class="language-bash">cd ~/Projects/
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 265px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/1525bc2bb32562857f70858a89bbb063/78e79/cd.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 38.22222222222222%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABQ0lEQVQY01WQ226DMAyG+yi7oEDIiZwgIUBhXVFpVbqtnXbUJu0BdrXrPfvcwipN+mQ5v+3kj2eYGWWc0tbkLqEZ5QVlDvEcwNwkPOOqxCyDBKcW8zzheUxUTDQwq+vq83Xzduhejp2RpZJLLVpmauxad12Zuirb7XJ929zsus2hXQ3NakBUT8OIGjgk7BxpdiaPsYqxhhJ0UOmEqVXeQGSy4NKP+mk4TNQcqRC6iYqIRkRHREE5xCLCoEtIwkRGpzaR6pKkNsJ/tn1Zfjz1z3fd4/1KiVKJ1pq+9w8+6xs7LN1+YXeLfCvVYp5VX98/++P7VUDGx2epsoX3vvDOFYxbygrKHeOFELWWjUwrxuHGBsQgkZvhyS/WQZxOw2A7QBPgJyITYDg6eZ7iuOE5SuELo+dxYfrCRT1jEDH/FX1Z1cgv5Mlg8dOkuXMAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="cd"
+        title="cd"
+        src="/static/1525bc2bb32562857f70858a89bbb063/78e79/cd.png"
+        srcset="/static/1525bc2bb32562857f70858a89bbb063/3684f/cd.png 225w,
+/static/1525bc2bb32562857f70858a89bbb063/78e79/cd.png 265w"
+        sizes="(max-width: 265px) 100vw, 265px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>The process of creating a local copy of the project is known as "cloning". Through cloning, you will obtain the latest version of the remote repository on your local machine. You can perform changes on the local repository and upload them to the remote repository when done.</p>
+<p>In your empty repository page, you will notice that a URL is provided. Copy this URL to your clipboard and go to the terminal. The URL should have the following format: <code>https://github.com/&#x3C;username>/&#x3C;project name>.git</code>. For example, <code>https://github.com/woojiahao/learning-git.git</code>.</p>
+<pre><code class="language-bash">git clone https://github.com/woojiahao/learning-git.git
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b9d54015ad06f4c56c1b1cb38704c4df/29114/new-repository-created.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABYElEQVQoz62Sa2+CMBiF/ecmGpmX6bJkv26fZjZFx6WAUKC3s/ctgmzJ5pc1eXIobU9P33ayeXrBNNgRWzyst9jsnrF6fPK6WG4wWywH5sEKsxHcn84WmM4D0oDmrzHBP7eJNQbWGjhnUbcar/sQ72dBZNiHKd6OMaJMQlQKadmRVRq51P67rDXYw1yZOOfAAA7aOJxigTAucIxyr+ckw0W2KJjaEga1cmi186pMt7b3GRmCklp8HEIcwhPiJEVRVrhUErJuKb1CQ7DWTQf/51TcBsO+4w1JRV4gETmKS0WG0iubNlSOAXWDQ/xqyCqy3KeLU4FUZIjiBBltorWBGtH3zT3DVAh8RjESMmTzummgKAkv9BhLtb5hrfvjyDSYFwWklJ6yLL22VLf+Fvu5t+a+Bfph2O3Y3VtXUzZrFV0IJW2a7hJ4jrlyJyEfw/jn02rrDYcco2A8zs9FXxkbfgGE4kTOL78NdAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="New repository created"
+        title="New repository created"
+        src="/static/b9d54015ad06f4c56c1b1cb38704c4df/1cfc2/new-repository-created.png"
+        srcset="/static/b9d54015ad06f4c56c1b1cb38704c4df/3684f/new-repository-created.png 225w,
+/static/b9d54015ad06f4c56c1b1cb38704c4df/fc2a6/new-repository-created.png 450w,
+/static/b9d54015ad06f4c56c1b1cb38704c4df/1cfc2/new-repository-created.png 900w,
+/static/b9d54015ad06f4c56c1b1cb38704c4df/21482/new-repository-created.png 1350w,
+/static/b9d54015ad06f4c56c1b1cb38704c4df/d61c2/new-repository-created.png 1800w,
+/static/b9d54015ad06f4c56c1b1cb38704c4df/29114/new-repository-created.png 1920w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><strong>Note*</strong> You may be prompted for your GitHub credentials if you created a private repository.</p>
+<p>You will observe some logging messages show up. Once completed, check that the project has been cloned. <code>ls</code> should display that a new folder, <code>learning-git</code>, has been created in the folder you have navigated to.</p>
+<pre><code class="language-bash">ls
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 723px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3719374707eb3b10519ac8c9bd94bac1/c67d4/clone.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 14.222222222222221%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAIAAAAcOLh5AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAi0lEQVQI1w2NCQ7CMAwE8xkKpa1yOk7SXIW0CPH//7DSyFofuxbnGJ5H5KvsP0qD62F81VS0r8oVF7py2fhmuWGuqKJCYytNEoYPNJIypZfl7tNb+waDogLPqsJt1mB6GvBY3abDNJv7YoGI+XTcKR6xfmDmPHgfuX+REssFP16hLjLget4IcRBIAX/wQCYP8NsuIgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="git clone"
+        title="git clone"
+        src="/static/3719374707eb3b10519ac8c9bd94bac1/c67d4/clone.png"
+        srcset="/static/3719374707eb3b10519ac8c9bd94bac1/3684f/clone.png 225w,
+/static/3719374707eb3b10519ac8c9bd94bac1/fc2a6/clone.png 450w,
+/static/3719374707eb3b10519ac8c9bd94bac1/c67d4/clone.png 723w"
+        sizes="(max-width: 723px) 100vw, 723px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+</li>
+<li>
+<p>Finally, you can navigate into your local copy.</p>
+<pre><code class="language-bash">cd learning-git/
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 437px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2b477c3e544b176575260940e5a43601/5a428/cd-clone.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 20.444444444444446%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAtklEQVQI1z3OS47DIBAEUB9mJDMGGuOm+dgEMo6/Uja5/2XSTqSR3qIXXapqKOdz+zvWqmHy+Ei0J7dHXJTN2idMt5g3Py3xto5lw1BbiUK5r6YDgt7r3neaBQWRSYgdBAEkjTcuM0tlCFXbsZWDUCjkJxxKeZ7L/igaRsKZa5nHmVdM7khu4xVhWLCvQ3+X7g5pN/lp4qwsNfV8refrpzVcKxT9Kv9B/64VOvABNnXg+eeir+Y3L08xrWR3bU0AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="cd into repository"
+        title="cd into repository"
+        src="/static/2b477c3e544b176575260940e5a43601/5a428/cd-clone.png"
+        srcset="/static/2b477c3e544b176575260940e5a43601/3684f/cd-clone.png 225w,
+/static/2b477c3e544b176575260940e5a43601/5a428/cd-clone.png 437w"
+        sizes="(max-width: 437px) 100vw, 437px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+</li>
+</ol>
+<h3>Local machine first</h3>
+<p>Opposed to the previous method of creating a repository, the "local machine first" approach is useful when you already have an existing project on your local machine that you wish to upload to GitHub. You are essentially performing the previous method but in reverse: starting with a local repository and then creating a remote repository based on it.</p>
+<ol>
+<li>
+<p>Navigate to an existing project folder on your local machine.</p>
+<pre><code class="language-bash">cd ~/Projects/existing-git-project/
+</code></pre>
+</li>
+<li>
+<p>When you're inside the project folder, run the following command.</p>
+<pre><code class="language-bash">git init
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 605px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/90cbd/init.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 17.77777777777778%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAnElEQVQI123M6w7CIAwFYJ5Gt3GHAgUBmZqYvf8L2WHiL5MvJ6dpU1ZvI8Cz4VESedd0WByxd48DcBcGhc2U0mY5y5S5TjQy7ZuGomOVvmw2CZ9d7AaasoWraKACDhvoptrQfRq0cmdWOmMAWesOdv8K7mF0E/7O40Pii95duZs8uWzul4StArhKXOGZMgkqMq1q0riqsMiwCPjrA7UOL9E0R7acAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="git init"
+        title="git init"
+        src="/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/90cbd/init.png"
+        srcset="/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/3684f/init.png 225w,
+/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/fc2a6/init.png 450w,
+/static/0c46cbfa7dfdb7e0f3cc45d0697e4888/90cbd/init.png 605w"
+        sizes="(max-width: 605px) 100vw, 605px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><code>git init</code> configures the current folder to be a local Git repository. Once this is configured, you are set.</p>
+</li>
+<li>
+<p>Now, visit GitHub and you can repeat steps 1 and 2 in the previous section. The project name can still be anything that you want. However, it is important to note that you should leave all other fields, aside from 1-3, as it is.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 776px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 84.44444444444446%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABtUlEQVQ4y41Ty47UMBDMp3NE2uOeOPAzSOxKgIA7YhcmjpNxno7jR+LHUHYmELRhRKnldCdxd3W7nEkpC0JY3QBVdSakoGW1LPZyGyEu2SR1TlnJetZ0bdsyVrddPwx8mqSYsGCVQggZnUmkV1yINXumbeikq8dFaPcnbwjO+2Ruc5K5a4gf4uYFSeyVJHyllNZ6NuYfXMM+zkY+/Hz61vVcSjVJ9f35+ceJjKPw4eJ8MG5eixwiM1qxqqzOrGlis+i4blp4sKbrz4wNEbzp63NHq7bQRu8qC0EIres4J9D2Ce437Pa0drGLWcyeSIav2pjFunmO7cM5NOv81fBnDON0M9RBjANAHF7ikmyD33/BZlDqBw5lgL/WRqorMD+ESJoijRoHAxNzkHLCYDgXIA3u8wb0ua9zsBmcjYkVUEMmi47SmLA288b7wJLClMpJUULWrC4ToG28iUd9RPWvyouzhBaEUlheUCQpihKb0SdUDSne2gzBOe289lZFkSpt0r3gI+6D8eF25Xws350+PhZf3+efezXGXKv8fVj1f6vnB/rl1cP93ae3rz+8OY10vVKX/8MvnGDalR7Bqe8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="New repository settings"
+        title="New repository settings"
+        src="/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png"
+        srcset="/static/4e34bc97f68c237502def4edac0067e0/3684f/new-repository-details.png 225w,
+/static/4e34bc97f68c237502def4edac0067e0/fc2a6/new-repository-details.png 450w,
+/static/4e34bc97f68c237502def4edac0067e0/167b5/new-repository-details.png 776w"
+        sizes="(max-width: 776px) 100vw, 776px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+</li>
+<li>
+<p>In the terminal, ensure that you are within the local repository and execute the following commands. These commands will be covered in future chapters.</p>
+<pre><code class="language-bash">git remote add origin &#x3C;url>
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+</code></pre>
+<p>Let's break down these commands. More information about the specific commands will be elaborated on in the following chapters.</p>
+<ul>
+<li><code>git remote add origin &#x3C;url></code> - links the local repository to the remote repository</li>
+<li><code>git add .</code> - adds all current local files to the Git staging area</li>
+<li><code>git commit -m "Initial commit"</code>- commits the staged (added) files to indicate that you are saving these changes and want to make them permanent within the history of the project</li>
+<li><code>git push -u origin master</code> - uploads the current set of changes from your local repository to the remote repository, effectively making them available on GitHub. <code>-u</code> sets up a <a href="https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches#:~:text=Tracking%20branches%20are%20local%20branches,which%20branch%20to%20merge%20in.">tracking branch</a> (refer to the attached resource for more information, this guide will not cover what tracking branches are)</li>
+</ul>
+</li>
+<li>Once the repository is created, GitHub will again provide a URL for you to access the remote repository. Copy this URL to the clipboard and return to the terminal.</li>
+</ol>
+<p>And there you have it! You have successfully uploaded an existing project to GitHub. You may have some questions about what each command does; fret not, the following chapters will go over them and hopefully build on your understanding of Git.</p>
+<h3>Use case</h3>
+<p>To quickly recap the use cases of the repository creation patterns discussed above.</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub first</td>
+<td>When creating a brand new project where no code is available yet</td>
+</tr>
+<tr>
+<td>Local repository first</td>
+<td>When uploading an existing project to GitHub</td>
+</tr>
+</tbody>
+</table>
+<p>Note that it is completely possible to use the local repository first pattern to create brand new projects. The use case mentioned above is the slightly more common approach to using the pattern.</p>
+<p><a href="../03-first-commit/README.md">Next</a></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/02-first-repository/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-03394a6cb6649e9f37ba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/app-03394a6cb6649e9f37ba.js" async=""></script><script src="/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/webpack-runtime-3474f1558647ff02c280.js" async=""></script></body></html>

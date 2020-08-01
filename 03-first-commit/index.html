@@ -1,0 +1,342 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.04d0941a4fae9b863984.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3474f1558647ff02c280.js"/><link as="script" rel="preload" href="/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/app-03394a6cb6649e9f37ba.js"/><link as="script" rel="preload" href="/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/page-data/03-first-commit/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/">Git Guide</a></h1><ul><li><a href="/01-setup/">Chapter 01 - Setup</a></li><li><a href="/02-first-repository/">Chapter 02 - First Repository</a></li><li><a aria-current="page" class="" href="/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a href="/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>First commit</h1>
+<p>Now that you have a repository setup, you can start to save and upload files. Before that, it is important to preface that this will be the most important chapter in understanding Git. As such, please read through each section carefully and properly understand how each command works.</p>
+<p>To understand Git, you have to understand the core concepts in play.</p>
+<h2>Core concepts</h2>
+<h3>Local vs remote</h3>
+<p>In the previous chapter, we referred to a repository on your local machine as a <strong>local repository</strong> while one that is created in GitHub as a <strong>remote repository</strong>. We had even added something called a <code>remote</code> to the local repository when using the "local machine first" repository creation pattern.</p>
+<p>A local repository refers to a project residing on your local machine while a remote repository is one stored on a version control site like GitHub. When working with Git, a lot of the work performed will be done in your local repository. It can be thought of as a local copy of the code, unaffected by external changes to the remote repository unless such changes are pulled or "downloaded" from the remote repository.</p>
+<p>A remote repository is like a central hub for any changes made on any number of local repositories. While a local repository can have any number of changes, these changes are not reflected on the remote repository unless explicitly pushed or "uploaded" to it. This is what makes Git an extremely powerful tool for developers - the ability to mess with the local copy of a repository without impacting the remote repository. Git goes a step further and allows users to roll back any changes in the event where there is a breaking change.</p>
+<p>This then begs the question of how do we get our code from the local repository into the remote repository.</p>
+<p><strong>Note*</strong> It is possible to have more than one remote per project, this is a concept that we will return to in future chapters.</p>
+<h3>Staging area</h3>
+<p>There are three locations that a file will "reside" in. The files do not exclusively "reside" in these locations but we will use this metaphor to make it easier to understand.</p>
+<p>All files reside first in the <strong>working directory.</strong></p>
+<p>The next location that a file can reside in is the <strong>staging area.</strong> The staging area is similar to the one you might imagine in schools or convention centres. It is an area where the spotlight is cast on a select few files. A file that has been added to the staging area is "staged". It is also tracked by Git, which means that any changes made to the file will be tracked.</p>
+<p>Only files that have been staged can be committed. Committing tells Git that you are confirming/committing to a set of changes and finalising these changes in the project's history.</p>
+<p>Only files that have been committed can be pushed to a remote repository. The last location happens to be the <strong>remote repository</strong> where the files are uploaded to the remote repository for others to access.</p>
+<p>If a local file changes while being tracked, Git will inform you that you will have to re-add the file. The file has to be re-staged as the current copy of the file is no longer the same as the copy in history, so you have to inform Git of these changes.</p>
+<p>If this seems confusing, don't worry, once you start using the commands, it will be easier to understand how Git works.</p>
+<p>The following diagram illustrates the concepts discussed above.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 463px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5ea54e0fce33cb535290c372e9e18e8d/71ce0/staging-area.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 92%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABcSAAAXEgFnn9JSAAAEYElEQVQ4y3WTe0xbVRzHTwuTDVR0bm4qm6BGFyPJ4owwtmmyhS1R4z9z0VCFggMGpS2Xy6PtKK8Ciy1C6XMtLS3q2BijlFehjBZGazG8CuUNhZbxdoph2QKbj+O9l46gYTf55XfO/Z3z+f3O9/wOADt/vnt8fQIxvx8zP8zewCzAM99PIpMCwNO+Bkstw2RvsRm66oxt/c3m270GfVN7zUE8NulqOO+a11tcc/q62cV6w92lxoYxpxGHA1GtvVBYN2wrrhloLdY5WoX6EWtJdTcXWEbN891uK6w2XYN6SzV0r0/CJmvtl/gm90K9FcJeaOmSQsdYBYRwHI5OVNEAoPnJW92QrxuDORVdMFtrg8WNLqg0LUDQ2t30k7G3Ed4yVa7V3al+ZLIb1xparx/DgY6RG4L76ybYP6B9MDlzc2PpN8PfNpv2LB6TNQzb+FX9ME/b+ZBXYXkguDX4T6neYQJsDsuv1lQT3GjWh+qGOo7kKwSHtkui6PnxsHGqJdgw0/R2gaX8wFZA1v5MWsdS4BXj6HvK+p73hZXtwRkc7nNb8SS+bO9i1Nev/8pOUbmQhPAVDhqyehkNhUkJ7zrYrHNLSPKHMDU5+HduWsgCBw39g40cg4kRR4bZzI90kWG7t0D6fC4Z9ypO+lFXGnMJCgrgw1wOZpehM5UBnWlMOI3ZbAYCJ1AGnGej8HFBFtzIz4LwOx6c46B/mZPiX8UZhhweGSjzckj45IpEeriDGkEdjo8e646hFPZcjOR2RH6Va6ZcyDbFUUs6oikFbZQLOVZqRF5/HDWvL47Ks8dG8Wy02MKbLPQlnNGcQicBiUa7qZVKhfcdyAg8eOD/rXXpdsfep7Xdm+Zf/MRqtT8+5msqAJCLRJsaSyRB1xOjCS3gNeEu3I/Q447PMmKPf9zc/ryhWOAP9wHSPAvxepSV7jXH43rja36QiAOuymQEUCmTAjCWgRAa9qUyPl3OTJ8ZR+kjYyh9dBJlDN7LZi+v5nA2+lgoC0BISPN9Mp0ooLioiJjL5fJXMPP3jAHopccTQGtS3OfjzEvLbVERM2Yqxd0Z841zGqGtuhHa4zvJiVywuE6G2Lqmbykk3cmjoC03k7wjMIsvIDLyS0VBmPP2SEMs1p4+EaI7HXbiZfvks7U3qnx30lAjk70ml0kJIHZ0rF2USiKgVCiCVicmvJ4sxN7Z1ia1WBR4/rNwAgjP7SOS2WIigt3M+E/A0F0ftUr1AvG+yzVYmTh1s9wgYVERcRkxYSFgF5kE7MmJRMW9KD18JYs1v8LNcA4hSdOjKH3qXjZn+X5eJhxmpZScEYqIy6zMzfKc2wPEjADIPEl+9ujbSY8/M4XQxieYCQOWi1GOrrjofidCc7uRxD+7EFr+FyrNHkKi3OydgU/+FZUKiZssEYsPgbcCd2/XTn3qg3dazp46Cdagj0ahII4sVpf/B/giZuTtwLKysk19lUr/Qfug9076VknE/hKphEh2VSoF/wIJxyrDb4o4KQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Staging area"
+        title="Staging area"
+        src="/static/5ea54e0fce33cb535290c372e9e18e8d/71ce0/staging-area.png"
+        srcset="/static/5ea54e0fce33cb535290c372e9e18e8d/3684f/staging-area.png 225w,
+/static/5ea54e0fce33cb535290c372e9e18e8d/fc2a6/staging-area.png 450w,
+/static/5ea54e0fce33cb535290c372e9e18e8d/71ce0/staging-area.png 463w"
+        sizes="(max-width: 463px) 100vw, 463px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h2>First commit</h2>
+<p>Let's now put what we have learnt to practice. Following that last chapter, you should have</p>
+<ul>
+<li>Created a GitHub repository (remote repository)</li>
+<li>Cloned the remote repository on your local machine (local repository)</li>
+<li>Navigated to the loal copy in your terminal</li>
+<li>
+<p>Create a new file in the root of the project folder and add your name into it. You can do this from your file explorer (creating a new text file directly and editing it) or through the terminal.</p>
+<pre><code class="language-bash">echo "Woo Jia Hao" > names.txt
+</code></pre>
+</li>
+<li>
+<p>View the current status of the work directory.</p>
+<pre><code class="language-bash">git status
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 708px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/f15297bcdb15311445181c36237f15a4/3cb0f/gst-untracked.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 42.22222222222223%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAzUlEQVQY052R4W7DIAyE8zRbG8BgMEkhJlm67f1faVcRdf3RStOkT8icOJ8tBp/V55bmLYierLyZCN5NOhhRR+hPGUJSzg0ncX316KXZS/NJXayWyz/MKpe91msp15Sb4zLShF5BGsWF0oK5cPYiTqvxM9Y5zLicXY5cgPPzCGiCeGekznTXz+5WwzXQLUSRgzTHPbD6tPRkbITRACYC0IENBRZ0GdbPr6aNaJG4c1hj2IR34Y/gm2W1eTeynewxZ/+C351n/Tbh8ij9nR90XltPE2FOuAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="git status after creating names.txt"
+        title="git status after creating names.txt"
+        src="/static/f15297bcdb15311445181c36237f15a4/3cb0f/gst-untracked.png"
+        srcset="/static/f15297bcdb15311445181c36237f15a4/3684f/gst-untracked.png 225w,
+/static/f15297bcdb15311445181c36237f15a4/fc2a6/gst-untracked.png 450w,
+/static/f15297bcdb15311445181c36237f15a4/3cb0f/gst-untracked.png 708w"
+        sizes="(max-width: 708px) 100vw, 708px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><code>git status</code> will print the current status of the Git repository. You will notice that there will be one section - "Untracked files". Under it, there will be the new file, <code>names.txt</code> in red. This indicates that the file has not been staged.</p>
+<p>As we have established earlier, the untracked files/unstaged files are not yet on the staging area. So let's add it to the staging area.</p>
+</li>
+<li>
+<p>Add the file (<code>names.txt</code>) to the staging area. This tracks the file and copies it to the staging area.</p>
+<pre><code class="language-bash">git add names.txt
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 431px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/a09d9ca904797810aa8923b2eae03912/9cb4e/git-add.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 24.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA3ElEQVQY01WPSW7DMAxFfZYuEisa7IrURKseastK7C667P1PUhZNFwUePhefIB4bG1NZprPOYDP0S7Bbgp0zwBpxj1gS1sHdPWy2H20oKm7d8NCpKj81XZrSnB2NMRdP67icaaj0tqsu3nQQyuex9ja3Em/aC+WE8cIEzlZj02rHQ3ChvX6lDgdtk7bEexdpGQMkNF4VtAp/kHCVlpPPNS7no24HawNrzxEKYf3VTq6S2/kLctXDu+0n8JuKpRsOk+4aqaH1/Pj8ermYG8uwlXJPvScoTZB/VfsP/AYoiz5jNgGPawAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="git add"
+        title="git add"
+        src="/static/a09d9ca904797810aa8923b2eae03912/9cb4e/git-add.png"
+        srcset="/static/a09d9ca904797810aa8923b2eae03912/3684f/git-add.png 225w,
+/static/a09d9ca904797810aa8923b2eae03912/9cb4e/git-add.png 431w"
+        sizes="(max-width: 431px) 100vw, 431px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>A common convention of <code>git add</code> is <code>git add .</code> where <code>.</code> represents all the files that are available to be copied to the staging area. This is very useful when you have multiple files you wish to stage at once.</p>
+<p>To check that a file has been staged, you can run <code>git status</code> again. This time, the file should be green in color and under a new section called "Changes to be committed". This indicates that file has been staged successfully.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 444px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/b919e173376b4e93d0558c33f22c01ca/9b7bd/gst-add.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 62.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABgElEQVQoz5VS23KjMAzlXzqzAYyNseS7CaGASTq7D33u//9HRUjpZp+6MwfNQR7J58gqpsv5to6AEeTFYzawWJwdLgQDGwm4Gpw62SucuZvbeOMucwh1q4swJmVC6LNPuZWRcdcIx4RthCfCWy/awLitN5hK2FqGqnWV0BXHQofR9auNk4mz6xf0Y8nx1MCJwSPuZAOWDEqm7hHLBgv6KmEqrg9Q5ocoJCTXZxOnTvfaj/V/FdNVtTA1mdmi2bM/lFA4cpsWqXtwl86clRl8n11aaAq1+K5/7gWPYu1faUgEG4hcBARlB5qcTXOL5GgBO5CiRjrqq8yZmlJ3AZEGucmuGi20x5SUj5gik4Yr51+HznmISWp/XL5bI4+7kG3avxjcz/CIJOz+ks+22UPt6YsUJ6a4vD9VY45R/1O2/1bclM/54s/bel0G1Am7MejVYQ6YPS6ROOSgr0nfLMxKnhVOjVva9JuHK0daTyp+/3gp5W5jd/X3wmxbuR09JQ98As7HmTuC1aRlAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="git status after adding names.txt"
+        title="git status after adding names.txt"
+        src="/static/b919e173376b4e93d0558c33f22c01ca/9b7bd/gst-add.png"
+        srcset="/static/b919e173376b4e93d0558c33f22c01ca/3684f/gst-add.png 225w,
+/static/b919e173376b4e93d0558c33f22c01ca/9b7bd/gst-add.png 444w"
+        sizes="(max-width: 444px) 100vw, 444px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+</li>
+<li>
+<p>Once a file has been staged, the file is ready to be committed.</p>
+<pre><code class="language-bash">git commit -m "Add names.txt"
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 444px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0f306105e508bc87637e1850a9386f90/9b7bd/git-commit.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 40%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABRUlEQVQY0y1Qy47kIBDLx4zUTQKEQPF+BUjS0c51L3vb//+Kge6RLMtVku1STUzZkuNR4oK12HbJi+KNrVlsVWylM2f74C1xvmNZiD6ofWHwC5MTNSmUEFJ08Xb+4rBrVWrMydeWa/KlhOZ06dGY2gfRiDm0BcQMIjCBazZfoHcmo4knFU6HFvLJpbexpnr7dGzSK982GWy8VuFBZ4ThgWFiEIQu2h+rCCZeLr/A7AxiD5W2mnAq1xgkzMyyarLZedVdPDF0TIT3qlP5o3tceknfUv3uPWCKz7cwRbnaL3wsYmDmH/FrRkSNSKZnOgQicnln9xGvZqZjg/AbXRA1bET+mrkL91nuIxHqJG9aHBau/nMtTs2PzgY6XrBlEHVRhdiT+j9ExvFt177//vv/9aC96tMwj/jBHyxv/vT3NjT0GJ8EfgCBUGT7/hhQAQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="git commit"
+        title="git commit"
+        src="/static/0f306105e508bc87637e1850a9386f90/9b7bd/git-commit.png"
+        srcset="/static/0f306105e508bc87637e1850a9386f90/3684f/git-commit.png 225w,
+/static/0f306105e508bc87637e1850a9386f90/9b7bd/git-commit.png 444w"
+        sizes="(max-width: 444px) 100vw, 444px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><code>git commit</code> is relatively straightforward. However, the <code>-m</code> is rather interesting. It provides a "commit message" for the commit which is the text in quotations following it. This commit message can be thought of as a short description of what the commit/change is about. Generally, commit messages should provide useful information about the commit where you can look back later and understand why changes were made without having to re-read the code.</p>
+<p>To check that a file has been successfully committed, you can run <code>git status</code>. This time, you will notice that there are no files in either the "Untracked files" or "Changes to be committed" sections.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 604px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/8b66735b85f6c7f4d4863ad3c146cca9/87254/gst-commit.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA9ElEQVQY02VQW07EMBDrZaBs2iQzk1fJi3S78McP9z8MZhdpQStZluOMrWSmkOsYNcTmePeyOx7gIGcAmrivfuh0WX1Txr+s/zCFdsQyXut7LId15fdi+cG8OOA+/Uff/Mlte8zIH37b05U5NAot5CPkM4BGOC4N66qkN4ndSIaAPymbyFUKnXzl0K3LxmVMQ9+KNGckIU46KBOBmwBPiBlXUaYlI79QolDJFxxX3lCvtH860bOSebn/dl6vzzacYsqEJDdx3VJlaSydwNzACxfFVdF20g8L+/j8GmPXNhlbhTpRY9uYunC3tmibkcTCFymP4W8DVVQ9m2qbQQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="git status after commiting names.txt"
+        title="git status after commiting names.txt"
+        src="/static/8b66735b85f6c7f4d4863ad3c146cca9/87254/gst-commit.png"
+        srcset="/static/8b66735b85f6c7f4d4863ad3c146cca9/3684f/gst-commit.png 225w,
+/static/8b66735b85f6c7f4d4863ad3c146cca9/fc2a6/gst-commit.png 450w,
+/static/8b66735b85f6c7f4d4863ad3c146cca9/87254/gst-commit.png 604w"
+        sizes="(max-width: 604px) 100vw, 604px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+</li>
+<li>
+<p>Once a file has been committed, it can finally be pushed the remote repository. Pushing is in a sense uploading the latest set of changes to the remote repository. In our case, we have decided to create a new file called <code>names.txt</code>, add our name in it, and save/commit that change.</p>
+<pre><code class="language-bash">git push origin master
+</code></pre>
+<p>Git will take a while to process the request and may prompt you to fill in your GitHub credentials.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 555px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/da71aa2776c8d36a7d5eb7b21e06131c/cd039/git-push.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 50.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABbklEQVQoz1WQW27rMAxEs5smli1R77dkW7Hbftz9b+eO26BFgQFBQDPkEW865H2tzmdFqzdPozajd6eHkatVQ1MnkZnpzA1mGiN3Z+Y+v3TTeYut+TSM30I+YzldHKGcpIqgNIvAuJ9l4qYyij+xVzjU81I5dFjJttTfle++PGM7Qr3k0kBN7eQyvjH9N1yOWE+Xh42bCZvPT+UaFNspXV9UmsnPFJhwX0mN+q0rjCVQgCqmHNK2sn0av2IW1xlrhc6PxU7czTIyChh09RRRX9jKdYDBqmzzBai7iRs+cmHnIW21aQAKjJDQiWxlwt+AimdY8ZzbOwLKr3DAChxUnweGuvyE04QVGQC/sAFAtiOgQ9e+A+YhnM27LzuTQfpu0w7Ux2ymxd5n+zb/3uzGlYsxSuU5z5IqiYJG657TyZcsRFmWOKk6qT7JPHH759r9499xfAhyV1g2Qp7qd6PUKqgsIjFZmFmZKrg5jvej/zw2fmlChtp3AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="git push"
+        title="git push"
+        src="/static/da71aa2776c8d36a7d5eb7b21e06131c/cd039/git-push.png"
+        srcset="/static/da71aa2776c8d36a7d5eb7b21e06131c/3684f/git-push.png 225w,
+/static/da71aa2776c8d36a7d5eb7b21e06131c/fc2a6/git-push.png 450w,
+/static/da71aa2776c8d36a7d5eb7b21e06131c/cd039/git-push.png 555w"
+        sizes="(max-width: 555px) 100vw, 555px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+</li>
+<li>
+<p>To verify that your changes have been made (adding <code>names.txt</code>), visit GitHub and navigate to the repository. You will now notice that there is a new file added, <code>names.txt</code>. Hooray!</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3f5361e56d570832fd5fe0d009b9713a/8b70b/new-file-added.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA+ElEQVQY022Oy07EMAxF+/9fwIpPYIPYs4Mlm+lsmBFCTcW001cSx3nYKc5IrRiJq6Mb6ya2U7UjCl89dqNF732IAt58B33wIYnHRDshUQVaO5Q8aGMBEZyTEcZayaQCKJe2HCVMiYhYrCDNa87rJuLsMFhwxLyH+YZIGmyZFSarHw9Pz6fXav0j2fmtfppu6Wc3GN8vOJigfTYb18V1E1wmOF06Nc13zSFSN5pBo0YSZhv6GWaIxrNBEtcuCYuLkmuI1f43kUauFRyVPbZQK1tvxaExUnxe03nkZlnfm/bh4+VNne82c14j5f/hFUOKiROXN0gUmX8Bi2+SVX0WEmgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="File added to GitHub!"
+        title="File added to GitHub!"
+        src="/static/3f5361e56d570832fd5fe0d009b9713a/1cfc2/new-file-added.png"
+        srcset="/static/3f5361e56d570832fd5fe0d009b9713a/3684f/new-file-added.png 225w,
+/static/3f5361e56d570832fd5fe0d009b9713a/fc2a6/new-file-added.png 450w,
+/static/3f5361e56d570832fd5fe0d009b9713a/1cfc2/new-file-added.png 900w,
+/static/3f5361e56d570832fd5fe0d009b9713a/8b70b/new-file-added.png 1266w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ed865eb0f621d05005c4fde4a90fb90e/64639/new-file-content.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 24.888888888888886%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAoElEQVQY01WPiQrCQAxE+///KShqd7tH7uwaWyk2PIYJJDCzPFN7JLitmEonFgyImYV2AwHGpqJ2wLuqOSAtSmgq7iai32uABpwb1VpVVURYxNx9jGCfGQsRm49l/s2a8v2VM1ih0dDIJtr8qv5oZAWkgL43yJ0uz61DaUASqYb6FBsnrH5oEAfRLvJfnolkKzXKnA1PIudhNGqzdMCo+QHdAiSThv9rmAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="File contents"
+        title="File contents"
+        src="/static/ed865eb0f621d05005c4fde4a90fb90e/1cfc2/new-file-content.png"
+        srcset="/static/ed865eb0f621d05005c4fde4a90fb90e/3684f/new-file-content.png 225w,
+/static/ed865eb0f621d05005c4fde4a90fb90e/fc2a6/new-file-content.png 450w,
+/static/ed865eb0f621d05005c4fde4a90fb90e/1cfc2/new-file-content.png 900w,
+/static/ed865eb0f621d05005c4fde4a90fb90e/21482/new-file-content.png 1350w,
+/static/ed865eb0f621d05005c4fde4a90fb90e/64639/new-file-content.png 1568w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+</li>
+</ul>
+<p>You have successfully made your first commit! There may seem to be a lot of things to recall at once, but many of these become habit over time. The theory behind Git has to be explained to ensure that you have a clear mental model of what is going on so that future commands or chain of commands will make more sense. If you are unsure about anything discussed in this chapter, go over it once again. Ensure that you have a clear understanding of what each command can do.</p>
+<h3>(Optional) Working with multiple files</h3>
+<p>Now, you might be wondering, "How do I add/commit/push multiple files at once?" Well, the process is similar to that of adding/commiting/pushing a single file, only this time, you will be specifying multiple files when adding them. In essence, the way you work with multiple files is the same as you would with a single file.</p>
+<p>This was briefly mentioned in step 3 but we would like to elaborate on this idea further.</p>
+<p>To add multiple files to the staging area at once, the file names can be placed one after another in the <code>git add</code> command, as such:</p>
+<pre><code class="language-bash">git add names.txt fruits.txt game.js
+</code></pre>
+<p>You can also specify the name of a folder to add all the files (with changes) from that folder to the staging area, as such:</p>
+<pre><code class="language-bash">git add assets/
+</code></pre>
+<p>If you wish to add all files (with changes) in your working directory (in the current folder) to the staging area at once, you can opt to use <code>.</code> instead of specifying every single file.</p>
+<pre><code class="language-bash">git add .
+</code></pre>
+<p>Once multiple files have been added, they can be committed in a single commit. Doing so groups the changes as one. This is especially useful when you had to modify multiple files to make a change to the project and these changes all fall under the same reason (aka the commit message).</p>
+<pre><code class="language-bash">git commit -m "Add user names, fruits, to the game"
+</code></pre>
+<p>Similarly, you can push multiple commits at once.</p>
+<pre><code class="language-bash">git push origin master
+</code></pre>
+<p><a href="../04-collaboration/README.md">Next</a></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/03-first-commit/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-03394a6cb6649e9f37ba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/app-03394a6cb6649e9f37ba.js" async=""></script><script src="/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/webpack-runtime-3474f1558647ff02c280.js" async=""></script></body></html>

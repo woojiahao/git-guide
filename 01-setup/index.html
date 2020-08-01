@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.04d0941a4fae9b863984.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3474f1558647ff02c280.js"/><link as="script" rel="preload" href="/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/app-03394a6cb6649e9f37ba.js"/><link as="script" rel="preload" href="/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/page-data/01-setup/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/">Git Guide</a></h1><ul><li><a aria-current="page" class="" href="/01-setup/">Chapter 01 - Setup</a></li><li><a href="/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a href="/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Setup</h1>
+<p>To begin, you will have to install Git on your machine. The instructions to do so can be found <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">here.</a></p>
+<p>Note when prompted to "Adjusting your PATH environment", you will be presented with three options. For now, select the third option and continue.</p>
+<p>Once you have installed Git, open up your terminal or Git Bash (if you are on Windows) and type the following command to verify that Git has been installed. You should see that an appropriate number will be shown. As of the writing of this guide, the latest version of Git is <code>2.27.0</code>.</p>
+<p><strong>Note*</strong> the terminal/Git Bash/command prompt will all be referred to as the terminal for ease of reference. If you are unfamiliar with bash commands or batch commands, refer to <a href="../08-bash-tutorial/README.md">this guide</a> for a quick tutorial.</p>
+<pre><code class="language-bash">git --version
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 251px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d145e9dc468425f373f6d42257b544e5/26abe/git-version.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 35.11111111111111%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABKElEQVQY03WQzU7DMBCE8ygImrT5abxrx/Fv4jhu01ShKr3wCly4cEBceXQcOALS6NOutLMjTcKMaVp1XcJy8pfzCKAIdAhdCapgBlolfV9im1e8pkaY0KiR6yD0WFOd8MFIpW+Xw+PkltkBURQ8Ja5mtpROH50aXUF4BZIKb4dzaw7CTqafgNnEDov1S1pwpiZhZ9HPZjip7gBNx1qn3cxV0P1ckTYtaJpjVmBk1LZkieyOrO33ICjvuByQ91Q4bGyFijQWeRcHaGy+57uqicx/+L0mDxnZ7PB+i/crIV0fr9wWNMvhblPFhKyg8fS3EhAKmTyGIfh+Cq4mEtGthaGqpX95/dijiv6/zbESbezz7fS0hOsyMmop+gaHCjXR49v7Z2z1v+Qv8ZNYLQnhM64AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Git version"
+        title="Git version"
+        src="/static/d145e9dc468425f373f6d42257b544e5/26abe/git-version.png"
+        srcset="/static/d145e9dc468425f373f6d42257b544e5/3684f/git-version.png 225w,
+/static/d145e9dc468425f373f6d42257b544e5/26abe/git-version.png 251w"
+        sizes="(max-width: 251px) 100vw, 251px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>You will also be using GitHub to manage your projects. More details about this will be explained in following chapters. To get started with GitHub, create an account <a href="https://github.com/">here.</a> GitHub recently made private repositories with unlimited collaborators free.</p>
+<p>Once both tools have been setup, you will have to configure Git on your machine. Within the terminal, type the following commands:</p>
+<pre><code class="language-bash">git config --global user.name "&#x3C;Your name>"
+git config --global user.email "&#x3C;Your email used when setting up GitHub>"
+</code></pre>
+<p>The first command configures the names that each commit made will be assigned under. The second command configures the email that these commits will be made under. The email used should correspond with the email that you have used to create your GitHub account.</p>
+<p>This is all you will need to setup your environment. Hooray!</p>
+<p><a href="../02-first-repository/README.md">Next</a></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/01-setup/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-03394a6cb6649e9f37ba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/app-03394a6cb6649e9f37ba.js" async=""></script><script src="/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/webpack-runtime-3474f1558647ff02c280.js" async=""></script></body></html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.04d0941a4fae9b863984.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/webpack-runtime-3474f1558647ff02c280.js"/><link as="script" rel="preload" href="/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/app-03394a6cb6649e9f37ba.js"/><link as="script" rel="preload" href="/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/page-data/07-advanced-git/07-01-git-log/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/">Git Guide</a></h1><ul><li><a href="/01-setup/">Chapter 01 - Setup</a></li><li><a href="/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a aria-current="page" class="" href="/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Git Log</h1>
+<p>Now that you know the basics of Git and have started working on the repository with a few commits, you might ask yourself, "How do we visualize these commits and changes we have made in the repository?"  </p>
+<p>This is where this chapter, and the subsequent (<code>Git Diffs</code>), come in. These commands give you a way to visualize the commits and changes made in your Git repository.  </p>
+<p><strong>TLDR:</strong> The command <code>git log</code> and its corresponding optional flags lets you look at the history of commits and how they link up in your repository.  </p>
+<p>At the end of the chapter, there will be links to additional resources and more visual GUI tools you can use to look at the log of the repository. However, I still suggest reading and understanding how <code>git log</code> works as these tools still rely on the basic <code>git log</code> to generate their graphs. Having an understanding of this command gives you an intuition for how these tools work in general. Additionally, as the command comes with Git, there is no additional setup required to start using <code>git log</code>. </p>
+<p><strong>Note:</strong> this chapter serves to show you and explain the common use cases for the command. For a more detailed explanation, look at the additional resources or the documentation of the command.</p>
+<h2>Project set up so-far</h2>
+<p>Let's say the project you are working on is a full-stack web application, with a frontend and backend.<br>
+And you have decided to split the work to frontend and backend work, with respective features branches being worked on.</p>
+<p>Your branches may look like this:</p>
+<pre><code>Original repository branches:
+master, backend/start-server (This will be remote branches for you)
+
+Teammate A's branches (On your local machine):
+master, origin/master, backend/start-server, origin/backend/start-server, frontend/landing (active)
+
+Teammate B's branches:
+backend/start-server (His local branch connected to github)
+</code></pre>
+<p><strong>Note: Assume you are teammate A</strong></p>
+<p>Let's say at this point you have added some code and commits to the project and want to see what commits you had done.<br>
+This could be because, you wanted to see where you left off yesterday or how many features have been completed. (The latter reason is when you are working on a larger feature)</p>
+<h3>Basic git log</h3>
+<p>Well to look at all the commits made on your current branch you can do:</p>
+<pre><code class="language-bash">git log
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4fadb9f499709a4a966fea08d378a132/cc488/small_picture_1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 55.111111111111114%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAABWElEQVQoz42Ry0oDQRBF5ysEjQ+SzPQj/aqu7pmeR2bGxKCCazfiRjAogi4UNO78dDsoqAjG4lD0og+XSyVXj8/zm7fF9evxcnW6fOvvLsK9gIdc3wd30mI3xRAwLzAP6Bwensnzp+7y8WW1Wt7cJhZEAZMSVRts6WTlnCFaUJhwywCGgg8JGabZJ6PR8GBwsD/Y2hls7+4l2hjnnc99EQqppFRCSEY4SznLKEszOibfoGxMeco4YTxjPGmqUAY/rUPfNX3bzLrao1HGKLDSmB/mLxIhpUVUWsd8DYYyRij52/mSp3XRlK5vwlFfzftqcdgEbzSAsigNbJAnQoAFHf9bG/t/vFNCRxmJbJDbj+RpiJmxcNxVDtpa+Z9koSQ6NBbWGI1oKaNxOI3l2Qa5Ln1dYFfnR309a8tFXwevvYUSETYnG+tCJQGp1EwZJvX6kpSP2fqef8vvjGl3Am5cQYgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Basic git log of local branch"
+        title="Basic git log of local branch"
+        src="/static/4fadb9f499709a4a966fea08d378a132/1cfc2/small_picture_1.png"
+        srcset="/static/4fadb9f499709a4a966fea08d378a132/3684f/small_picture_1.png 225w,
+/static/4fadb9f499709a4a966fea08d378a132/fc2a6/small_picture_1.png 450w,
+/static/4fadb9f499709a4a966fea08d378a132/1cfc2/small_picture_1.png 900w,
+/static/4fadb9f499709a4a966fea08d378a132/cc488/small_picture_1.png 928w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>From this screenshot you can see that although we can see all the commits linked to our current branch, there is a bit too much information at once.</p>
+<p>For example, information like when the commit was made or who made it is not really important when trying to look at the bigger picture.<br>
+This is also not practical when looking at projects with 10s or 100s of commits, as we would be lost in the information</p>
+<h3>Flags</h3>
+<h4>oneline</h4>
+<p>Luckily there are special flags we can use to format the output.<br>
+If we add the flag, <code>--oneline</code>, git will shorten each commit to oneline, only preserving the important information.<br>
+Looking at the man page for this command:  </p>
+<pre><code class="language-bash">Documentation:
+--oneline
+This is a shorthand for "--pretty=oneline --abbrev-commit" used together.
+--abbrev-commit
+Instead of showing the full 40-byte hexadecimal commit object name, show only a partial prefix. Non default number of digits can be specified with "--abbrev=&#x3C;n>" (which also modifies diff output, if it is displayed).
+</code></pre>
+<p>Thus when running the command.</p>
+<pre><code class="language-bash">git log --oneline
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7250a3f3a1a29e43bddfd405d0e04f20/078fe/small_picture_2.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 13.333333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAIAAAAcOLh5AAAACXBIWXMAAAsSAAALEgHS3X78AAAAl0lEQVQI12Nwyu+1zm43z2y2zerUyXbVyNXQzjPUytfXtTXUNzDWNzbWNwIjYxN9A309p0DN8EqT6PLSmoaKigoGCztrI2tjMwcLczszSyNLc31rE10LbRV9RSVVRRU0pKaoqKgkJ60oJy0mKQVEDA6mZtZGxlY2dtZ2DvomJpp6ukrqakCkrKaOBalrKGtoKmtoqWmCEABa1yU0mMTkRgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Git log with only oneline"
+        title="Git log with only oneline"
+        src="/static/7250a3f3a1a29e43bddfd405d0e04f20/1cfc2/small_picture_2.png"
+        srcset="/static/7250a3f3a1a29e43bddfd405d0e04f20/3684f/small_picture_2.png 225w,
+/static/7250a3f3a1a29e43bddfd405d0e04f20/fc2a6/small_picture_2.png 450w,
+/static/7250a3f3a1a29e43bddfd405d0e04f20/1cfc2/small_picture_2.png 900w,
+/static/7250a3f3a1a29e43bddfd405d0e04f20/078fe/small_picture_2.png 934w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>And boom, this was what we wanted at the start. Now we can see that we have added the landing page and also changed the extension of the landing page.  </p>
+<p>But there is something weird here...<br>
+We can see that there is a commit tagged with origin/master, along with the commits of our current branch, frontend/landing. As we have established previously in chapter 6, all branches start off somewhere. In this example, the branch frontend/landing branches out from the origin/master branch. As such, git log makes a reference to this.</p>
+<p>Luckily, we don't have to imagine these relationships between branches and commits as there is a flag that provides us with that visualization.</p>
+<h4>graph</h4>
+<p>As mentioned earlier, to display the relationships between branches and commits, we can use the <code>--graph</code> flag. This flag shows a 'graph' of the commits, or the relationship between branches and commits.<br>
+Combining this with the <code>--oneline</code> flag we showed above, makes for a very clean and concise git log.  </p>
+<p>(Try this out yourself and see what happens!)</p>
+<pre><code class="language-bash">git log --oneline --graph
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7f6a934bbbc3bf893a583b6851d833cb/dc616/small_picture_3.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 12.88888888888889%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAIAAAAcOLh5AAAACXBIWXMAAAsSAAALEgHS3X78AAAAnElEQVQI12NwK5nkUjzBtXSCQ16/UWGQTpGOfqGJfrmxsY+5ibGFiYWFiTkEWZqYmhrbuRpFV+lFV6eXN7W2tjBYOtoaWRmbO1mZOZhZmlpZGNiaG1jpqxurKGvIKysrKKugICUlRTkpIJKUlBQRl2BwtLCyMzaxsrSydXA2s7LSMzZS1dJUUldTVldXUdfARMoaWkCkqqmlpqkFACeSJrjV+9qFAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Git log with oneline and graph"
+        title="Git log with oneline and graph"
+        src="/static/7f6a934bbbc3bf893a583b6851d833cb/1cfc2/small_picture_3.png"
+        srcset="/static/7f6a934bbbc3bf893a583b6851d833cb/3684f/small_picture_3.png 225w,
+/static/7f6a934bbbc3bf893a583b6851d833cb/fc2a6/small_picture_3.png 450w,
+/static/7f6a934bbbc3bf893a583b6851d833cb/1cfc2/small_picture_3.png 900w,
+/static/7f6a934bbbc3bf893a583b6851d833cb/dc616/small_picture_3.png 933w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Now that you know how to look at commits tagged to your branch, you might also want to see all the commits of the entire repository across all branches - both remote and local.<br>
+Luckily we have a flag to look at the log of the entire repository.  </p>
+<h4>all</h4>
+<p>The <code>--all</code> flag shows the <code>git log</code>, including all the commits from every branch you have in the repository.<br>
+We will also be combining this flag with all previous flags to get the best overview of a project. (In our opinion)</p>
+<pre><code class="language-bash">git log --oneline --graph --all
+</code></pre>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/bcbe119a02f52e16c46a709ca8045cc6/416ee/big_picture_1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 24%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAAsSAAALEgHS3X78AAAA6ElEQVQY04XNT0vDMBjH8b4ID9rROdekTdKmNEvap0kT26IiHnUIgidR8OSfOebBw/YCVNhLNnrxpvDhd3q+PMHZ0/vF8+f54mP+sj1+WFVLUItGvTb60tm2s33ftBZMC8ZCA/X8vrx+u3pcbzbrm9u7wBWRMELrUsnMidJIN+PA4gIjiiklWT7FySRGP/BkPzoYh6NRuLO7F0bjoBbp1AKzOj/qisGpBiqjwVrGizhJfYlS8otQRBgmLKF+aTBIPJycgju0/WC6TrdW1sA496c+/lsgM1xxrvJMSDVTdcoyD6XfP/+NvwC3YTvO7rUsSAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Git log with oneline graph and all"
+        title="Git log with oneline graph and all"
+        src="/static/bcbe119a02f52e16c46a709ca8045cc6/1cfc2/big_picture_1.png"
+        srcset="/static/bcbe119a02f52e16c46a709ca8045cc6/3684f/big_picture_1.png 225w,
+/static/bcbe119a02f52e16c46a709ca8045cc6/fc2a6/big_picture_1.png 450w,
+/static/bcbe119a02f52e16c46a709ca8045cc6/1cfc2/big_picture_1.png 900w,
+/static/bcbe119a02f52e16c46a709ca8045cc6/416ee/big_picture_1.png 930w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Now we can see that our frontend landing page feature (<code>frontend/landing</code> branch) has already been merged down to the <code>master</code> branch of our local repository. Using <code>git fetch</code> (to fetch any changes from GitHub), we can see that teammate B has also made more commits on his feature branch and the local <code>backend/start-server</code> branch is behind.  </p>
+<p>For a detailed explanation on how to read the graph, you can refer to these Stack Overflow answers:  </p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/39772204/need-help-interpreting-git-log-graph-command">Need help interpreting git log --graph command</a></li>
+<li><a href="https://stackoverflow.com/questions/5382255/how-to-read-git-log-graph">How to read git log graph</a></li>
+</ul>
+<h2>Wrapping up</h2>
+<p>To end off, the <code>git log</code> command actually has a lot more features and flags which are a bit more nuanced and situational. This chapter demonstrates the most commonly used features and flags which we hope will be useful to you.  </p>
+<p>As mentioned above, below are additional resources.</p>
+<h3>Additional resources</h3>
+<ul>
+<li><a href="https://www.atlassian.com/git/tutorials/git-log">More features of git log</a></li>
+<li><a href="https://git-scm.com/docs/git-log">git log documentation</a></li>
+</ul>
+<h3>GUI applications to visualise <code>git log</code></h3>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">VSCode extension (Git Graph)</a></li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 842px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/aac4622827ac44710e87e0d26a1df06f/99072/git_graph_vscode.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 63.55555555555556%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAAsSAAALEgHS3X78AAAB5ElEQVQozyWSyXKcMBCGeQ8jAQIJGLZh3wbw2B4nVa7KMae8/3PkA/VBpaX/pVvtCCFut1td10VR3O93rXWapmVZZlfwZK7QVyRJIqUMgiCO4yiKHM/jKHng4HEQwigFV9u267LkWS5cwT0ApRRKbEhmD5EThLEVR1C6byKM1bzVTdn23TiPSZqYGDZlfYFsmqaqKt/3x3F0jC6VcQlxhlTKa/8Vn3++1q+12/p265qpxT+F5HluC1RXQOEonRW5NFJLT75JN/X03+Xn9fv79Xrt+w593/eYWpaFPcjn8wlXGIa8Oqm+Z8b4QlG5K10j9E/z63ge+7aTihqGEbQsON+2DS4a9Hg8nCSq/EiejqUUUigv6Iq66zvyMNZ1HYZJZbUs3CNL8WycW3QPtLywJ0Wggnmd13WF2NomCZ/YHoYBL1zSZ/BYOMGXsrRo3w+6HsiAZnUFmgiC5PMQn+eZWvitaZocExV81gWVrpBGiY+56PphGkeyoUCZIWG1k4M4K+KnbROVefbme1fNQobK+3iOx/FOe8igWjseVIEUdNi2A3cchxNGRZHR6xMtpKu8aKnfh3GwXWEY7EjBBRJxiqcKXs8hiaMq03xVcHXbDYXey89pmeiZ/Rs+Binc2uKhsOPJ5j/Kn4QhfQBUjwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Git graph looks like"
+        title="Git graph looks like"
+        src="/static/aac4622827ac44710e87e0d26a1df06f/99072/git_graph_vscode.png"
+        srcset="/static/aac4622827ac44710e87e0d26a1df06f/3684f/git_graph_vscode.png 225w,
+/static/aac4622827ac44710e87e0d26a1df06f/fc2a6/git_graph_vscode.png 450w,
+/static/aac4622827ac44710e87e0d26a1df06f/99072/git_graph_vscode.png 842w"
+        sizes="(max-width: 842px) 100vw, 842px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h3>Github</h3>
+<p>Actually there is a feature on GitHub that also allows you to visualise the graph of your repository.<br>
+It is under <code>Insights</code> → <code>Network</code> in your respective GitHub repository.<br>
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 900px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/645ce6cc45b29f602dbad8daf49a6966/3d405/github_graph.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 43.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsSAAALEgHS3X78AAABPElEQVQoz22Q3U6DQBCFeYuaqFRME7CppkSj3pvonY/ohYbagAVa5GFM1Ph7IUriFnbZXejiLFIMscPJZjJnPvaAoh+d7xyeDcxjfXDQ6++DNMNUe3uaMdzSh+tav7Opr6lGo46qb2zvds2Trnmq3LjelRNcOuHFeObNQm966wehC+cshGYyDWzXd1zfnniNrLFtja4ta6RQXmS5wFzwQpT/alGVEOUKrywVjAnYjFLO4JHKMorQHM0TmrGcZjmjnOdFsViqyPNaCqUU3oEJAQYauAQ2vuIYlGIMLhhShMA1aSonQtQ5ajiBMSa/MMSEYVYDOJUWRggxxuA6zhgkbcNJEkWfkER+nhANKdGqoH18en79iBB4nLdgWKKUVaSEYcg5F+1KCb57uI++45f3txbcJKmSr/y1fyWWyz/q1swHsDWBMgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Github graph"
+        title="Github graph"
+        src="/static/645ce6cc45b29f602dbad8daf49a6966/1cfc2/github_graph.png"
+        srcset="/static/645ce6cc45b29f602dbad8daf49a6966/3684f/github_graph.png 225w,
+/static/645ce6cc45b29f602dbad8daf49a6966/fc2a6/github_graph.png 450w,
+/static/645ce6cc45b29f602dbad8daf49a6966/1cfc2/github_graph.png 900w,
+/static/645ce6cc45b29f602dbad8daf49a6966/3d405/github_graph.png 1348w"
+        sizes="(max-width: 900px) 100vw, 900px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/07-advanced-git/07-01-git-log/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-03394a6cb6649e9f37ba.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/app-03394a6cb6649e9f37ba.js" async=""></script><script src="/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/webpack-runtime-3474f1558647ff02c280.js" async=""></script></body></html>
