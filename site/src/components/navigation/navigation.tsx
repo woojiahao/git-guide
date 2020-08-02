@@ -2,6 +2,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import * as React from "react"
 import "./navigation.css"
 import createTitle from "../../utils/title"
+import { FiChevronDown } from "react-icons/all"
 
 class Chapter {
   private readonly parent: Chapter
@@ -37,11 +38,11 @@ class Chapter {
 
   get linkSlug(): string {
     if (this.parent) {
-      return `${this.parent.linkSlug}${this.slug}`.replace('//', '/')
+      return `${this.parent.linkSlug}${this.slug}`.replace("//", "/")
     } else {
       let linkSlug = this.slug
-      if (!linkSlug.startsWith('/')) `/${linkSlug}`
-      if (!linkSlug.endsWith('/')) `${linkSlug}/`
+      if (!linkSlug.startsWith("/")) `/${linkSlug}`
+      if (!linkSlug.endsWith("/")) `${linkSlug}/`
       return linkSlug
     }
   }
@@ -87,8 +88,11 @@ const Navigation: React.FC = () => {
 
   return (
     <aside className="navigation">
-      <h1><Link to="/">Git Guide</Link></h1>
-      <ul>
+      <div className="title-bar">
+        <h1><Link to="/">Git Guide</Link></h1>
+        <FiChevronDown style={{fontSize: `2em`}} className="expand-arrow"/>
+      </div>
+      <ul className="chapters">
         {chapters.map(ch => {
           if (ch.hasSubChapters) {
             return (

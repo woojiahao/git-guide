@@ -13,3 +13,13 @@
 .container .content footer hr {
   margin: 2em 0;
 }
+
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .container .content {
+    padding: 1em 3em;
+  }
+}
