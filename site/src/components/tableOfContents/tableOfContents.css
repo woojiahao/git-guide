@@ -1,0 +1,24 @@
+.toc {
+  padding: 2em;
+  overflow-y: scroll;
+  background-color: var(--white);
+}
+
+.toc h1 {
+  text-align: center;
+}
+
+.toc div ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.toc div ul li ul {
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 1480px) {
+  .toc {
+    display: none;
+  }
+}
