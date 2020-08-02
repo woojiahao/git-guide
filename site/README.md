@@ -10,6 +10,15 @@ Install `gatsby-cli`.
 npm i -g gatsby-cli
 ```
 
+Copy the chapters into the `./site/content/chapters/` folder.
+
+```bash
+cd ../
+chmod +x copy-chapters.sh
+bash copy-chapters.sh
+cd site/
+```
+
 Run a development server.
 
 ```bash
