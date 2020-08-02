@@ -3,7 +3,7 @@ import * as React from "react"
 import { useState } from "react"
 import "./navigation.css"
 import createTitle from "../../utils/title"
-import { FiChevronDown } from "react-icons/all"
+import { FiChevronDown, FiChevronUp } from "react-icons/all"
 
 class Chapter {
   private readonly parent: Chapter
@@ -89,11 +89,14 @@ const Navigation: React.FC = () => {
 
   const [expanded, setExpanded] = useState(false)
 
+  const toggleExpanded = () => setExpanded(!expanded)
+
   return (
     <aside className="navigation">
       <div className="title-bar">
         <h1><Link to="/">Git Guide</Link></h1>
-        <FiChevronDown style={{ fontSize: `2em` }} className="expand-arrow" onClick={() => setExpanded(!expanded)}/>
+        {expanded ? <FiChevronUp style={{ fontSize: `2em` }} className="expand-arrow" onClick={toggleExpanded}/> :
+          <FiChevronDown style={{ fontSize: `2em` }} className="expand-arrow" onClick={toggleExpanded}/>}
       </div>
       <ul className="chapters" id={expanded ? "expand-chapters" : ""}>
         {chapters.map(ch => {
