@@ -2,12 +2,17 @@
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 4.5fr;
+  grid-template-columns: 1fr 4fr 1fr;
 }
 
 .container .content {
   overflow-y: scroll;
   padding: 3em;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
 .container .content footer hr {

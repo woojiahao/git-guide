@@ -1,12 +1,14 @@
 import * as React from "react"
 import "./layout.css"
 import Navigation from "../navigation/navigation"
+import TableOfContents from "../tableOfContents/tableOfContents"
 
 interface LayoutProps {
   children?: any
+  tableOfContents?: any
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, tableOfContents }) => {
   return (
     <div className="container">
       <Navigation/>
@@ -22,6 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           href="https://github.com/woojiahao/git-guide">here.</a>
         </footer>
       </div>
+      {tableOfContents && <TableOfContents contents={tableOfContents}/>}
     </div>
   )
 }

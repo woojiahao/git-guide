@@ -57,7 +57,12 @@ pre {
 }
 
 a {
-   color: var(--link);
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
 }
 
 h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {

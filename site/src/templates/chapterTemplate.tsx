@@ -10,6 +10,7 @@ interface ChapterTemplateProps extends PageProps {
       fields: {
         slug: string
       }
+      tableOfContents: string
     }
   }
 }
@@ -18,7 +19,7 @@ const ChapterTemplate: React.FC<ChapterTemplateProps> = ({ data }) => {
   const chapterContent = data.markdownRemark.html
 
   return (
-    <Layout>
+    <Layout tableOfContents={data.markdownRemark.tableOfContents}>
       <div dangerouslySetInnerHTML={{ __html: chapterContent }}/>
     </Layout>
   )
@@ -33,6 +34,7 @@ export const query = graphql`
       fields {
         slug
       }
+      tableOfContents
     }
   }
 `
