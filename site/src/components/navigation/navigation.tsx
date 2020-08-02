@@ -1,5 +1,6 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
 import * as React from "react"
+import { useState } from "react"
 import "./navigation.css"
 import createTitle from "../../utils/title"
 import { FiChevronDown } from "react-icons/all"
@@ -86,13 +87,15 @@ const Navigation: React.FC = () => {
     }
   }
 
+  const [expanded, setExpanded] = useState(false)
+
   return (
     <aside className="navigation">
       <div className="title-bar">
         <h1><Link to="/">Git Guide</Link></h1>
-        <FiChevronDown style={{fontSize: `2em`}} className="expand-arrow"/>
+        <FiChevronDown style={{ fontSize: `2em` }} className="expand-arrow" onClick={() => setExpanded(!expanded)}/>
       </div>
-      <ul className="chapters">
+      <ul className="chapters" id={expanded ? "expand-chapters" : ""}>
         {chapters.map(ch => {
           if (ch.hasSubChapters) {
             return (

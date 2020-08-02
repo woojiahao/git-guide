@@ -55,7 +55,12 @@
     margin: 0;
   }
 
+  /*TODO Set to scale 0 so that animation can work*/
   .navigation .chapters {
     display: none;
+  }
+
+  .navigation .chapters#expand-chapters {
+    display: block;
   }
 }
