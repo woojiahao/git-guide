@@ -34,7 +34,7 @@
   margin-top: 0.5em;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1480px) {
   .navigation {
     background-color: var(--bg);
     height: 100%;
