@@ -37,16 +37,19 @@
 @media screen and (max-width: 1024px) {
   .navigation {
     background-color: var(--bg);
+    height: 100%;
+    overflow-y: visible;
   }
 
   .navigation .title-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1em;
   }
 
   .navigation .title-bar .expand-arrow {
-    display: inline;
+    display: inline-block;
   }
 
   .navigation .title-bar h1 {
@@ -55,12 +58,16 @@
     margin: 0;
   }
 
-  /*TODO Set to scale 0 so that animation can work*/
   .navigation .chapters {
     display: none;
   }
 
   .navigation .chapters#expand-chapters {
+    display: block;
+  }
+
+  .navigation .chapters li a {
+    text-decoration: none;
     display: block;
   }
 }
