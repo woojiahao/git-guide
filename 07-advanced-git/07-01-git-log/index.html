@@ -1,10 +1,60 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/git-guide/styles.8ab3bfd9c991aca83fbf.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link)}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4.5fr}.container .content{overflow-y:scroll;padding:3em}.container .content footer hr{margin:2em 0}.navigation{background-color:var(--white);padding:2em;overflow-y:auto}.navigation h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li a:hover{font-weight:700}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/git-guide/webpack-runtime-78d3762e75c9669ecd81.js"/><link as="script" rel="preload" href="/git-guide/framework-a576ae5ab153fa4a7c27.js"/><link as="script" rel="preload" href="/git-guide/app-bfafb2d29eac3f02890a.js"/><link as="script" rel="preload" href="/git-guide/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/git-guide/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"/><link as="fetch" rel="preload" href="/git-guide/page-data/07-advanced-git/07-01-git-log/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><h1><a href="/git-guide/">Git Guide</a></h1><ul><li><a href="/git-guide/01-setup/">Chapter 01 - Setup</a></li><li><a href="/git-guide/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/git-guide/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/git-guide/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/git-guide/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/git-guide/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a aria-current="page" class="" href="/git-guide/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/git-guide/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1>Git Log</h1>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/git-guide/styles.6610560dcc6352966bb7.css">*{margin:0;padding:0}#___gatsby,#gatsby-focus-wrapper,body,html{height:100%;overflow:hidden}body{--body-font:"Open Sans",sans-serif;--heading-font:"Josefin Sans",serif;--code-font:"Source Code Pro",monospace;--font-size:16px;--bg:#eae6e5;--fg:#12130f;--white:#fdfffc;--subtitle:#7c809b;--link:#1282a2;font-family:var(--body-font);font-size:var(--font-size);color:var(--fg);background-color:var(--bg)}h1,h2,h3,h4,h5,h6{font-family:var(--heading-font);margin:1.5em 0}ol,ol li,p,pre,ul,ul li{margin-bottom:1em}ol,ul{margin-left:2em}pre code{white-space:pre-wrap}:not(pre)>code,pre{background-color:var(--white);border-radius:5px;font-family:var(--code-font)}:not(pre)>code{padding:.2em}pre{padding:1em}a{color:var(--link);text-decoration:none}a:hover{font-weight:700}h1>a,h2>a,h3>a,h4>a,h5>a,h6>a{color:var(--fg);text-decoration:none}@media screen and (max-width:1024px){body{--font-size:14px}}@media screen and (max-width:768px){body{--font-size:12px}}@media screen and (max-width:512px){body{--font-size:11px}}.container{height:100vh;width:100vw;display:grid;grid-template-columns:1fr 4fr 1fr}.container .content{overflow-y:scroll;padding:3em}::-webkit-scrollbar{width:0;background:transparent}.container .content footer hr{margin:2em 0}@media screen and (max-width:1480px){.container{grid-template-columns:1fr}.container .content{padding:1em 3em}}.navigation{background-color:var(--white);padding:2em;overflow-y:auto}.navigation .title-bar .expand-arrow{display:none}.navigation .title-bar h1{text-align:center}.navigation ul{margin:0;list-style-type:none}.navigation ul li.parent-chapter{color:var(--link);text-decoration:none}.navigation ul li>ul{margin-left:2em}.navigation ul li>ul li:first-child{margin-top:.5em}@media screen and (max-width:1480px){.navigation{background-color:var(--bg);height:100%;overflow-y:visible}.navigation .title-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1em}.navigation .title-bar .expand-arrow{display:inline-block}.navigation .title-bar h1{text-align:left;padding:0;margin:0}.navigation .chapters{display:none}.navigation .chapters#expand-chapters,.navigation .chapters li a{display:block}}.toc{padding:2em;overflow-y:scroll;background-color:var(--white)}.toc h1{text-align:center}.toc div ul{list-style-type:none;margin:0}.toc div ul li ul{margin-left:1em}@media screen and (max-width:1480px){.toc{display:none}}.subtitle{color:var(--subtitle);padding:0;margin:0}</style><meta name="generator" content="Gatsby 2.24.23"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Josefin+Sans|Open+Sans" rel="stylesheet"/><link as="script" rel="preload" href="/git-guide/webpack-runtime-4fa9f0b344aeee4ff079.js"/><link as="script" rel="preload" href="/git-guide/framework-fd2b85530eec85104a39.js"/><link as="script" rel="preload" href="/git-guide/app-3cdd1c81b7d93cf48b30.js"/><link as="script" rel="preload" href="/git-guide/styles-89fd2ae28bdf06750a71.js"/><link as="script" rel="preload" href="/git-guide/5e2a4920-644fc63685a427743821.js"/><link as="script" rel="preload" href="/git-guide/component---src-templates-chapter-template-tsx-69c5a2ff7d3178d2d0c4.js"/><link as="fetch" rel="preload" href="/git-guide/page-data/07-advanced-git/07-01-git-log/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/static/d/3034640578.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/git-guide/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="container"><aside class="navigation"><div class="title-bar"><h1><a href="/git-guide/">Git Guide</a></h1><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" style="font-size:2em" class="expand-arrow" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline points="6 9 12 15 18 9"></polyline></svg></div><ul class="chapters" id=""><li><a href="/git-guide/01-setup/">Chapter 01 - Setup</a></li><li><a href="/git-guide/02-first-repository/">Chapter 02 - First Repository</a></li><li><a href="/git-guide/03-first-commit/">Chapter 03 - First Commit</a></li><li><a href="/git-guide/04-collaboration/">Chapter 04 - Collaboration</a></li><li><a href="/git-guide/05-merge-conflicts/">Chapter 05 - Merge Conflicts</a></li><li><a href="/git-guide/06-branching/">Chapter 06 - Branching</a></li><li class="parent-chapter">Chapter 07 - Advanced Git<ul><li><a aria-current="page" class="" href="/git-guide/07-advanced-git/07-01-git-log/">Chapter 07.01 - Git Log</a></li></ul></li><li><a href="/git-guide/08-bash-tutorial/">Chapter 08 - Bash Tutorial</a></li></ul></aside><div class="content"><main><div><h1 id="git-log" style="position:relative;"><a href="#git-log" aria-label="git log permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Git Log</h1>
 <p>Now that you know the basics of Git and have started working on the repository with a few commits, you might ask yourself, "How do we visualize these commits and changes we have made in the repository?"  </p>
 <p>This is where this chapter, and the subsequent (<code>Git Diffs</code>), come in. These commands give you a way to visualize the commits and changes made in your Git repository.  </p>
 <p><strong>TLDR:</strong> The command <code>git log</code> and its corresponding optional flags lets you look at the history of commits and how they link up in your repository.  </p>
 <p>At the end of the chapter, there will be links to additional resources and more visual GUI tools you can use to look at the log of the repository. However, I still suggest reading and understanding how <code>git log</code> works as these tools still rely on the basic <code>git log</code> to generate their graphs. Having an understanding of this command gives you an intuition for how these tools work in general. Additionally, as the command comes with Git, there is no additional setup required to start using <code>git log</code>. </p>
 <p><strong>Note:</strong> this chapter serves to show you and explain the common use cases for the command. For a more detailed explanation, look at the additional resources or the documentation of the command.</p>
-<h2>Project set up so-far</h2>
+<h2 id="project-set-up-so-far" style="position:relative;"><a href="#project-set-up-so-far" aria-label="project set up so far permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Project set up so-far</h2>
 <p>Let's say the project you are working on is a full-stack web application, with a frontend and backend.<br>
 And you have decided to split the work to frontend and backend work, with respective features branches being worked on.</p>
 <p>Your branches may look like this:</p>
@@ -20,7 +70,7 @@ backend/start-server (His local branch connected to github)
 <p><strong>Note: Assume you are teammate A</strong></p>
 <p>Let's say at this point you have added some code and commits to the project and want to see what commits you had done.<br>
 This could be because, you wanted to see where you left off yesterday or how many features have been completed. (The latter reason is when you are working on a larger feature)</p>
-<h3>Basic git log</h3>
+<h3 id="basic-git-log" style="position:relative;"><a href="#basic-git-log" aria-label="basic git log permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic git log</h3>
 <p>Well to look at all the commits made on your current branch you can do:</p>
 <pre><code class="language-bash">git log
 </code></pre>
@@ -57,8 +107,8 @@ This could be because, you wanted to see where you left off yesterday or how man
 <p>From this screenshot you can see that although we can see all the commits linked to our current branch, there is a bit too much information at once.</p>
 <p>For example, information like when the commit was made or who made it is not really important when trying to look at the bigger picture.<br>
 This is also not practical when looking at projects with 10s or 100s of commits, as we would be lost in the information</p>
-<h3>Flags</h3>
-<h4>oneline</h4>
+<h3 id="flags" style="position:relative;"><a href="#flags" aria-label="flags permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Flags</h3>
+<h4 id="oneline" style="position:relative;"><a href="#oneline" aria-label="oneline permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>oneline</h4>
 <p>Luckily there are special flags we can use to format the output.<br>
 If we add the flag, <code>--oneline</code>, git will shorten each commit to oneline, only preserving the important information.<br>
 Looking at the man page for this command:  </p>
@@ -105,7 +155,7 @@ Instead of showing the full 40-byte hexadecimal commit object name, show only a 
 <p>But there is something weird here...<br>
 We can see that there is a commit tagged with origin/master, along with the commits of our current branch, frontend/landing. As we have established previously in chapter 6, all branches start off somewhere. In this example, the branch frontend/landing branches out from the origin/master branch. As such, git log makes a reference to this.</p>
 <p>Luckily, we don't have to imagine these relationships between branches and commits as there is a flag that provides us with that visualization.</p>
-<h4>graph</h4>
+<h4 id="graph" style="position:relative;"><a href="#graph" aria-label="graph permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>graph</h4>
 <p>As mentioned earlier, to display the relationships between branches and commits, we can use the <code>--graph</code> flag. This flag shows a 'graph' of the commits, or the relationship between branches and commits.<br>
 Combining this with the <code>--oneline</code> flag we showed above, makes for a very clean and concise git log.  </p>
 <p>(Try this out yourself and see what happens!)</p>
@@ -143,7 +193,7 @@ Combining this with the <code>--oneline</code> flag we showed above, makes for a
     </span></p>
 <p>Now that you know how to look at commits tagged to your branch, you might also want to see all the commits of the entire repository across all branches - both remote and local.<br>
 Luckily we have a flag to look at the log of the entire repository.  </p>
-<h4>all</h4>
+<h4 id="all" style="position:relative;"><a href="#all" aria-label="all permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>all</h4>
 <p>The <code>--all</code> flag shows the <code>git log</code>, including all the commits from every branch you have in the repository.<br>
 We will also be combining this flag with all previous flags to get the best overview of a project. (In our opinion)</p>
 <pre><code class="language-bash">git log --oneline --graph --all
@@ -184,15 +234,15 @@ We will also be combining this flag with all previous flags to get the best over
 <li><a href="https://stackoverflow.com/questions/39772204/need-help-interpreting-git-log-graph-command">Need help interpreting git log --graph command</a></li>
 <li><a href="https://stackoverflow.com/questions/5382255/how-to-read-git-log-graph">How to read git log graph</a></li>
 </ul>
-<h2>Wrapping up</h2>
+<h2 id="wrapping-up" style="position:relative;"><a href="#wrapping-up" aria-label="wrapping up permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wrapping up</h2>
 <p>To end off, the <code>git log</code> command actually has a lot more features and flags which are a bit more nuanced and situational. This chapter demonstrates the most commonly used features and flags which we hope will be useful to you.  </p>
 <p>As mentioned above, below are additional resources.</p>
-<h3>Additional resources</h3>
+<h3 id="additional-resources" style="position:relative;"><a href="#additional-resources" aria-label="additional resources permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional resources</h3>
 <ul>
 <li><a href="https://www.atlassian.com/git/tutorials/git-log">More features of git log</a></li>
 <li><a href="https://git-scm.com/docs/git-log">git log documentation</a></li>
 </ul>
-<h3>GUI applications to visualise <code>git log</code></h3>
+<h3 id="gui-applications-to-visualise-git-log" style="position:relative;"><a href="#gui-applications-to-visualise-git-log" aria-label="gui applications to visualise git log permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GUI applications to visualise <code>git log</code></h3>
 <ul>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph">VSCode extension (Git Graph)</a></li>
 </ul>
@@ -225,7 +275,7 @@ We will also be combining this flag with all previous flags to get the best over
       />
   </a>
     </span></p>
-<h3>Github</h3>
+<h3 id="github" style="position:relative;"><a href="#github" aria-label="github permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Github</h3>
 <p>Actually there is a feature on GitHub that also allows you to visualise the graph of your repository.<br>
 It is under <code>Insights</code> → <code>Network</code> in your respective GitHub repository.<br>
 <span
@@ -257,4 +307,32 @@ It is under <code>Insights</code> → <code>Network</code> in your respective Gi
         loading="lazy"
       />
   </a>
-    </span></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/07-advanced-git/07-01-git-log/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-830cd53ca5c6720b5926.js"],"app":["/app-bfafb2d29eac3f02890a.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-5fda3ddb3893f84b8871.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-147f980fa48618690b38.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js"]};/*]]>*/</script><script src="/git-guide/polyfill-830cd53ca5c6720b5926.js" nomodule=""></script><script src="/git-guide/component---src-templates-chapter-template-tsx-08e4983812b8148c38ce.js" async=""></script><script src="/git-guide/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/git-guide/app-bfafb2d29eac3f02890a.js" async=""></script><script src="/git-guide/framework-a576ae5ab153fa4a7c27.js" async=""></script><script src="/git-guide/webpack-runtime-78d3762e75c9669ecd81.js" async=""></script></body></html>
+    </span></p></div></main><footer><hr/>Copyright © 2020. Git Guide is built with Gatsby.js. The repository can be found <a href="https://github.com/woojiahao/git-guide">here.</a></footer></div><div class="toc"><h1>Contents</h1><div><ul>
+<li>
+<p><a href="/git-guide/07-advanced-git/07-01-git-log/#git-log">Git Log</a></p>
+<ul>
+<li>
+<p><a href="/git-guide/07-advanced-git/07-01-git-log/#project-set-up-so-far">Project set up so-far</a></p>
+<ul>
+<li><a href="/git-guide/07-advanced-git/07-01-git-log/#basic-git-log">Basic git log</a></li>
+<li>
+<p><a href="/git-guide/07-advanced-git/07-01-git-log/#flags">Flags</a></p>
+<ul>
+<li><a href="/git-guide/07-advanced-git/07-01-git-log/#oneline">oneline</a></li>
+<li><a href="/git-guide/07-advanced-git/07-01-git-log/#graph">graph</a></li>
+<li><a href="/git-guide/07-advanced-git/07-01-git-log/#all">all</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="/git-guide/07-advanced-git/07-01-git-log/#wrapping-up">Wrapping up</a></p>
+<ul>
+<li><a href="/git-guide/07-advanced-git/07-01-git-log/#additional-resources">Additional resources</a></li>
+<li><a href="/git-guide/07-advanced-git/07-01-git-log/#gui-applications-to-visualise-git-log">GUI applications to visualise <code>git log</code></a></li>
+<li><a href="/git-guide/07-advanced-git/07-01-git-log/#github">Github</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/07-advanced-git/07-01-git-log/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-d06486d78b0d3a46b835.js"],"app":["/app-3cdd1c81b7d93cf48b30.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-f2c56d37797be6783198.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-0b281a7fa197409e7a99.js"],"component---src-templates-chapter-template-tsx":["/component---src-templates-chapter-template-tsx-69c5a2ff7d3178d2d0c4.js"]};/*]]>*/</script><script src="/git-guide/polyfill-d06486d78b0d3a46b835.js" nomodule=""></script><script src="/git-guide/component---src-templates-chapter-template-tsx-69c5a2ff7d3178d2d0c4.js" async=""></script><script src="/git-guide/5e2a4920-644fc63685a427743821.js" async=""></script><script src="/git-guide/styles-89fd2ae28bdf06750a71.js" async=""></script><script src="/git-guide/app-3cdd1c81b7d93cf48b30.js" async=""></script><script src="/git-guide/framework-fd2b85530eec85104a39.js" async=""></script><script src="/git-guide/webpack-runtime-4fa9f0b344aeee4ff079.js" async=""></script></body></html>
