@@ -156,5 +156,3 @@ To quickly recap the use cases of the repository creation patterns discussed abo
 |Local repository first|When uploading an existing project to GitHub|
 
 Note that it is completely possible to use the local repository first pattern to create brand new projects. The use case mentioned above is the slightly more common approach to using the pattern.
-
-[Next](../03-first-commit/README.md)

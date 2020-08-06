@@ -145,5 +145,3 @@ Similarly, you can push multiple commits at once.
 ```bash
 git push origin master
 ```
-
-[Next](../04-collaboration/README.md)

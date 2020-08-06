@@ -179,5 +179,3 @@ After one round of this, the original repository should have all of the team mem
 ```bash
 git pull origin master
 ```
-
-[Next](../05-merge-conflicts/README.md)
