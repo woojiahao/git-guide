@@ -30,7 +30,7 @@ jobs:
 
       - name: Installing Gatsby 
         working-directory: ${{ env.SITE_DIR }}
-        run: npm i --save gatsby
+        run: npm config set registry https://skimdb.npmjs.com/registry && npm i gatsby
 
       - name: Deploy the site
         working-directory: ${{ env.SITE_DIR }}
