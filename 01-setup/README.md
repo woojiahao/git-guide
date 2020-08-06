@@ -26,5 +26,3 @@ git config --global user.email "<Your email used when setting up GitHub>"
 The first command configures the names that each commit made will be assigned under. The second command configures the email that these commits will be made under. The email used should correspond with the email that you have used to create your GitHub account.
 
 This is all you will need to setup your environment. Hooray!
-
-[Next](../02-first-repository/README.md)
