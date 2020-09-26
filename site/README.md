@@ -14,9 +14,14 @@ Copy the chapters into the `./site/content/chapters/` folder.
 
 ```bash
 cd ../
-chmod +x copy-chapters.sh
 bash copy-chapters.sh
 cd site/
+```
+
+Install the required node packages.  
+
+```bash
+npm install
 ```
 
 Run a development server.
