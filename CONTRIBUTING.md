@@ -6,7 +6,7 @@ To contribute to the guide, fork this repository and make the necessary ammendme
 
 ## Self-hosting
 
-~~To host the guide on GitHub Pages, the quickest way is by enabling it in the settings of GitHub. Set GitHub Pages to render from the `master` branch (refer [here](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)). Once this is done, GitHub Pages will take a while to upload your changes and it will soon be available at `https://<username>.github.io/git-guide`.~~
+To host the guide on GitHub Pages, the quickest way is by enabling it in the settings of GitHub. Set GitHub Pages to render from the `gh-pages` branch (refer [here](https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)). Once this is done, GitHub Pages will take a while to upload your changes and it will soon be available at `https://<username>.github.io/git-guide`.
 
 ~~**Note*** it is possible to use a separate documentation generator for this but for simplicity sake, we will be using the default GitHub Pages template.~~
 
