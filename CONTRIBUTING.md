@@ -10,7 +10,7 @@ To host the guide on GitHub Pages, the quickest way is by enabling it in the set
 
 **Note*** it is possible to use a separate documentation generator for this but for simplicity sake, we will be using the default GitHub Pages template.
 
-Update as of **01 August 2020** we are now using Gatsby.js to host our guide on github pages.  
+As of **01 August 2020** we are now using Gatsby.js to generate our guide on GitHub pages.
 
 You can find out more information on how to self-host the website [here.](./site/README.md)
 
