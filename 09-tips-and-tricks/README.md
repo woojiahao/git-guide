@@ -13,7 +13,7 @@ You can refer to their respecitve sub-chapter guides for more information.
 ## Contributing a tip
 
 On top of following the guidelines in the [contributing](../CONTRIBUTING.md) document for a tip's sub-chapter, you should also:  
-- Make sure the tip is added as a sub-chapter folder
+- Make sure the tip is added as a sub-chapter folder (You can use other tips or chapter's 7 sub-chapters as a reference)
 - Make sure you add a short description, the date when the guide was finished(Inital finished date) and a link to the quick reference table above.
 - Make sure the quick reference table is formatted properly (You can use [this](http://markdowntable.com/) website)
 - Make sure the tip's sub-chapter updates are noted at the bottom of the tip
