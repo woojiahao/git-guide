@@ -13,6 +13,7 @@ You can refer to their respecitve sub-chapter guides for more information.
 ## Contributing a tip
 
 On top of following the guidelines in the [contributing](../CONTRIBUTING.md) document for a tip's sub-chapter, you should also:  
+- Make sure the tip is added as a sub-chapter folder
 - Make sure you add a short description and link to the quick reference table above
 - Make a Pull Request indicating the tip you are adding
 
