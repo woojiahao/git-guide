@@ -30,7 +30,7 @@ jobs:
 
       - name: Installing Gatsby
         working-directory: ${{ env.SITE_DIR }}
-        run: npm i --no-optional
+        run: npm cache --force clean && npm i --no-optional --force
 
       - name: Deploy the site
         working-directory: ${{ env.SITE_DIR }}
