@@ -36,7 +36,7 @@ If this seems confusing, don't worry, once you start using the commands, it will
 
 The following diagram illustrates the concepts discussed above.
 
-![Staging area](./res/staging-area.png)
+![Staging area](res/staging-area.png)
 
 ## First commit
 
@@ -58,7 +58,7 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
     git status
     ```
 
-    ![git status after creating names.txt](./res/gst-untracked.png)
+    ![git status after creating names.txt](res/gst-untracked.png)
 
     `git status` will print the current status of the Git repository. You will notice that there will be one section - "Untracked files". Under it, there will be the new file, `names.txt` in red. This indicates that the file has not been staged.
 
@@ -70,13 +70,13 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
     git add names.txt
     ```
 
-    ![git add](./res/git-add.png)
+    ![git add](res/git-add.png)
 
     A common convention of `git add` is `git add .` where `.` represents all the files that are available to be copied to the staging area. This is very useful when you have multiple files you wish to stage at once.
 
     To check that a file has been staged, you can run `git status` again. This time, the file should be green in color and under a new section called "Changes to be committed". This indicates that file has been staged successfully.
 
-    ![git status after adding names.txt](./res/gst-add.png)
+    ![git status after adding names.txt](res/gst-add.png)
 
 4. Once a file has been staged, the file is ready to be committed.
 
@@ -84,13 +84,13 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
     git commit -m "Add names.txt"
     ```
 
-    ![git commit](./res/git-commit.png)
+    ![git commit](res/git-commit.png)
 
     `git commit` is relatively straightforward. However, the `-m` is rather interesting. It provides a "commit message" for the commit which is the text in quotations following it. This commit message can be thought of as a short description of what the commit/change is about. Generally, commit messages should provide useful information about the commit where you can look back later and understand why changes were made without having to re-read the code.
 
     To check that a file has been successfully committed, you can run `git status`. This time, you will notice that there are no files in either the "Untracked files" or "Changes to be committed" sections.
 
-    ![git status after commiting names.txt](./res/gst-commit.png)
+    ![git status after commiting names.txt](res/gst-commit.png)
 
 5. Once a file has been committed, it can finally be pushed the remote repository. Pushing is in a sense uploading the latest set of changes to the remote repository. In our case, we have decided to create a new file called `names.txt`, add our name in it, and save/commit that change.
 
@@ -100,13 +100,13 @@ Let's now put what we have learnt to practice. Following that last chapter, you 
 
     Git will take a while to process the request and may prompt you to fill in your GitHub credentials.
 
-    ![git push](./res/git-push.png)
+    ![git push](res/git-push.png)
 
 6. To verify that your changes have been made (adding `names.txt`), visit GitHub and navigate to the repository. You will now notice that there is a new file added, `names.txt`. Hooray!
 
-    ![File added to GitHub!](./res/new-file-added.png)
+    ![File added to GitHub!](res/new-file-added.png)
 
-    ![File contents](./res/new-file-content.png)
+    ![File contents](res/new-file-content.png)
 
 You have successfully made your first commit! There may seem to be a lot of things to recall at once, but many of these become habit over time. The theory behind Git has to be explained to ensure that you have a clear mental model of what is going on so that future commands or chain of commands will make more sense. If you are unsure about anything discussed in this chapter, go over it once again. Ensure that you have a clear understanding of what each command can do.
 

@@ -14,23 +14,23 @@ For this mini-practical, every member should try simulating a merge conflict one
 
 1. Following the previous chapter, the owner must pull the latest changes from their remote repository.
 
-    ![git pull](./res/owner-pull.png)
+    ![git pull](res/owner-pull.png)
 
 2. The owner will modify the first line of `names.txt` and change it to any text that they want. Once they are done, push this change to the original repository.
 
-    ![Owner changing the first line of text](./res/owner-change.png)
+    ![Owner changing the first line of text](res/owner-change.png)
 
 3. Member A will also make a modification (different from the owner) to the first line and commit it.
 
-    ![Member A's modification](./res/member-change.png)
+    ![Member A's modification](res/member-change.png)
 
 4. Member A will use `git pull` to get the latest changes from the original repository. A merge conflict will occur.
 
-    ![git pull merge conflict error](./res/merge-conflict-warning.png)
+    ![git pull merge conflict error](res/merge-conflict-warning.png)
 
 5. To view the status of the merge conflict, use `git status`. It will provide information about the files in question.
 
-    ![View the files with conflict](./res/gst.png)
+    ![View the files with conflict](res/gst.png)
 
 It is up to member A to fix this merge conflict on their end now.
 
@@ -54,7 +54,7 @@ Andrew Ng
 
 Once done, the changes have been saved, add and commit the file again and this time, `git status` should show that the merge conflict has been resolved. Generally, the commit after fixing a merge conflict should indicate that the file was modified due to a merge conflict. As you can see, the error is gone.
 
-![Fix merge conlict and commit](./res/fix-mc.png)
+![Fix merge conlict and commit](res/fix-mc.png)
 
 Rotate this exercise between your members and try modifying various lines of code at once and resolving the merge conflicts that arise. It is hard to simulate all environments where you may receive a merge conflict so it is crucial that everyone understands how merge conflicts can be resolved so that future even if the file contents differ.
 
