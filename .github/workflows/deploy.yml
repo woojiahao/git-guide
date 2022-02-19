@@ -1,4 +1,4 @@
-on: 
+on:
   push:
     branches:
       - publish
@@ -10,7 +10,7 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.GH_TOKEN }}
       SITE_DIR: ./site/
-    strategy: 
+    strategy:
       matrix:
         node_version: [13.x]
     steps:
@@ -28,12 +28,12 @@ jobs:
       - name: Copy chapters to /site/content/
         run: chmod +x copy-chapters.sh && bash copy-chapters.sh
 
-      - name: Installing Gatsby 
+      - name: Installing Gatsby
         working-directory: ${{ env.SITE_DIR }}
-        run: npm config set registry https://skimdb.npmjs.com/registry && npm i gatsby
+        run: npm i --no-optional
 
       - name: Deploy the site
         working-directory: ${{ env.SITE_DIR }}
         run: npm run deploy
-        env: 
+        env:
           GH_TOKEN: ${{ env.GH_TOKEN }}
