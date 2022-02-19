@@ -8,7 +8,6 @@ jobs:
     name: Deploy website to Github Pages with Gatsby
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
       SITE_DIR: ./site/
     strategy:
       matrix:
@@ -36,4 +35,4 @@ jobs:
         working-directory: ${{ env.SITE_DIR }}
         run: npm run deploy
         env:
-          GH_TOKEN: ${{ env.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
