@@ -12,7 +12,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -b gh-pages -r https://$GH_TOKEN@github.com/woojiahao/git-guide"
+    "deploy": "gatsby build --prefix-paths && echo 'learngit.woojiahao.com' > ./public/CNAME && gh-pages -d public -b gh-pages -r https://$GH_TOKEN@github.com/woojiahao/git-guide"
   },
   "dependencies": {
     "gatsby": "^2.23.12",

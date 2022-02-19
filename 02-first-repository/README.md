@@ -40,11 +40,11 @@ In "GitHub first", the repository is created on GitHub (creating a remote reposi
 
 1. Login to GitHub and in the top-right corner of the menu bar, you should see a drop-down. Expand it and you will see an option for a "New Repository". Select this option.
 
-    ![New repository option in GitHub](./res/new-repository-option.png)
+    ![New repository option in GitHub](res/new-repository-option.png)
 
 2. You will be brought to a page where you can "customise your repository". You will have options to customise the following:
 
-    ![New repository page in GitHub](./res/new-repository-page.png)
+    ![New repository page in GitHub](res/new-repository-page.png)
 
     **Note*** For the guide, we will be using the terms repository and project interchangeably.
 
@@ -63,7 +63,7 @@ In "GitHub first", the repository is created on GitHub (creating a remote reposi
 
     Lastly, you can specify if the project is publicly-accessible or privately-accessible. For school projects or personal projects that you wish to keep under wraps, you can set the repository to private. This means that no one can view your repository unless you explicitly give them permission to do so. For open-source projects, you can set the repository to public so that other developers can view your code and use it. For this guide, this selection does not matter.
 
-    ![New repository settings](./res/new-repository-details.png)
+    ![New repository settings](res/new-repository-details.png)
 
 3. Now that you have created a project on GitHub, you can then create a local copy of this project on your local machine. Open your terminal and navigate to a folder where you wish to store your project. For now, we will store all projects in a `Projects/` folder found on your user directory (`/home/<user>` for unix-based systems and `C:\Users\<user>\` for Windows).
 
@@ -73,7 +73,7 @@ In "GitHub first", the repository is created on GitHub (creating a remote reposi
     cd ~/Projects/
     ```
 
-    ![cd](./res/cd.png)
+    ![cd](res/cd.png)
 
     The process of creating a local copy of the project is known as "cloning". Through cloning, you will obtain the latest version of the remote repository on your local machine. You can perform changes on the local repository and upload them to the remote repository when done.
 
@@ -83,7 +83,7 @@ In "GitHub first", the repository is created on GitHub (creating a remote reposi
     git clone https://github.com/woojiahao/learning-git.git
     ```
 
-    ![New repository created](./res/new-repository-created.png)
+    ![New repository created](res/new-repository-created.png)
 
     **Note*** You may be prompted for your GitHub credentials if you created a private repository.
 
@@ -93,7 +93,7 @@ In "GitHub first", the repository is created on GitHub (creating a remote reposi
     ls
     ```
 
-    ![git clone](./res/clone.png)
+    ![git clone](res/clone.png)
 
 4. Finally, you can navigate into your local copy.
 
@@ -101,7 +101,7 @@ In "GitHub first", the repository is created on GitHub (creating a remote reposi
     cd learning-git/
     ```
 
-    ![cd into repository](./res/cd-clone.png)
+    ![cd into repository](res/cd-clone.png)
 
 ### Local machine first
 
@@ -119,13 +119,13 @@ Opposed to the previous method of creating a repository, the "local machine firs
     git init
     ```
 
-    ![git init](./res/init.png)
+    ![git init](res/init.png)
 
     `git init` configures the current folder to be a local Git repository. Once this is configured, you are set.
 
 3. Now, visit GitHub and you can repeat steps 1 and 2 in the previous section. The project name can still be anything that you want. However, it is important to note that you should leave all other fields, aside from 1-3, as it is.
 
-    ![New repository settings](./res/new-repository-details.png)
+    ![New repository settings](res/new-repository-details.png)
 
 5. In the terminal, ensure that you are within the local repository and execute the following commands. These commands will be covered in future chapters.
 
@@ -150,9 +150,9 @@ And there you have it! You have successfully uploaded an existing project to Git
 
 To quickly recap the use cases of the repository creation patterns discussed above.
 
-| Pattern | Use case |
-|---|----|
-|GitHub first |When creating a brand new project where no code is available yet |
-|Local repository first|When uploading an existing project to GitHub|
+| Pattern                | Use case                                                         |
+| ---------------------- | ---------------------------------------------------------------- |
+| GitHub first           | When creating a brand new project where no code is available yet |
+| Local repository first | When uploading an existing project to GitHub                     |
 
 Note that it is completely possible to use the local repository first pattern to create brand new projects. The use case mentioned above is the slightly more common approach to using the pattern.

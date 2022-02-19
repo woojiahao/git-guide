@@ -82,17 +82,17 @@ If your team is using the `learning-git` repository, all other members will have
 
 **Note*** If you created a private repository, you will have to add your team members as a collaborator for them to have access to it (refer [here](https://help.github.com/en/github/setting-up-and-managing-your-github-user-account/inviting-collaborators-to-a-personal-repository)).
 
-![GitHub collaborators for private repositories](./res/collaborator.png)
+![GitHub collaborators for private repositories](res/collaborator.png)
 
 All members (excluding the owner) are to perform these steps first.
 
 1. Fork the repository
 
-    ![Fork option](./res/fork-2.png)
+    ![Fork option](res/fork-2.png)
 
     GitHub should begin creating a remote copy for your own account. Once done, you should see a page like this.
 
-    ![Forked repository](./res/forked.png)
+    ![Forked repository](res/forked.png)
 
 2. Clone the repository by clicking on the green "Clone" button and copying the repository URL
 
@@ -107,15 +107,15 @@ All members (excluding the owner) are to perform these steps first.
     git remote add upstream <original repository URL>
     ```
 
-    ![git remote add](./res/add-upstream.png)
+    ![git remote add](res/add-upstream.png)
 
     The repository URL is the same URL that you used to clone a repository. However, this time, it can be found in the original repository.
 
-    ![Original repository URL](./res/orig-url.png)
+    ![Original repository URL](res/orig-url.png)
 
     To view all remotes available to you, use the `git remote -v` command to view both the alias of the remote and the URL of the matching repository. For example:
 
-    ![View remotes](./res/list-remotes.png)
+    ![View remotes](res/list-remotes.png)
 
 The following steps must be carried out by each member one after another. The owner of the repository **must** accept the pull request from each member first before the next member can proceed.
 
@@ -129,11 +129,11 @@ The following steps must be carried out by each member one after another. The ow
 
     If there are no changes to the original repository, you will see something like this:
 
-    ![git pull no change](./res/git-pull-1.png)
+    ![git pull no change](res/git-pull-1.png)
 
     If there are changes to the original repository, you will see something like this instead:
 
-    ![git pull with change](./res/git-pull-2.png)
+    ![git pull with change](res/git-pull-2.png)
 
 2. Add a new line to the file `names.txt`, this can be your name or any text. You can use a text editor.
 
@@ -152,23 +152,23 @@ The following steps must be carried out by each member one after another. The ow
 
 3. Add this change to the staging area and push it to your local repository
 
-    ![Add new name](./res/add-new-name.png)
+    ![Add new name](res/add-new-name.png)
 
 4. In GitHub, create a pull request where the `base` is the original repository's `master` branch and the `compare` is your copy of the repository's `master` branch. The title field is required while the others are optional. The pull request button can be found in your remote copy of the repository.
 
-    ![Pull request button](./res/local-updated.png)
+    ![Pull request button](res/local-updated.png)
 
-    ![Pull request page](./res/pr-page.png)
+    ![Pull request page](res/pr-page.png)
 
-    ![Pull request details page](./res/pr-details.png)
+    ![Pull request details page](res/pr-details.png)
 
 5. To create the pull request, click on the "Create pull request" button.
 
 Once a member has created a pull request, the owner of the repository can view it in the repository under the "Pull requests" tab. They will now view a list of pending pull requests, which will be one from the member. Click onto the pull request in the list and they will be able to view the pull request. When the owner accepts this pull request (by clicking on the "Merge pull request" button), the changes proposed will be merged into the original repository. In the GitHub file brower, you can view the contents of `names.txt` and find that the new line added by the member is present.
 
-![View pull request](./res/view-pr.png)
+![View pull request](res/view-pr.png)
 
-![Merge pull request](./res/confirm-pr.png)
+![Merge pull request](res/confirm-pr.png)
 
 Once the owner has accepted the pull request and merged the changes, the next member can begin. Repeat the steps above ensuring that the latest changes are pulled from the `upstream` remote.
 

@@ -8,6 +8,6 @@ Similar to a tree, a branch can extend outwards from any point on the tree. This
 
 Branching is incredibly powerful as it allows for different changes to happen to a single codebase without affecting the root. We will be exploring how branching can be used in a project.
 
-![Branching](./res/branching.svg)
+![Branching](res/branching.svg)
 
 In the diagram above, notice that the blue (root) branch continues while secondary branches (purple and green) are created from various points on the root. These secondary branches can be bug fixes or new features that you wish to work on while the development of the core project continues. Branching allows you to work on these components without influencing the primary branch.

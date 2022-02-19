@@ -12,7 +12,7 @@ Once you have installed Git, open up your terminal or Git Bash (if you are on Wi
 git --version
 ```
 
-![Git version](./res/git-version.png)
+![Git version](res/git-version.png)
 
 You will also be using GitHub to manage your projects. More details about this will be explained in following chapters. To get started with GitHub, create an account [here.](https://github.com/) GitHub recently made private repositories with unlimited collaborators free.
 

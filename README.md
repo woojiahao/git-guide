@@ -18,15 +18,15 @@ However, as with anything relating to programming, the best learning is always i
 
 ## Table of contents
 
-1. [Setup](./01-setup/README.md)
-2. [First repository](./02-first-repository/README.md)
-3. [First commit](./03-first-commit/README.md)
-4. [Collaborating with others](./04-collaboration/README.md)
-5. [Merge conflicts](./05-merge-conflicts/README.md)
-6. [(Optional) Branching - WIP](./06-branching/README.md)
-7. [(Optional) Advanced topics - WIP](./07-advanced-git/README.md)
-   1. [Git Log](./07-advanced-git/07-01-git-log/README.md)
-8. [(Optional) Basic bash commands](./08-bash-tutorial/README.md)
+1. [Setup](01-setup/README.md)
+2. [First repository](02-first-repository/README.md)
+3. [First commit](03-first-commit/README.md)
+4. [Collaborating with others](04-collaboration/README.md)
+5. [Merge conflicts](05-merge-conflicts/README.md)
+6. [(Optional) Branching - WIP](06-branching/README.md)
+7. [(Optional) Advanced topics - WIP](07-advanced-git/README.md)
+   1. [Git Log](07-advanced-git/07-01-git-log/README.md)
+8. [(Optional) Basic bash commands](08-bash-tutorial/README.md)
 
 ## Recommended resources
 
