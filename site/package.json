@@ -15,7 +15,7 @@
     "deploy": "gatsby build --prefix-paths && echo 'learngit.woojiahao.com' > ./public/CNAME && gh-pages -d public -b gh-pages -r https://$GH_TOKEN@github.com/woojiahao/git-guide"
   },
   "dependencies": {
-    "gatsby": "^2.23.12",
+    "gatsby": "^5.3.3",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-sharp": "^2.6.24",
     "gatsby-remark-autolink-headers": "^2.3.11",
